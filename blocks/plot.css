@@ -1,0 +1,28 @@
+.plot {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: 1em 1em 1fr;
+  grid-template-rows: 1fr 1em 1em;
+  grid-template-areas:
+    "axis-label-y numbers-y plot"
+    "none         none      numbers-x"
+    "none         none      axis-label-x";
+
+}
+
+.plot__axis-label {
+  grid-area: axis-label-x;
+}
+
+.plot__axis-label_axis_y {
+  grid-area: axis-label-y;
+}
+
+.plot__scale-labels {
+  grid-area: numbers-x;
+}
+
+.plot__scale-labels_axis_y {
+  grid-area: numbers-y;
+}
