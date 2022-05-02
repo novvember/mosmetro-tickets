@@ -1,0 +1,19 @@
+.root{
+  font-family: 'Merriweather', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  /* Цвета страницы */
+  background-color: #fff;
+  color: #000;
+  /* Позиционирование секций*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1em;
+  min-width: 320px;
+  box-sizing: border-box;
+}
