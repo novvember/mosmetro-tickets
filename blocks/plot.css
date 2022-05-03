@@ -49,3 +49,41 @@
 .plot__scale-number:nth-last-child(5n + 1) {
   display: block;
 }
+
+.plot__transport-name {
+  font-weight: bold;
+}
+
+.plot__transport-name::before {
+  content: '';
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin-right: .2em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: sub;
+  font-size: initial;
+}
+
+.plot__transport-name_type_metro::before {
+  background-image: url(../images/icon_metro.svg);
+}
+
+.plot__transport-name_type_bus::before {
+  background-image: url(../images/icon_bus.svg);
+}
+
+.plot__transport-name_type_tram::before {
+  background-image: url(../images/icon_tram.svg);
+}
+
+.plot__transport-name_type_trolley::before {
+  background-image: url(../images/icon_trolley.svg);
+}
+
+@media (max-width: 700px) {
+  .plot__axis-label_axis_y .plot__transport-name {
+    font-size: 0;
+  }
+}
