@@ -13,16 +13,29 @@
 
 .plot__axis-label {
   grid-area: axis-label-x;
+  margin: 0;
+  width: max-content;
+  height: fit-content;
 }
 
 .plot__axis-label_axis_y {
   grid-area: axis-label-y;
+  transform: rotate(-90deg) translateY(1em);
+  transform-origin: left bottom;
+  align-self: end;
 }
 
 .plot__scale-labels {
   grid-area: numbers-x;
+  display: flex;
+  justify-content: space-between;
 }
 
 .plot__scale-labels_axis_y {
   grid-area: numbers-y;
+  flex-direction: column-reverse;
+}
+
+.plot__scale-number {
+  margin: 0;
 }
