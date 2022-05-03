@@ -38,4 +38,5 @@
 
 .plot__scale-number {
   margin: 0;
+  text-align: right;
 }
