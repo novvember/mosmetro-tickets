@@ -7,17 +7,9 @@ import { axisXScaleLabelsSelector,
         maxXNumber,
         maxYNumber} from "../utils/constants.js";
 
+import {getNumbers} from "../utils/utils.js";
 
 
-
-
-function getEvenNumbers(min, max) {
-  const numbers = [];
-  for (let number = min; number <= max; number += 2) {
-    numbers.push(number);
-  }
-  return numbers;
-}
 
 function getScaleLabel(textContent) {
   const element = document
@@ -30,13 +22,13 @@ function getScaleLabel(textContent) {
 }
 
 const axisXScaleLabels = new Section({
-    items: getEvenNumbers(0, maxXNumber),
+    items: getNumbers(0, maxXNumber, 1),
     renderer: getScaleLabel,
   }, axisXScaleLabelsSelector);
 axisXScaleLabels.renderItems();
 
 const axisYScaleLabels = new Section({
-  items: getEvenNumbers(0, maxYNumber),
+  items: getNumbers(0, maxYNumber, 1),
   renderer: getScaleLabel,
 }, axisYScaleLabelsSelector);
 axisYScaleLabels.renderItems();

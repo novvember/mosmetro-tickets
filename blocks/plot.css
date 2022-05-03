@@ -39,7 +39,12 @@
 }
 
 .plot__scale-number {
+  display: none;
   margin: 0;
   text-align: right;
   font-size: .7em;
+}
+
+.plot__scale-number:nth-last-child(5n + 1) {
+  display: block;
 }
