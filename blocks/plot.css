@@ -1,7 +1,8 @@
 .plot {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  width: 100%;
+  width: 100vmin;
+  max-width: 100%;
   aspect-ratio: 1 / 1;
   display: grid;
   grid-template-columns: 1em 1em 1fr;
