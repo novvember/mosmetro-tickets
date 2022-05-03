@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./MerriweatherSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./MerriweatherSans-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("./MerriweatherSans-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("./MerriweatherSans-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./MerriweatherSans-Italic.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("./MerriweatherSans-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("./MerriweatherSans-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./MerriweatherSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./MerriweatherSans-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./MerriweatherSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./MerriweatherSans-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style:  italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./MerriweatherSans-SemiBoldItalic.ttf");
+}

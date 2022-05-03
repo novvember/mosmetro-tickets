@@ -1,5 +1,6 @@
 @import url(../vendor/normalize.css);
-@import url(../vendor/fonts/Merriweather.css);
+@import url(../vendor/fonts/Merriweather/Merriweather.css);
+@import url(../vendor/fonts/Merriweather_Sans/Merriweather_Sans.css);
 
 @import url(../blocks/root.css);
 @import url(../blocks/content.css);
