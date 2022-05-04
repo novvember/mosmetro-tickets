@@ -51,6 +51,7 @@
 
 .plot__scale-number:first-child {
   width: auto;
+  margin-left: calc(100% / (71 * 3));
 }
 
 .plot__scale-number:nth-last-child(5n + 1) {
