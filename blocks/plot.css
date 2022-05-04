@@ -62,12 +62,13 @@
   margin-right: .2em;
   background-size: contain;
   background-repeat: no-repeat;
-  vertical-align: -.25em;
+  vertical-align: -.2em;
   font-size: initial;
 }
 
 .plot__transport-name_type_metro::before {
   background-image: url(../images/icon_metro.svg);
+  vertical-align: -.3em;
 }
 
 .plot__transport-name_type_bus::before {
