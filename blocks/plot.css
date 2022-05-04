@@ -5,63 +5,66 @@
   max-width: 100%;
   aspect-ratio: 1 / 1;
   display: grid;
-  grid-template-columns: 2.5em 1em 1fr;
-  grid-template-rows: 1fr 1em 2.5em;
+  grid-template-columns: 1em 1.5em 1fr;
+  grid-template-rows: 1fr 1.5em 1em;
   grid-template-areas:
     "axis-label-y numbers-y plot"
     "none         none      numbers-x"
     "none         none      axis-label-x";
 }
 
-
+/* Подпись оси */
 .plot__axis-label {
-  grid-area: axis-label-x;
   margin: 0;
-  /* width: max-content;
-  height: fit-content; */
+  width: max-content;
+  height: fit-content;
   text-align: center;
+  justify-self: center;
+}
+
+.plot__axis-label::after {
+  content: ' →';
+}
+
+.plot__axis-label_axis_x {
+  grid-area: axis-label-x;
+  align-self: end;
 }
 
 .plot__axis-label_axis_y {
   grid-area: axis-label-y;
-  writing-mode: vertical-rl;
-  transform:rotate(180deg);
-  /* transform: rotate(-90deg) translateY(1em); */
-  /* transform-origin: left bottom; */
-  /* align-self: end; */
+  transform: rotate(-90deg);
+  align-self: center;
 }
 
-
+/* Шкала с цифрами */
 .plot__scale-labels {
   grid-area: numbers-x;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .plot__scale-labels_axis_y {
   grid-area: numbers-y;
   flex-direction: column-reverse;
+  align-items: flex-end;
 }
-
 
 .plot__scale-number {
   display: none;
   margin: 0;
-  text-align: right;
+  text-align: center;
   font-size: .7em;
   width: 2ch;
-}
-
-.plot__scale-number:first-child {
-  width: auto;
-  margin-left: calc(100% / (71 * 3));
+  line-height: 1;
 }
 
 .plot__scale-number:nth-last-child(5n + 1) {
   display: block;
 }
 
-
+/* Выделение вида траснпорта доп иконкой */
 .plot__transport-name {
   font-weight: bold;
 }
@@ -76,10 +79,6 @@
   background-repeat: no-repeat;
   vertical-align: -.2em;
   font-size: initial;
-}
-
-.plot__axis-label_axis_y .plot__transport-name::before {
-  transform: rotate(90deg);
 }
 
 .plot__transport-name_type_metro::before {
@@ -101,11 +100,11 @@
 
 @media (max-width: 600px) {
   .plot__axis-label_axis_y .plot__transport-name {
-    font-size: 0;
+    font-size: 0; /* Скрытие текста на маленьких экарнах */
   }
 }
 
-
+/* Непосредственно само поле графика */
 .plot__cells {
   display: grid;
   grid-template-columns: repeat(71, 1fr);
@@ -116,6 +115,3 @@
   background-color: #eee;
   border-radius: 50%;
 }
-
-
-
