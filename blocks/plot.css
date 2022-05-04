@@ -68,7 +68,7 @@
 
 .plot__transport-name_type_metro::before {
   background-image: url(../images/icon_metro.svg);
-  vertical-align: -.3em;
+  vertical-align: -.35em;
 }
 
 .plot__transport-name_type_bus::before {
