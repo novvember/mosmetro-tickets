@@ -23,7 +23,15 @@
 }
 
 .plot__axis-label::after {
-  content: ' →';
+  content: '';
+  display: inline-block;
+  width: 2ex;
+  height: 1ex;
+  margin-left: .3em;
+  background-image: url(../images/arrow-right.svg);
+  background-size: cover;
+  background-position: center;
+  opacity: .5;
 }
 
 .plot__axis-label_axis_x {
