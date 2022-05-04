@@ -4,6 +4,7 @@
   width: 100vmin;
   max-width: 100%;
   aspect-ratio: 1 / 1;
+  max-height: 90vh;
   display: grid;
   grid-template-columns: 1em 1.5em 1fr;
   grid-template-rows: 1fr 1.5em 1em;
