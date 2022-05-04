@@ -46,6 +46,11 @@
   margin: 0;
   text-align: right;
   font-size: .7em;
+  width: 2ch;
+}
+
+.plot__scale-number:first-child {
+  width: auto;
 }
 
 .plot__scale-number:nth-last-child(5n + 1) {
