@@ -59,10 +59,10 @@
   display: inline-block;
   height: 1em;
   width: 1em;
-  margin-right: -.25em;
+  margin-right: .2em;
   background-size: contain;
   background-repeat: no-repeat;
-  vertical-align: sub;
+  vertical-align: -.25em;
   font-size: initial;
 }
 
