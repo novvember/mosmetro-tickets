@@ -28,12 +28,14 @@
           <p class="plot__axis-label plot__axis-label_axis_y">Поездки на <span class="plot__transport-name plot__transport-name_type_tram" title="Трамвай">трамваях,</span> <span class="plot__transport-name plot__transport-name_type_bus" title="Автобус">автобусах,</span> <span class="plot__transport-name plot__transport-name_type_trolley" title="Троллейбус">троллейбусах</span> за месяц</p>
           <div class="plot__scale-labels plot__scale-labels_axis_y"> </div>
           <!-- Поле -->
-          <div class="plot__field">
-            <div class="plot-field-cell"></div>
+          <div class="plot__cells">
           </div>
           <!-- Шаблоны элементов для генерации -->
           <template class="template__plot__scale-number">
             <p class="plot__scale-number">#</p>
+          </template>
+          <template class="template__plot__cell">
+            <div class="plot__cell"></div>
           </template>
         </div>
 
