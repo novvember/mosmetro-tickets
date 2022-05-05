@@ -62,13 +62,11 @@ const cells = new Section({
 cells.renderItems();
 
 
-
 const tickets = {};
-for (let i = 0; i <= 3; i++) {
+for (let i = 0; i < 3; i++) {
   const ticketId = ticketParams[i].id;
   tickets[ticketId] = new TicketWithTripLimit(ticketParams[i]);
   tickets[ticketId].fillField();
 
   console.log(tickets[ticketId]);
-  console.log(tickets[ticketId]._field[7][8]);
 }

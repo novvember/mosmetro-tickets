@@ -3,7 +3,7 @@ import Ticket from "./Ticket.js";
 export default class TicketWithTripLimit extends Ticket {
   constructor(ticketParams) {
     super(ticketParams);
-    this._expireLimitPerDay = this._tripLimit / this._dayLimit;
+    this._expireTripsPerDay = this._tripLimit / this._dayLimit;
   }
 
   fillField() {
@@ -16,16 +16,21 @@ export default class TicketWithTripLimit extends Ticket {
 
   _getAverageCost({metroTrips, tatTrips}) {
     const tripsPerPeriod = metroTrips + tatTrips;
-    let tripsPerDay = tripsPerPeriod / this._period;
+    if (tripsPerPeriod === 0) return 0;
 
-    // Проверка на сгорание поездок
-    if(tripsPerDay < this._expireLimitPerDay) tripsPerDay = this._expireLimitPerDay;
+    const tripsPerDay = tripsPerPeriod / this._period;
 
-    const ticketsPerDay = tripsPerDay / this._tripLimit;
+    let ticketsPerDay = tripsPerDay / this._tripLimit;
+
+    // Пересчет на время до следующего билета, если сгорают поездки
+    if (tripsPerDay < this._expireTripsPerDay) {
+      const tripPeriod = 1 / tripsPerDay;
+      const ticketPeriod = Math.ceil(this._dayLimit / tripPeriod) * tripPeriod;
+      ticketsPerDay = 1 / ticketPeriod;
+    }
+
     const ticketsPerPeriod = ticketsPerDay * this._period;
-    const costPerDay = ticketsPerDay * this._price;
-    const costPerPeriod = costPerDay * this._period;
-
+    const costPerPeriod = ticketsPerPeriod * this._price;
     return costPerPeriod;
   }
 }
