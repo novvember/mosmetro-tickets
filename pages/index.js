@@ -17,7 +17,7 @@ import {getNumbers} from "../utils/utils.js";
 import ticketParams from "../utils/ticketParams.js";
 
 
-
+// Генерация осей графика
 function getScaleLabel(textContent) {
   const element = document
                     .querySelector(axisScaleLabelTemplateSelector)
@@ -28,6 +28,20 @@ function getScaleLabel(textContent) {
   return element;
 }
 
+const axisXScaleLabels = new Section({
+  items: getNumbers(0, maxXNumber, 1),
+  renderer: getScaleLabel,
+}, axisXScaleLabelsSelector);
+axisXScaleLabels.renderItems();
+
+const axisYScaleLabels = new Section({
+items: getNumbers(0, maxYNumber, 1),
+renderer: getScaleLabel,
+}, axisYScaleLabelsSelector);
+axisYScaleLabels.renderItems();
+
+
+// Генерация поля графика
 function getCell({x, y}) {
   const cell = new Cell({x, y}, {templateSelector: cellTemplateSelector, elementSelector: cellSelector});
   return cell.renderElement();
@@ -43,18 +57,6 @@ function getCoordinates(maxXNumber, maxYNumber) {
   return coordinates;
 }
 
-const axisXScaleLabels = new Section({
-    items: getNumbers(0, maxXNumber, 1),
-    renderer: getScaleLabel,
-  }, axisXScaleLabelsSelector);
-axisXScaleLabels.renderItems();
-
-const axisYScaleLabels = new Section({
-  items: getNumbers(0, maxYNumber, 1),
-  renderer: getScaleLabel,
-}, axisYScaleLabelsSelector);
-axisYScaleLabels.renderItems();
-
 const cells = new Section({
   items: getCoordinates(maxXNumber, maxYNumber),
   renderer: getCell,
@@ -62,11 +64,15 @@ const cells = new Section({
 cells.renderItems();
 
 
+// Создание экземпляров билетов
 const tickets = {};
-for (let i = 0; i < 3; i++) {
-  const ticketId = ticketParams[i].id;
-  tickets[ticketId] = new TicketWithTripLimit(ticketParams[i]);
-  tickets[ticketId].fillField();
 
-  console.log(tickets[ticketId]);
-}
+ticketParams
+  .filter(params => params.tripLimit !== Infinity)
+  .forEach(params => {
+    const ticketId = params.id;
+    tickets[ticketId] = new TicketWithTripLimit(params);
+    tickets[ticketId].fillField();
+
+    console.log(tickets[ticketId]);
+  });
