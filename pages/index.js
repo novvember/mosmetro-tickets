@@ -1,6 +1,8 @@
 import Section from "../components/Section.js";
 import Cell from "../components/Cell.js";
 
+import TicketWithTripLimit from "../components/TicketWithTripLimit.js";
+
 import { axisXScaleLabelsSelector,
         axisYScaleLabelsSelector,
         axisScaleLabelTemplateSelector,
@@ -12,7 +14,7 @@ import { axisXScaleLabelsSelector,
         cellsSelector} from "../utils/constants.js";
 
 import {getNumbers} from "../utils/utils.js";
-import ticketParams from "../utils/tickets.js";
+import ticketParams from "../utils/ticketParams.js";
 
 
 
