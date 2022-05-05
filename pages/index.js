@@ -12,6 +12,7 @@ import { axisXScaleLabelsSelector,
         cellsSelector} from "../utils/constants.js";
 
 import {getNumbers} from "../utils/utils.js";
+import ticketParams from "../utils/tickets.js";
 
 
 
