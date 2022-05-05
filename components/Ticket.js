@@ -27,4 +27,12 @@ export default class Ticket {
 
     return matrix;
   }
+
+  fillField() {
+    for (let x = 0; x <= this._maxXNumber; x++) {
+      for (let y = 0; y <= this._maxYNumber; y++) {
+        this._field[x][y] = this._getAverageCost({metroTrips: x, tatTrips: y});
+      }
+    }
+  }
 }

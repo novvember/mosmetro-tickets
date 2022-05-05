@@ -6,15 +6,10 @@ export default class TicketWithTripLimit extends Ticket {
     this._expireTripsPerDay = this._tripLimit / this._dayLimit;
   }
 
-  fillField() {
-    for (let x = 0; x <= this._maxXNumber; x++) {
-      for (let y = 0; y <= this._maxYNumber; y++) {
-        this._field[x][y] = this._getAverageCost({metroTrips: x, tatTrips: y});
-      }
-    }
-  }
-
   _getAverageCost({metroTrips, tatTrips}) {
+    if(this._isValidForMetro === false && metroTrips > 0) return null;
+    if(this._isValidForTat === false && tatTrips > 0) return null;
+
     const tripsPerPeriod = metroTrips + tatTrips;
     if (tripsPerPeriod === 0) return 0;
 
@@ -31,6 +26,6 @@ export default class TicketWithTripLimit extends Ticket {
 
     const ticketsPerPeriod = ticketsPerDay * this._period;
     const costPerPeriod = ticketsPerPeriod * this._price;
-    return costPerPeriod;
+    return costPerPeriod.toFixed(2);
   }
 }
