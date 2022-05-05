@@ -7,5 +7,22 @@ export default class Ticket {
     this._tripLimit = ticketParams.tripLimit;
     this._isValidForMetro = ticketParams.isValidForMetro;
     this._isValidForTat = ticketParams.isValidForTat;
+
+    this._period = 30;
+    this._maxXNumber = 70;
+    this._maxYNumber = 70;
+
+    this._field = _getEmptyField();
+  }
+
+  _getEmptyField() {
+    const matrix = {};
+
+    for (let x = 0; x <= this._maxXNumber; x++) {
+      matrix[x] = {};
+      for (let y = 0; y <= _maxYNumber; y++) {
+        matrix[x][y] = null;
+      }
+    }
   }
 }
