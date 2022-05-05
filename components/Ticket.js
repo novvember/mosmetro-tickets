@@ -12,7 +12,7 @@ export default class Ticket {
     this._maxXNumber = 70;
     this._maxYNumber = 70;
 
-    this._field = _getEmptyField();
+    this._field = this._getEmptyField();
   }
 
   _getEmptyField() {
@@ -20,9 +20,11 @@ export default class Ticket {
 
     for (let x = 0; x <= this._maxXNumber; x++) {
       matrix[x] = {};
-      for (let y = 0; y <= _maxYNumber; y++) {
+      for (let y = 0; y <= this._maxYNumber; y++) {
         matrix[x][y] = null;
       }
     }
+
+    return matrix;
   }
 }
