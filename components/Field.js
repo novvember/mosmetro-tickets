@@ -18,7 +18,28 @@ export default class Field {
   }
 
   _calculate() {
+    for (let x = 0; x <= this._maxXNumber; x++) {
+      for (let y = 0; y <= this._maxYNumber; y++) {
+        this._currentField[x][y].minCost = this._getMinCost(this._currentField[x][y].ticketValues);
+      }
+    }
+  }
 
+  _getMinCost(tickets) {
+    let minCostValue = Infinity;
+    let minConstTicketId = '';
+
+    for (let ticketId in tickets) {
+      // Проверка, выбрал ли этот билет для расчета
+      if (this._selectedTickets[ticketId] === false) continue;
+
+      if (tickets[ticketId] !== null && tickets[ticketId] < minCostValue) {
+        minCostValue = tickets[ticketId];
+        minConstTicketId = ticketId;
+      }
+    }
+
+    return {value: minCostValue, ticketId: minConstTicketId};
   }
 
   _render() {
@@ -39,9 +60,9 @@ export default class Field {
       initialField[x] = {};
       for (let y = 0; y <= this._maxYNumber; y++) {
         initialField[x][y] = {};
-        initialField[x][y].ticketResults = {};
+        initialField[x][y].ticketValues = {};
         for (let ticketId in this._tickets) {
-          initialField[x][y].ticketResults[ticketId] = this._tickets[ticketId]._field[x][y];
+          initialField[x][y].ticketValues[ticketId] = this._tickets[ticketId]._field[x][y];
         }
       }
     }

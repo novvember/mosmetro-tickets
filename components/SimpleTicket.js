@@ -25,6 +25,6 @@ export default class SimpleTicket extends Ticket {
     const ticketsPerDay = 1 / ticketPeriod;
     const ticketsPerPeriod = ticketsPerDay * this._period;
     const costPerPeriod = ticketsPerPeriod * this._price;
-    return costPerPeriod.toFixed(2);
+    return +costPerPeriod.toFixed(2);
   }
 }
