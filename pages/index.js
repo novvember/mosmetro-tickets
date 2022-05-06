@@ -18,6 +18,8 @@ import ticketParams from "../utils/ticketParams.js";
 
 
 // Генерация осей графика
+console.log('Создание и отрисовка осей графика...');
+
 function getScaleLabel(textContent) {
   const element = document
                     .querySelector(axisScaleLabelTemplateSelector)
@@ -39,9 +41,12 @@ items: getNumbers(0, fieldParams.maxYNumber, 1),
 renderer: getScaleLabel,
 }, axisYScaleLabelsSelector);
 axisYScaleLabels.renderItems();
+console.log('...Готово');
 
 
-// Генерация поля графика
+// Генерация пустого поля графика
+console.log('Создание и отрисовка пустого поля графика...');
+
 function getCell({x, y}) {
   const cell = new Cell({x, y}, {templateSelector: cellTemplateSelector, elementSelector: cellSelector});
   return cell.renderElement();
@@ -62,13 +67,16 @@ const cells = new Section({
   renderer: getCell,
 }, cellsSelector);
 cells.renderItems();
+console.log('...Готово');
 
 
 // Создание экземпляров билетов
+console.log('Создание билетов и расчет их полей...');
+
 const tickets = {};
 
 ticketParams
-  //.filter(params => params.tripLimit !== Infinity)
+  .filter(params => params.isIgnored === false)
   .forEach(params => {
     const ticketId = params.id;
     tickets[ticketId] = new SimpleTicket(params, fieldParams);
@@ -76,3 +84,16 @@ ticketParams
 
     console.log(tickets[ticketId]);
   });
+
+console.log('...Готово');
+
+
+
+// Создание поля графика
+console.log('Создание и расчет поля графика...');
+
+const field = new Field(tickets);
+console.log(field);
+
+console.log('...Готово');
+
