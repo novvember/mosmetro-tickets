@@ -10,5 +10,8 @@ export const cellSelector = '.plot__cell';
 export const cellsSelector = '.plot__cells';
 
 // Параметры графика
-export const  maxXNumber = 70;
-export const  maxYNumber = 70;
+export const fieldParams = {
+  maxXNumber: 70,
+  maxYNumber: 70,
+  period: 30,
+}

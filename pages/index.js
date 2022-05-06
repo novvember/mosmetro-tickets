@@ -4,15 +4,14 @@ import Field from "../components/Field.js";
 
 import SimpleTicket from "../components/SimpleTicket.js";
 
-import { axisXScaleLabelsSelector,
+import {axisXScaleLabelsSelector,
         axisYScaleLabelsSelector,
         axisScaleLabelTemplateSelector,
         axisScaleLabelSelector,
-        maxXNumber,
-        maxYNumber,
         cellTemplateSelector,
         cellSelector,
-        cellsSelector} from "../utils/constants.js";
+        cellsSelector,
+        fieldParams} from "../utils/constants.js";
 
 import {getNumbers} from "../utils/utils.js";
 import ticketParams from "../utils/ticketParams.js";
@@ -30,13 +29,13 @@ function getScaleLabel(textContent) {
 }
 
 const axisXScaleLabels = new Section({
-  items: getNumbers(0, maxXNumber, 1),
+  items: getNumbers(0, fieldParams.maxXNumber, 1),
   renderer: getScaleLabel,
 }, axisXScaleLabelsSelector);
 axisXScaleLabels.renderItems();
 
 const axisYScaleLabels = new Section({
-items: getNumbers(0, maxYNumber, 1),
+items: getNumbers(0, fieldParams.maxYNumber, 1),
 renderer: getScaleLabel,
 }, axisYScaleLabelsSelector);
 axisYScaleLabels.renderItems();
@@ -59,7 +58,7 @@ function getCoordinates(maxXNumber, maxYNumber) {
 }
 
 const cells = new Section({
-  items: getCoordinates(maxXNumber, maxYNumber),
+  items: getCoordinates(fieldParams.maxXNumber, fieldParams.maxYNumber),
   renderer: getCell,
 }, cellsSelector);
 cells.renderItems();
@@ -72,7 +71,7 @@ ticketParams
   //.filter(params => params.tripLimit !== Infinity)
   .forEach(params => {
     const ticketId = params.id;
-    tickets[ticketId] = new SimpleTicket(params);
+    tickets[ticketId] = new SimpleTicket(params, fieldParams);
     tickets[ticketId].fillField();
 
     console.log(tickets[ticketId]);

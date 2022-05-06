@@ -1,8 +1,8 @@
 import Ticket from "./Ticket.js";
 
 export default class SimpleTicket extends Ticket {
-  constructor(ticketParams) {
-    super(ticketParams);
+  constructor(ticketParams, fieldParams) {
+    super(ticketParams, fieldParams);
   }
 
   _getAverageCost({metroTrips, tatTrips}) {

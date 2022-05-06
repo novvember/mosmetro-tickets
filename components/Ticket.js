@@ -1,5 +1,5 @@
 export default class Ticket {
-  constructor(ticketParams) {
+  constructor(ticketParams, fieldParams) {
     this._name = ticketParams.name;
     this._id = ticketParams.id;
     this._price = ticketParams.price;
@@ -10,9 +10,9 @@ export default class Ticket {
     this._isSelectedByDefault = ticketParams.isSelectedByDefault;
     this._isIgnored = ticketParams.isIgnored;
 
-    this._period = 30;
-    this._maxXNumber = 70;
-    this._maxYNumber = 70;
+    this._period = fieldParams.period;
+    this._maxXNumber = fieldParams.maxXNumber;
+    this._maxYNumber = fieldParams.maxYNumber;
 
     this._field = this._getEmptyField();
   }
