@@ -1,5 +1,6 @@
 import Section from "../components/Section.js";
 import Cell from "../components/Cell.js";
+import Field from "../components/Field.js";
 
 import SimpleTicket from "../components/SimpleTicket.js";
 

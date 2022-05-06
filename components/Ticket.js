@@ -7,6 +7,8 @@ export default class Ticket {
     this._tripLimit = ticketParams.tripLimit;
     this._isValidForMetro = ticketParams.isValidForMetro;
     this._isValidForTat = ticketParams.isValidForTat;
+    this._isSelectedByDefault = ticketParams.isSelectedByDefault;
+    this._isIgnored = ticketParams.isIgnored;
 
     this._period = 30;
     this._maxXNumber = 70;

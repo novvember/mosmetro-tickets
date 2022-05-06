@@ -3,7 +3,6 @@ import Ticket from "./Ticket.js";
 export default class SimpleTicket extends Ticket {
   constructor(ticketParams) {
     super(ticketParams);
-    this._expireTripsPerDay = this._tripLimit / this._dayLimit;
   }
 
   _getAverageCost({metroTrips, tatTrips}) {
