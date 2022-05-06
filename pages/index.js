@@ -68,7 +68,7 @@ cells.renderItems();
 const tickets = {};
 
 ticketParams
-  .filter(params => params.tripLimit !== Infinity)
+  //.filter(params => params.tripLimit !== Infinity)
   .forEach(params => {
     const ticketId = params.id;
     tickets[ticketId] = new TicketWithTripLimit(params);
