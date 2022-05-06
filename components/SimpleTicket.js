@@ -1,6 +1,6 @@
 import Ticket from "./Ticket.js";
 
-export default class TicketWithTripLimit extends Ticket {
+export default class SimpleTicket extends Ticket {
   constructor(ticketParams) {
     super(ticketParams);
     this._expireTripsPerDay = this._tripLimit / this._dayLimit;

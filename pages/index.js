@@ -1,7 +1,7 @@
 import Section from "../components/Section.js";
 import Cell from "../components/Cell.js";
 
-import TicketWithTripLimit from "../components/TicketWithTripLimit.js";
+import SimpleTicket from "../components/SimpleTicket.js";
 
 import { axisXScaleLabelsSelector,
         axisYScaleLabelsSelector,
@@ -71,7 +71,7 @@ ticketParams
   //.filter(params => params.tripLimit !== Infinity)
   .forEach(params => {
     const ticketId = params.id;
-    tickets[ticketId] = new TicketWithTripLimit(params);
+    tickets[ticketId] = new SimpleTicket(params);
     tickets[ticketId].fillField();
 
     console.log(tickets[ticketId]);
