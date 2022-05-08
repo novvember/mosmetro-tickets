@@ -23,4 +23,12 @@ export default class Cell {
     this._element.dataset.y = this._y;
     return this._element;
   }
+
+  setMinTicket(value) {
+    this._element.dataset.minTicket = value;
+  }
+
+  setMinCost(value) {
+    this._element.dataset.minCost = value;
+  }
 }

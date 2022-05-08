@@ -95,8 +95,9 @@ console.log('...Готово');
 // Создание поля графика
 console.log('Создание и расчет поля графика...');
 
-const field = new Field(tickets);
+const field = new Field(tickets, cells);
 field._calculate();
+field._render();
 console.log(field);
 
 console.log('...Готово');

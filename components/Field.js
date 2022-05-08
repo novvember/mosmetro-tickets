@@ -1,8 +1,9 @@
 export default class Field {
-  constructor(tickets) {
+  constructor(tickets, cells) {
     this._tickets = tickets;
     this._selectedTickets = this._setSelectedTicketsByDefault();
     this._currentField = this._getInitialField();
+    this._cells = cells;
   }
 
   _setSelectedTicketsByDefault() {
@@ -43,11 +44,21 @@ export default class Field {
   }
 
   _render() {
-
+    for (let x = 0; x <= this._maxXNumber; x++) {
+      for (let y = 0; y <= this._maxYNumber; y++) {
+        this._cells[x][y].setMinTicket(this._currentField[x][y].minCost.ticketId);
+        this._cells[x][y].setMinCost(this._currentField[x][y].minCost.value);
+      }
+    }
   }
 
   _clear() {
-
+    for (let x = 0; x <= this._maxXNumber; x++) {
+      for (let y = 0; y <= this._maxYNumber; y++) {
+        this._cells[x][y].setMinTicket('');
+        this._cells[x][y].setMinCost('');
+      }
+    }
   }
 
   _getInitialField() {
