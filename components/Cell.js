@@ -19,7 +19,8 @@ export default class Cell {
 
   renderElement() {
     this._element = this._getTemplate();
-    this._element.classList.add(`${this._elementSelector.slice(1)}_${this._x}_${this._y}`);
+    this._element.dataset.x = this._x;
+    this._element.dataset.y = this._y;
     return this._element;
   }
 }

@@ -48,8 +48,9 @@ console.log('...Готово');
 console.log('Создание и отрисовка пустого поля графика...');
 
 function getCell({x, y}) {
-  const cell = new Cell({x, y}, {templateSelector: cellTemplateSelector, elementSelector: cellSelector});
-  return cell.renderElement();
+  if (!cells[x]) cells[x] = {};
+  cells[x][y] = new Cell({x, y}, {templateSelector: cellTemplateSelector, elementSelector: cellSelector});
+  return cells[x][y].renderElement();
 }
 
 function getCoordinates(maxXNumber, maxYNumber) {
@@ -62,11 +63,13 @@ function getCoordinates(maxXNumber, maxYNumber) {
   return coordinates;
 }
 
-const cells = new Section({
+const cells = {}; // Хранит все элементы ячеек
+
+const cellsSection = new Section({
   items: getCoordinates(fieldParams.maxXNumber, fieldParams.maxYNumber),
   renderer: getCell,
 }, cellsSelector);
-cells.renderItems();
+cellsSection.renderItems();
 console.log('...Готово');
 
 
@@ -97,4 +100,3 @@ field._calculate();
 console.log(field);
 
 console.log('...Готово');
-
