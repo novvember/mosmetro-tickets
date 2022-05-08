@@ -121,6 +121,31 @@
 }
 
 .plot__cell {
-  background-color: #eee;
+  background-color: #ccc;
   border-radius: 50%;
+}
+
+/* Ячейки с разными билетами */
+.plot__cell[data-min-ticket=allInOne_trips_60] {
+  background-color: #c0504d;
+}
+
+.plot__cell[data-min-ticket=allInOne_days_30] {
+  background-color: #cc5652;
+}
+
+.plot__cell[data-min-ticket=allInOne_days_90] {
+  background-color: #d95b57;
+}
+
+.plot__cell[data-min-ticket=allInOne_days_365] {
+  background-color: #e5605c;
+}
+
+.plot__cell[data-min-ticket=troika] {
+  background-color: #4bacc6;
+}
+
+.plot__cell[data-min-ticket=tat_days_30] {
+  background-color: #1f497d;
 }
