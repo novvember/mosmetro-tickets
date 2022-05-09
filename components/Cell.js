@@ -37,8 +37,8 @@ export default class Cell {
     this._element.dataset.scaleGroup = `${scaleGroup}`;
 
     const minSize = 0;
-    const maxSize = 60;
-    const size = Math.sqrt(Math.pow(minSize, 2) + (scaleGroup / 100) * Math.pow(maxSize, 2));
+    const maxSize = 70;
+    const size = Math.round(Math.sqrt(Math.pow(minSize, 2) + (scaleGroup / 100) * Math.pow(maxSize, 2)));
     this._element.style.backgroundSize = `${size}%`;
   }
 }
