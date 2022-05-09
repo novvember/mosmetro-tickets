@@ -19,9 +19,15 @@ export default class Field {
   }
 
   _calculate() {
+    this._fieldMinValue = Infinity;
+    this._fieldMaxValue = -Infinity;
+
     for (let x = 0; x <= this._maxXNumber; x++) {
       for (let y = 0; y <= this._maxYNumber; y++) {
-        this._currentField[x][y].minCost = this._getMinCost(this._currentField[x][y].ticketValues);
+        const minCost = this._getMinCost(this._currentField[x][y].ticketValues);
+        this._currentField[x][y].minCost = minCost;
+        if (minCost.value < this._fieldMinValue) this._fieldMinValue = minCost.value;
+        if (minCost.value > this._fieldMaxValue) this._fieldMaxValue = minCost.value;
       }
     }
   }
@@ -48,6 +54,9 @@ export default class Field {
       for (let y = 0; y <= this._maxYNumber; y++) {
         this._cells[x][y].setMinTicket(this._currentField[x][y].minCost.ticketId);
         this._cells[x][y].setMinCost(this._currentField[x][y].minCost.value);
+        this._cells[x][y].setScaleGroup(this._currentField[x][y].minCost.value,
+                                        this._fieldMinValue,
+                                        this._fieldMaxValue);
       }
     }
   }
@@ -57,6 +66,7 @@ export default class Field {
       for (let y = 0; y <= this._maxYNumber; y++) {
         this._cells[x][y].setMinTicket('');
         this._cells[x][y].setMinCost('');
+        // this._cells[x][y].setScaleGroup('');
       }
     }
   }

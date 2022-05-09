@@ -123,13 +123,13 @@
 .plot__cell {
   background: #ccc url(../images/dot-white.svg) no-repeat;
   background-position: center;
-  background-size: 30%;
   transition: background-size .3s;
 }
 
 .plot__cell:hover {
-  background-size: 150%;
+  /* background-size: 150%; */
 }
+
 
 /* Ячейки с разными билетами */
 .plot__cell[data-min-ticket=allInOne_trips_60] {

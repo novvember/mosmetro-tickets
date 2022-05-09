@@ -31,4 +31,10 @@ export default class Cell {
   setMinCost(value) {
     this._element.dataset.minCost = value;
   }
+
+  setScaleGroup(currentValue, minValue, maxValue) {
+    const scaleGroup = Math.floor(100 * (currentValue - minValue) / (maxValue - minValue));
+    this._element.dataset.scaleGroup = `${scaleGroup}`;
+    this._element.style.backgroundSize = `${Math.ceil(60 * scaleGroup / 100)}%`;
+  }
 }
