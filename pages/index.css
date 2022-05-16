@@ -9,3 +9,7 @@
 
 @import url(../blocks/canvas.css);
 @import url(../blocks/plot.css);
+
+@import url(../blocks/labels.css);
+@import url(../blocks/ticket-group.css);
+@import url(../blocks/ticket.css);
