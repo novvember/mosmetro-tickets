@@ -1,7 +1,7 @@
 export const ticketParams = [
   // Единые на поездки
   {
-    name: 'Единый на 1 поездку',
+    name: 'Единый на&nbsp;1&nbsp;поездку',
     price: 57,
     dayLimit: 5,
     tripLimit: 1,
@@ -13,7 +13,7 @@ export const ticketParams = [
     isIgnored: false,
   },
   {
-    name: 'Единый на 2 поездки',
+    name: 'Единый на&nbsp;2&nbsp;поездки',
     price: 114,
     dayLimit: 5,
     tripLimit: 2,
@@ -25,7 +25,7 @@ export const ticketParams = [
     isIgnored: false,
   },
   {
-    name: 'Единый на 60 поездок',
+    name: 'Единый на&nbsp;60&nbsp;поездок',
     price: 1970,
     dayLimit: 45,
     tripLimit: 60,
@@ -39,7 +39,7 @@ export const ticketParams = [
 
   // Единые на дни
   {
-    name: 'Единый на 1 сутки',
+    name: 'Единый на&nbsp;1&nbsp;сутки',
     price: 230,
     dayLimit: 1,
     tripLimit: Infinity,
@@ -51,7 +51,7 @@ export const ticketParams = [
     isIgnored: false,
   },
   {
-    name: 'Единый на 3 суток',
+    name: 'Единый на&nbsp;3&nbsp;суток',
     price: 438,
     dayLimit: 3,
     tripLimit: Infinity,
@@ -63,7 +63,7 @@ export const ticketParams = [
     isIgnored: false,
   },
   {
-    name: 'Единый на 30 дней',
+    name: 'Единый на&nbsp;30&nbsp;дней',
     price: 2170,
     dayLimit: 30,
     tripLimit: Infinity,
@@ -75,7 +75,7 @@ export const ticketParams = [
     isIgnored: false,
   },
   {
-    name: 'Единый на 90 дней',
+    name: 'Единый на&nbsp;90&nbsp;дней',
     price: 5430,
     dayLimit: 90,
     tripLimit: Infinity,
@@ -87,7 +87,7 @@ export const ticketParams = [
     isIgnored: false,
   },
   {
-    name: 'Единый на 365 дней',
+    name: 'Единый на&nbsp;365 дней',
     price: 19500,
     dayLimit: 365,
     tripLimit: Infinity,
@@ -101,7 +101,7 @@ export const ticketParams = [
 
   // Единый на календарный месяц
   {
-    name: 'Единый на календарный месяц',
+    name: 'Единый на&nbsp;календарный месяц',
     price: 2900,
     dayLimit: 30,
     tripLimit: Infinity,
@@ -127,7 +127,7 @@ export const ticketParams = [
     isIgnored: false,
   },
   {
-    name: 'Карта Тройка (пересадка 90 минут)',
+    name: 'Карта Тройка (пересадка 90&nbsp;минут)',
     price: 62,
     dayLimit: 1825,
     tripLimit: 1,
@@ -135,7 +135,7 @@ export const ticketParams = [
     isValidForTat: true,
     id: 'troika_90min',
     groupId: 'troika',
-    isSelectedByDefault: true,
+    isSelectedByDefault: false,
     isIgnored: true,
   },
 
@@ -155,7 +155,7 @@ export const ticketParams = [
 
   // Билеты ТАТ
   {
-    name: 'ТАТ на 30 дней',
+    name: 'ТАТ на&nbsp;30&nbsp;дней',
     price: 1180,
     dayLimit: 30,
     tripLimit: Infinity,

@@ -116,7 +116,7 @@ function renderTicket(ticket) {
   const title = element.querySelector(ticketTitleSelector);
 
   element.classList.add(`ticket_id_${ticket.id}`);
-  title.textContent = ticket.name;
+  title.innerHTML = ticket.name;
   if (ticket.isSelectedByDefault) checkbox.checked = true;
   if (ticket.isIgnored) checkbox.disabled = true;
 

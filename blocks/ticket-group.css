@@ -1,9 +1,11 @@
 .ticket-group {
   border-radius: .2em;
   font-family: 'Open Sans', sans-serif;
-  padding: .5em;
+  padding: .4em;
   border: none;
   margin: 0;
+  flex-grow: 1;
+  width: 15%;
 }
 
 .ticket-group__title {
@@ -14,7 +16,7 @@
   text-transform: uppercase;
   letter-spacing: .2em;
   color: #aaa;
-  margin-bottom: .5em;
+  margin-bottom: .4em;
 }
 
 .ticket_group__ticket-list {
@@ -23,5 +25,5 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: .5em;
+  gap: .4em;
 }

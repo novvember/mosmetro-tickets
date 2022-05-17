@@ -4,17 +4,19 @@
 
 .ticket__label {
   display: flex;
-  gap: .5em;
+  gap: .4em;
   align-items: baseline;
 }
 
 .ticket__title {
   margin: 0;
-  padding: .5em;
-  color: #fff;
+  padding: .4em;
+  color: #000;
   border-radius: .4em;
-  opacity: .7;
+  opacity: .6;
   transition: opacity .1s;
+  background-color: rgb(250,250,250);
+  font-size: .9em;
 }
 
 .ticket__checkbox:checked + .ticket__title {
@@ -39,26 +41,30 @@
 /* Разные билеты */
 .ticket_id_allInOne_trips_60 .ticket__title {
   background-color: #c0504d;
+  color: #fff;
 }
 
 .ticket_id_allInOne_days_30 .ticket__title {
   background-color: #cc5652;
+  color: #fff;
 }
 
 .ticket_id_allInOne_days_90 .ticket__title {
   background-color: #d95b57;
+  color: #fff;
 }
 
 .ticket_id_allInOne_days_365 .ticket__title {
   background-color: #e5605c;
+  color: #fff;
 }
-
 
 .ticket_id_troika .ticket__title {
   background-color: #4bacc6;
+  color: #fff;
 }
-
 
 .ticket_id_tat_days_30 .ticket__title {
   background-color: #1f497d;
+  color: #fff;
 }
