@@ -87,7 +87,7 @@ export const ticketParams = [
     isIgnored: false,
   },
   {
-    name: 'Единый на&nbsp;365 дней',
+    name: 'Единый на&nbsp;365&nbsp;дней',
     price: 19500,
     dayLimit: 365,
     tripLimit: Infinity,

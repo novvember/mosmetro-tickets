@@ -1,4 +1,4 @@
-.ticket-group {
+.legend-group {
   border-radius: .2em;
   font-family: 'Open Sans', sans-serif;
   padding: .4em;
@@ -8,7 +8,7 @@
   width: 15%;
 }
 
-.ticket-group__title {
+.legend-group__title {
   display: block;
   margin: 0;
   font-weight: 300;
@@ -19,7 +19,7 @@
   margin-bottom: .4em;
 }
 
-.ticket_group__ticket-list {
+.legend-group__ticket-list {
   margin: 0;
   padding: 0;
   list-style: none;

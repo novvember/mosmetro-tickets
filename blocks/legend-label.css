@@ -1,14 +1,14 @@
-.ticket {
+.legend-label {
 
 }
 
-.ticket__label {
+.legend-label__label {
   display: flex;
   gap: .4em;
   align-items: baseline;
 }
 
-.ticket__title {
+.legend-label__title {
   margin: 0;
   padding: .4em;
   color: #000;
@@ -17,20 +17,22 @@
   transition: opacity .1s;
   background-color: rgb(250,250,250);
   font-size: .9em;
+  text-decoration: line-through;
 }
 
-.ticket__checkbox:checked + .ticket__title {
+.legend-label__checkbox:checked + .legend-label__title {
   opacity: 1;
+  text-decoration: none;
 }
 
-.ticket__checkbox:disabled + .ticket__title {
+.legend-label__checkbox:disabled + .legend-label__title {
   filter: grayscale();
   opacity: .3;
   color: #000;
   text-decoration: line-through;
 }
 
-.ticket_current .ticket__title {
+.legend-label_current .legend-label__title {
   outline: 2px solid gold;
   outline-offset: 2px;
   transform: rotate(-2deg) scale(1.05);
@@ -39,32 +41,32 @@
 
 
 /* Разные билеты */
-.ticket_id_allInOne_trips_60 .ticket__title {
+.ticket_id_allInOne_trips_60 .legend-label__title {
   background-color: #c0504d;
   color: #fff;
 }
 
-.ticket_id_allInOne_days_30 .ticket__title {
+.ticket_id_allInOne_days_30 .legend-label__title {
   background-color: #cc5652;
   color: #fff;
 }
 
-.ticket_id_allInOne_days_90 .ticket__title {
+.ticket_id_allInOne_days_90 .legend-label__title {
   background-color: #d95b57;
   color: #fff;
 }
 
-.ticket_id_allInOne_days_365 .ticket__title {
+.ticket_id_allInOne_days_365 .legend-label__title {
   background-color: #e5605c;
   color: #fff;
 }
 
-.ticket_id_troika .ticket__title {
+.ticket_id_troika .legend-label__title {
   background-color: #4bacc6;
   color: #fff;
 }
 
-.ticket_id_tat_days_30 .ticket__title {
+.ticket_id_tat_days_30 .legend-label__title {
   background-color: #1f497d;
   color: #fff;
 }

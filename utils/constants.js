@@ -17,15 +17,15 @@ export const fieldParams = {
 }
 
 // Форма с выбором билетов
-export const labelsSelector = '.labels';
-export const ticketGroupTemplateSelector = '.template__ticket-group';
-export const ticketGroupSelector = '.ticket-group';
-export const ticketGroupTitleSelector = '.ticket-group__title';
-export const ticketsInGroupSelector = '.ticket_group__ticket-list';
+export const legendSelector = '.legend';
+export const legendGroupTemplateSelector = '.template__legend-group';
+export const legendGroupSelector = '.legend-group';
+export const legendGroupTitleSelector = '.legend-group__title';
+export const legendTicketListSelector = '.legend-group__ticket-list';
 
-export const ticketTemplateSelector = '.template__ticket';
-export const ticketSelector = '.ticket';
-export const ticketCheckboxSelector = '.ticket__checkbox';
-export const ticketTitleSelector = '.ticket__title';
+export const legendLabelTemplateSelector = '.template__legend-label';
+export const legendLabelSelector = '.legend-label';
+export const legendLabelCheckboxSelector = '.legend-label__checkbox';
+export const legendLabelTitleSelector = '.legend-label__title';
 
 

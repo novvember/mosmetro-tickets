@@ -128,9 +128,11 @@
 }
 
 .plot__cell:hover {
-  box-shadow: 0 0 20px #000;
+  outline: 2px solid rgba(255, 255, 255, .7);
+  outline-offset: 2px;
+  /* box-shadow: 0 0 20px #000; */
   z-index: 1;
-  transition: box-shadow .3s;
+  /* transition: box-shadow .3s; */
 }
 
 

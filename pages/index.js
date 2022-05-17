@@ -12,15 +12,15 @@ import {axisXScaleLabelsSelector,
         cellSelector,
         cellsSelector,
         fieldParams,
-        labelsSelector,
-        ticketGroupTemplateSelector,
-        ticketGroupSelector,
-        ticketGroupTitleSelector,
-        ticketsInGroupSelector,
-        ticketTemplateSelector,
-        ticketSelector,
-        ticketCheckboxSelector,
-        ticketTitleSelector} from "../utils/constants.js";
+        legendSelector,
+        legendGroupTemplateSelector,
+        legendGroupSelector,
+        legendGroupTitleSelector,
+        legendTicketListSelector,
+        legendLabelTemplateSelector,
+        legendLabelSelector,
+        legendLabelCheckboxSelector,
+        legendLabelTitleSelector} from "../utils/constants.js";
 
 import {getNumbers} from "../utils/utils.js";
 import {ticketParams, ticketGroupParams} from "../utils/ticketParams.js";
@@ -105,15 +105,15 @@ console.log('...Готово');
 // Создание формы с выбором билетов
 console.log('Создание формы с выбором билетов...');
 
-function renderTicket(ticket) {
+function renderLegendLabel(ticket) {
   const element = document
-    .querySelector(ticketTemplateSelector)
+    .querySelector(legendLabelTemplateSelector)
     .content
-    .querySelector(ticketSelector)
+    .querySelector(legendLabelSelector)
     .cloneNode(true);
 
-  const checkbox = element.querySelector(ticketCheckboxSelector);
-  const title = element.querySelector(ticketTitleSelector);
+  const checkbox = element.querySelector(legendLabelCheckboxSelector);
+  const title = element.querySelector(legendLabelTitleSelector);
 
   element.classList.add(`ticket_id_${ticket.id}`);
   title.innerHTML = ticket.name;
@@ -128,26 +128,26 @@ function getTicketsByGroupId(groupId) {
     .filter(ticket => ticket.groupId === groupId);
 }
 
-function renderTicketGroup(groupId) {
+function renderLegendGroup(groupId) {
   const element = document
-                    .querySelector(ticketGroupTemplateSelector)
+                    .querySelector(legendGroupTemplateSelector)
                     .content
-                    .querySelector(ticketGroupSelector)
+                    .querySelector(legendGroupSelector)
                     .cloneNode(true);
 
-  const title = element.querySelector(ticketGroupTitleSelector);
-  const ticketsInGroup = element.querySelector(ticketsInGroupSelector);
+  const title = element.querySelector(legendGroupTitleSelector);
+  const ticketsInGroup = element.querySelector(legendTicketListSelector);
 
   title.textContent = ticketGroupParams[groupId].title;
 
   getTicketsByGroupId(groupId).forEach(ticket => {
-    ticketsInGroup.append(renderTicket(ticket));
+    ticketsInGroup.append(renderLegendLabel(ticket));
   });
 
   return element;
 }
 
-const ticketGroups = new Section(renderTicketGroup, labelsSelector);
-ticketGroups.renderItems(Object.keys(ticketGroupParams));
+const legendGroups = new Section(renderLegendGroup, legendSelector);
+legendGroups.renderItems(Object.keys(ticketGroupParams));
 
 console.log('...Готово');
