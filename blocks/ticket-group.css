@@ -1,15 +1,18 @@
 .ticket-group {
-  border-radius: .7em;
+  border-radius: .2em;
   font-family: 'Open Sans', sans-serif;
   padding: .5em;
-  background-color: #4bacc6;
+  /* background-color: #4bacc6; */
+  box-shadow: 0 0 .5em #ddd;
 }
 
 .ticket-group__title {
   margin: 0;
-  font-weight: bold;
-  font-size: 1.2em;
-  color: white;
+  font-weight: 300;
+  font-size: .8em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: #aaa;
   margin-bottom: .5em;
 }
 
