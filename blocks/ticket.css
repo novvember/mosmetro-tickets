@@ -21,15 +21,19 @@
   opacity: 1;
 }
 
+.ticket__checkbox:disabled + .ticket__title {
+  filter: grayscale();
+  opacity: .3;
+  color: #000;
+  text-decoration: line-through;
+}
+
 .ticket_current .ticket__title {
   outline: 2px solid gold;
   outline-offset: 2px;
   transform: rotate(-2deg) scale(1.05);
   box-shadow: 0 0 .5em #aaa;
 }
-
-
-
 
 
 /* Разные билеты */
