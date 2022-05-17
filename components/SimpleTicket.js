@@ -1,9 +1,6 @@
 import Ticket from "./Ticket.js";
 
 export default class SimpleTicket extends Ticket {
-  constructor(ticketParams, fieldParams) {
-    super(ticketParams, fieldParams);
-  }
 
   _getAverageCost({metroTrips, tatTrips}) {
     if(this._isValidForMetro === false && metroTrips > 0) return null;

@@ -15,3 +15,17 @@ export const fieldParams = {
   maxYNumber: 70,
   period: 30,
 }
+
+// Форма с выбором билетов
+export const labelsSelector = '.labels';
+export const ticketGroupTemplateSelector = '.template__ticket-group';
+export const ticketGroupSelector = '.ticket-group';
+export const ticketGroupTitleSelector = '.ticket-group__title';
+export const ticketsInGroupSelector = '.ticket_group__ticket-list';
+
+export const ticketTemplateSelector = '.template__ticket';
+export const ticketSelector = '.ticket';
+export const ticketCheckboxSelector = '.ticket__checkbox';
+export const ticketTitleSelector = '.ticket__title';
+
+

@@ -1,4 +1,4 @@
-const ticketParams = [
+export const ticketParams = [
   // Единые на поездки
   {
     name: 'Единый на 1 поездку',
@@ -8,6 +8,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_trips_1',
+    groupId: 'allInOne',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -19,6 +20,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_trips_2',
+    groupId: 'allInOne',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -30,6 +32,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_trips_60',
+    groupId: 'allInOne',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -43,6 +46,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_1',
+    groupId: 'allInOne',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -54,6 +58,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_3',
+    groupId: 'allInOne',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -65,6 +70,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_30',
+    groupId: 'allInOne',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -76,6 +82,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_90',
+    groupId: 'allInOne',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -87,6 +94,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_365',
+    groupId: 'allInOne',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -100,6 +108,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_month',
+    groupId: 'allInOne',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -113,20 +122,22 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'troika',
+    groupId: 'troika',
     isSelectedByDefault: true,
     isIgnored: false,
   },
-  // {
-  //   name: 'Карта Тройка (пересадка 90 минут)',
-  //   price: 62,
-  //   dayLimit: 1825,
-  //   tripLimit: 1,
-  //   isValidForMetro: true,
-  //   isValidForTat: true,
-  //   id: 'troika_90min',
-  //   isSelectedByDefault: true,
-  //   isIgnored: true,
-  // },
+  {
+    name: 'Карта Тройка (пересадка 90 минут)',
+    price: 62,
+    dayLimit: 1825,
+    tripLimit: 1,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'troika_90min',
+    groupId: 'troika',
+    isSelectedByDefault: true,
+    isIgnored: true,
+  },
 
   // Банковские карты
   {
@@ -137,6 +148,7 @@ const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'bankcard',
+    groupId: 'other',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -150,6 +162,7 @@ const ticketParams = [
     isValidForMetro: false,
     isValidForTat: true,
     id: 'tat_days_30',
+    groupId: 'tat',
     isSelectedByDefault: true,
     isIgnored: false,
   },
@@ -160,4 +173,24 @@ const ticketParams = [
   //
 ];
 
-export default ticketParams;
+export const ticketGroupParams = {
+  troika: {
+    title: 'Тройка',
+  },
+
+  allInOne: {
+    title: 'Единый',
+  },
+
+  tat: {
+    title: 'ТАТ',
+  },
+
+  other: {
+    title: 'Другие',
+  },
+
+  complex: {
+    title: 'Сочетания',
+  },
+}
