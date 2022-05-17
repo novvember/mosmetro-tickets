@@ -13,8 +13,23 @@
   padding: .5em;
   color: #fff;
   border-radius: .4em;
-
+  opacity: .7;
+  transition: opacity .1s;
 }
+
+.ticket__checkbox:checked + .ticket__title {
+  opacity: 1;
+}
+
+.ticket_current .ticket__title {
+  outline: 2px solid gold;
+  outline-offset: 2px;
+  transform: rotate(-2deg) scale(1.05);
+  box-shadow: 0 0 .5em #aaa;
+}
+
+
+
 
 
 /* Разные билеты */
@@ -34,9 +49,11 @@
   background-color: #e5605c;
 }
 
+
 .ticket_id_troika .ticket__title {
   background-color: #4bacc6;
 }
+
 
 .ticket_id_tat_days_30 .ticket__title {
   background-color: #1f497d;
