@@ -18,14 +18,34 @@ export const fieldParams = {
 
 // Форма с выбором билетов
 export const legendSelector = '.legend';
-export const legendGroupTemplateSelector = '.template__legend-group';
-export const legendGroupSelector = '.legend-group';
-export const legendGroupTitleSelector = '.legend-group__title';
-export const legendTicketListSelector = '.legend-group__ticket-list';
 
-export const legendLabelTemplateSelector = '.template__legend-label';
-export const legendLabelSelector = '.legend-label';
-export const legendLabelCheckboxSelector = '.legend-label__checkbox';
-export const legendLabelTitleSelector = '.legend-label__title';
+export const legendLabelSelectors = {
+  templateSelector: '.template__legend-label',
+  labelSelector: '.legend-label',
+  checkboxSelector: '.legend-label__checkbox',
+  titleSelector: '.legend-label__title',
+};
+
+export const legendGroupSelectors = {
+  templateSelector: '.template__legend-group',
+  groupSelector: '.legend-group',
+  titleSelector: '.legend-group__title',
+  ticketListSelector: '.legend-group__ticket-list',
+};
+
+
+
+const legendGroupTemplateSelector = '.template__legend-group';
+const legendGroupSelector = '.legend-group';
+const legendGroupTitleSelector = '.legend-group__title';
+const legendTicketListSelector = '.legend-group__ticket-list';
+
+const legendLabelTemplateSelector = '.template__legend-label';
+const legendLabelSelector = '.legend-label';
+const legendLabelCheckboxSelector = '.legend-label__checkbox';
+const legendLabelTitleSelector = '.legend-label__title';
+
+
+
 
 
