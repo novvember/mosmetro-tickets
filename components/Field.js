@@ -18,7 +18,7 @@ export default class Field {
     this._selectedTickets = seletedTickets;
   }
 
-  _calculate() {
+  calculate() {
     this._fieldMinValue = Infinity;
     this._fieldMaxValue = -Infinity;
 
@@ -49,7 +49,7 @@ export default class Field {
     return {value: minCostValue, ticketId: minConstTicketId};
   }
 
-  _render() {
+  render() {
     for (let x = 0; x <= this._maxXNumber; x++) {
       for (let y = 0; y <= this._maxYNumber; y++) {
         this._cells[x][y].setMinTicket(this._currentField[x][y].minCost.ticketId);
