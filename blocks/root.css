@@ -17,3 +17,14 @@
   min-width: 320px;
   box-sizing: border-box;
 }
+
+a {
+  color: inherit;
+  transition: opacity .1s;
+  text-decoration: underline;
+  text-decoration-color: tomato;
+}
+
+a:hover {
+  opacity: .7;
+}
