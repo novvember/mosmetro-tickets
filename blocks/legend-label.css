@@ -69,11 +69,16 @@
 }
 
 .ticket_id_troika .legend-label__title {
-  background-color: #4bacc6;
+  background-color: #10a6c8;
   color: #fff;
 }
 
 .ticket_id_tat_days_30 .legend-label__title {
-  background-color: #1f497d;
+  background-color: #007dbd;
+  color: #fff;
+}
+
+.ticket_id_compound__tat_days_30__troika .legend-label__title {
+  background-color: #007dbd;
   color: #fff;
 }

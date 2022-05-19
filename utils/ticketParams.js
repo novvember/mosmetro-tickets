@@ -170,7 +170,37 @@ export const ticketParams = [
   // Сочетания билетов (?)
   // ТАТ 30 дней + Тройка-метро
   // ТАТ 30 дней + Единый 60 поездок
-  //
+  {
+    name: 'ТАТ на&nbsp;30&nbsp;дней + Тройка',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__tat_days_30__troika',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'troika',
+    useForTat: 'tat_days_30',
+  },
+
+  {
+    name: 'ТАТ на&nbsp;30&nbsp;дней + Единый на&nbsp;60&nbsp;поездок',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__tat_days_30__allInOne_trips_60',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'allInOne_trips_60',
+    useForTat: 'tat_days_30',
+  },
+
+
 ];
 
 export const ticketGroupParams = {
@@ -190,7 +220,7 @@ export const ticketGroupParams = {
     title: 'Другие',
   },
 
-  complex: {
+  compound: {
     title: 'Сочетания',
   },
 }

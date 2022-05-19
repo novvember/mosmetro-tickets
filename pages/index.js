@@ -3,6 +3,7 @@ import Cell from "../components/Cell.js";
 import Field from "../components/Field.js";
 
 import SimpleTicket from "../components/SimpleTicket.js";
+import CompoundTicket from "../components/CompoundTicket.js";
 import Legend from "../components/Legend.js";
 
 import {axisXScaleLabelsSelector,
@@ -78,9 +79,15 @@ ticketParams
   .filter(params => params.isIgnored === false)
   .forEach(params => {
     const ticketId = params.id;
-    tickets[ticketId] = new SimpleTicket(params, fieldParams);
-    tickets[ticketId].fillField();
+    const isCompound = params.groupId === 'compound';
 
+    if (!isCompound) {
+      tickets[ticketId] = new SimpleTicket(params, fieldParams);
+    } else {
+      tickets[ticketId] = new CompoundTicket(params, fieldParams, tickets);
+    }
+
+    tickets[ticketId].fillField();
     console.log(tickets[ticketId]);
   });
 

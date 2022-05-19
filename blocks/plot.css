@@ -154,9 +154,13 @@
 }
 
 .plot__cell[data-min-ticket=troika] {
-  background-color: #4bacc6;
+  background-color: #10a6c8;
 }
 
 .plot__cell[data-min-ticket=tat_days_30] {
-  background-color: #1f497d;
+  background-color: #007dbd;
+}
+
+.plot__cell[data-min-ticket=compound__tat_days_30__troika] {
+  background-color: #007dbd;
 }
