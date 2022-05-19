@@ -20,11 +20,13 @@
 
 a {
   color: inherit;
-  transition: opacity .1s;
+  transition: opacity .2s, text-decoration-color .5s;
   text-decoration: underline;
-  text-decoration-color: tomato;
+  text-decoration-color: #db2426;
+  text-decoration-thickness: 2px;
 }
 
 a:hover {
-  opacity: .7;
+  /* opacity: .7; */
+  text-decoration-color: #007dbd;
 }
