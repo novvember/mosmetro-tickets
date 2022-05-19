@@ -1,91 +1,97 @@
 export const ticketParams = [
-  // Единые на поездки
+  // Единые с лимитом поездок
   {
     name: 'Единый на&nbsp;1&nbsp;поездку',
-    price: 57,
+    price: 61,
     dayLimit: 5,
     tripLimit: 1,
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_trips_1',
-    groupId: 'allInOne',
+    groupId: 'allInOne_trips',
     isSelectedByDefault: true,
     isIgnored: false,
   },
+
   {
     name: 'Единый на&nbsp;2&nbsp;поездки',
-    price: 114,
+    price: 122,
     dayLimit: 5,
     tripLimit: 2,
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_trips_2',
-    groupId: 'allInOne',
+    groupId: 'allInOne_trips',
     isSelectedByDefault: true,
     isIgnored: false,
   },
+
   {
     name: 'Единый на&nbsp;60&nbsp;поездок',
-    price: 1970,
+    price: 2400,
     dayLimit: 45,
     tripLimit: 60,
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_trips_60',
-    groupId: 'allInOne',
+    groupId: 'allInOne_trips',
     isSelectedByDefault: true,
     isIgnored: false,
   },
 
-  // Единые на дни
+  // Единые без лимита
   {
     name: 'Единый на&nbsp;1&nbsp;сутки',
-    price: 230,
+    price: 265,
     dayLimit: 1,
     tripLimit: Infinity,
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_1',
-    groupId: 'allInOne',
+    groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
   },
+
   {
     name: 'Единый на&nbsp;3&nbsp;суток',
-    price: 438,
+    price: 500,
     dayLimit: 3,
     tripLimit: Infinity,
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_3',
-    groupId: 'allInOne',
+    groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
   },
+
   {
     name: 'Единый на&nbsp;30&nbsp;дней',
-    price: 2170,
+    price: 2360,
     dayLimit: 30,
     tripLimit: Infinity,
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_30',
-    groupId: 'allInOne',
+    groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
   },
+
   {
     name: 'Единый на&nbsp;90&nbsp;дней',
-    price: 5430,
-    dayLimit: 90,
+    price: 5710,
+    dayLimit: 30,
     tripLimit: Infinity,
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_90',
-    groupId: 'allInOne',
+    groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
   },
+
   {
     name: 'Единый на&nbsp;365&nbsp;дней',
     price: 19500,
@@ -94,30 +100,16 @@ export const ticketParams = [
     isValidForMetro: true,
     isValidForTat: true,
     id: 'allInOne_days_365',
-    groupId: 'allInOne',
-    isSelectedByDefault: true,
-    isIgnored: false,
-  },
-
-  // Единый на календарный месяц
-  {
-    name: 'Единый на&nbsp;календарный месяц',
-    price: 2900,
-    dayLimit: 30,
-    tripLimit: Infinity,
-    isValidForMetro: true,
-    isValidForTat: true,
-    id: 'allInOne_days_month',
-    groupId: 'allInOne',
+    groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
   },
 
   // Карта Тройка
   {
-    name: 'Карта Тройка',
-    price: 40,
-    dayLimit: 1825,
+    name: 'Электронный кошелек',
+    price: 46,
+    dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
     isValidForTat: true,
@@ -126,10 +118,11 @@ export const ticketParams = [
     isSelectedByDefault: true,
     isIgnored: false,
   },
+
   {
-    name: 'Карта Тройка (пересадка 90&nbsp;минут)',
-    price: 62,
-    dayLimit: 1825,
+    name: 'Пересадка (90&nbsp;минут)',
+    price: 69,
+    dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
     isValidForTat: true,
@@ -142,7 +135,7 @@ export const ticketParams = [
   // Банковские карты
   {
     name: 'Банковская карта',
-    price: 44,
+    price: 51,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -153,15 +146,54 @@ export const ticketParams = [
     isIgnored: false,
   },
 
+  {
+    name: 'Акция по&nbsp;карте Мир (до&nbsp;30.06.2022)',
+    price: 41,
+    dayLimit: Infinity,
+    tripLimit: 1,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'bankcard_mir-promo',
+    groupId: 'other',
+    isSelectedByDefault: true,
+    isIgnored: false,
+  },
+
   // Билеты ТАТ
   {
     name: 'ТАТ на&nbsp;30&nbsp;дней',
-    price: 1180,
+    price: 1400,
     dayLimit: 30,
     tripLimit: Infinity,
     isValidForMetro: false,
     isValidForTat: true,
     id: 'tat_days_30',
+    groupId: 'tat',
+    isSelectedByDefault: true,
+    isIgnored: false,
+  },
+
+  {
+    name: 'ТАТ на&nbsp;90&nbsp;дней',
+    price: 3720,
+    dayLimit: 90,
+    tripLimit: Infinity,
+    isValidForMetro: false,
+    isValidForTat: true,
+    id: 'tat_days_90',
+    groupId: 'tat',
+    isSelectedByDefault: true,
+    isIgnored: false,
+  },
+
+  {
+    name: 'ТАТ на&nbsp;365&nbsp;дней',
+    price: 14000,
+    dayLimit: 365,
+    tripLimit: Infinity,
+    isValidForMetro: false,
+    isValidForTat: true,
+    id: 'tat_days_365',
     groupId: 'tat',
     isSelectedByDefault: true,
     isIgnored: false,
@@ -185,6 +217,36 @@ export const ticketParams = [
   },
 
   {
+    name: 'ТАТ на&nbsp;90&nbsp;дней + Тройка',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__tat_days_90__troika',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'troika',
+    useForTat: 'tat_days_90',
+  },
+
+  {
+    name: 'ТАТ на&nbsp;365&nbsp;дней + Тройка',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__tat_days_365__troika',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'troika',
+    useForTat: 'tat_days_365',
+  },
+
+  {
     name: 'ТАТ на&nbsp;30&nbsp;дней + Единый на&nbsp;60&nbsp;поездок',
     price: null,
     dayLimit: null,
@@ -199,17 +261,51 @@ export const ticketParams = [
     useForTat: 'tat_days_30',
   },
 
+  {
+    name: 'ТАТ на&nbsp;90&nbsp;дней + Единый на&nbsp;60&nbsp;поездок',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__tat_days_90__allInOne_trips_60',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'allInOne_trips_60',
+    useForTat: 'tat_days_90',
+  },
 
+  {
+    name: 'ТАТ на&nbsp;365&nbsp;дней + Единый на&nbsp;60&nbsp;поездок',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__tat_days_365__allInOne_trips_60',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'allInOne_trips_60',
+    useForTat: 'tat_days_365',
+  },
 ];
 
+
+// Параметры групп билетов
+// isLongGroup: true, // растянуть группу в легенде на несколько строк
 export const ticketGroupParams = {
   troika: {
     title: 'Тройка',
   },
 
-  allInOne: {
-    title: 'Единый',
-    isLongGroup: true, // растянуть группу в легенде на несколько строк
+  allInOne_trips: {
+    title: 'Единый с&nbsp;лимитом',
+  },
+
+  allInOne_days: {
+    title: 'Единый без лимита',
   },
 
   tat: {
@@ -222,5 +318,6 @@ export const ticketGroupParams = {
 
   compound: {
     title: 'Сочетания',
+    isLongGroup: true, // растянуть группу в легенде на несколько строк
   },
 }

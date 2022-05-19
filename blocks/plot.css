@@ -123,8 +123,8 @@
 .plot__cell {
   background: #ccc url(../images/dot-white.svg) no-repeat;
   background-position: center center;
-  box-shadow: none;
-  transition: background-size .3s;
+  /* box-shadow: none;
+  transition: background-size .3s; */
 }
 
 .plot__cell:hover {

@@ -53,7 +53,7 @@ export default class Legend {
     const title = element.querySelector(this._legendGroupTitleSelector);
     const ticketList = element.querySelector(this._legendTicketListSelector);
 
-    title.textContent = this._ticketGroupParams[groupId].title;
+    title.innerHTML = this._ticketGroupParams[groupId].title;
 
     this._getTicketsByGroupId(groupId).forEach(ticket => {
       ticketList.append(this._renderLabel(ticket));

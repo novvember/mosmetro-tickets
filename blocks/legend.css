@@ -7,5 +7,5 @@
 }
 
 .legend .legend_hasLongGroup {
-  grid-row-end: span 6;
+  grid-row: 1 / span 2;
 }
