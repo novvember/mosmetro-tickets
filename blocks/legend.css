@@ -1,4 +1,11 @@
 .legend {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-auto-flow: row dense;
   gap: .4em;
+  width: 100%;
+}
+
+.legend .legend_hasLongGroup {
+  grid-row-end: span 6;
 }

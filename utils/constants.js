@@ -31,6 +31,7 @@ export const legendGroupSelectors = {
   groupSelector: '.legend-group',
   titleSelector: '.legend-group__title',
   ticketListSelector: '.legend-group__ticket-list',
+  longGroupAdditionalClass: 'legend_hasLongGroup',
 };
 
 

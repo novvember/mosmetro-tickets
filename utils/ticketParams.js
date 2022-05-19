@@ -167,9 +167,8 @@ export const ticketParams = [
     isIgnored: false,
   },
 
-  // Сочетания билетов (?)
-  // ТАТ 30 дней + Тройка-метро
-  // ТАТ 30 дней + Единый 60 поездок
+  // Сочетания билетов
+  // Нужно добавить useForMetro, useForTat
   {
     name: 'ТАТ на&nbsp;30&nbsp;дней + Тройка',
     price: null,
@@ -210,6 +209,7 @@ export const ticketGroupParams = {
 
   allInOne: {
     title: 'Единый',
+    isLongGroup: true, // растянуть группу в легенде на несколько строк
   },
 
   tat: {

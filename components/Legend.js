@@ -13,6 +13,7 @@ export default class Legend {
     this._legendGroupSelector = legendGroupSelectors.groupSelector;
     this._legendGroupTitleSelector = legendGroupSelectors.titleSelector;
     this._legendTicketListSelector = legendGroupSelectors.ticketListSelector;
+    this._longGroupAdditionalClass = legendGroupSelectors.longGroupAdditionalClass;
   }
 
   _getElementFromTemplate(templateSelector, elementSelector) {
@@ -57,6 +58,10 @@ export default class Legend {
     this._getTicketsByGroupId(groupId).forEach(ticket => {
       ticketList.append(this._renderLabel(ticket));
     });
+
+    if(this._ticketGroupParams[groupId].isLongGroup) {
+      element.classList.add(this._longGroupAdditionalClass);
+    }
 
     return element;
   }
