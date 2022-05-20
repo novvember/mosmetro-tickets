@@ -138,29 +138,56 @@
 
 /* Ячейки с разными билетами */
 .plot__cell[data-min-ticket=allInOne_trips_60] {
-  background-color: #c0504d;
+  background-color: var(--color__allInOne_trips_60);
 }
 
+
 .plot__cell[data-min-ticket=allInOne_days_30] {
-  background-color: #cc5652;
+  background-color: var(--color__allInOne_days_30);
 }
 
 .plot__cell[data-min-ticket=allInOne_days_90] {
-  background-color: #d95b57;
+  background-color: var(--color__allInOne_days_90);
 }
 
 .plot__cell[data-min-ticket=allInOne_days_365] {
-  background-color: #e5605c;
+  background-color: var(--color__allInOne_days_365);
 }
+
 
 .plot__cell[data-min-ticket=troika] {
-  background-color: #10a6c8;
+  background-color: var(--color__troika);
 }
 
+
+.plot__cell[data-min-ticket=bankcard_mir-promo] {
+  background-color: var(--color__bankcard_mir-promo);
+}
+
+
 .plot__cell[data-min-ticket=tat_days_30] {
-  background-color: #007dbd;
+  background-color: var(--color__tat_days_30);
 }
 
 .plot__cell[data-min-ticket=compound__tat_days_30__troika] {
-  background-color: #007dbd;
+  background-color: var(--color__compound__tat_days_30__troika);
 }
+
+.plot__cell[data-min-ticket=tat_days_90] {
+  background-color: var(--color__tat_days_90);
+}
+
+.plot__cell[data-min-ticket=compound__tat_days_90__troika] {
+  background-color: var(--color__compound__tat_days_90__troika);
+}
+
+.plot__cell[data-min-ticket=tat_days_365] {
+  background-color: var(--color__tat_days_365);
+}
+
+.plot__cell[data-min-ticket=compound__tat_days_365__troika] {
+  background-color: var(--color__compound__tat_days_365__troika);
+}
+
+
+

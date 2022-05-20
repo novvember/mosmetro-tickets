@@ -49,36 +49,61 @@
 
 /* Разные билеты */
 .ticket_id_allInOne_trips_60 .legend-label__title {
-  background-color: #c0504d;
+  background-color: var(--color__allInOne_trips_60);
   color: #fff;
 }
 
 .ticket_id_allInOne_days_30 .legend-label__title {
-  background-color: #cc5652;
+  background-color: var(--color__allInOne_days_30);
   color: #fff;
 }
 
 .ticket_id_allInOne_days_90 .legend-label__title {
-  background-color: #d95b57;
+  background-color: var(--color__allInOne_days_90);
   color: #fff;
 }
 
 .ticket_id_allInOne_days_365 .legend-label__title {
-  background-color: #e5605c;
+  background-color: var(--color__allInOne_days_365);
   color: #fff;
 }
 
 .ticket_id_troika .legend-label__title {
-  background-color: #10a6c8;
+  background-color: var(--color__troika);
+  color: #fff;
+}
+
+.ticket_id_bankcard_mir-promo .legend-label__title {
+  background-color: var(--color__bankcard_mir-promo);
   color: #fff;
 }
 
 .ticket_id_tat_days_30 .legend-label__title {
-  background-color: #007dbd;
+  background-color: var(--color__tat_days_30);
   color: #fff;
 }
 
 .ticket_id_compound__tat_days_30__troika .legend-label__title {
-  background-color: #007dbd;
+  background-color: var(--color__compound__tat_days_30__troika);
+  color: #fff;
+}
+
+.ticket_id_tat_days_90 .legend-label__title {
+  background-color: var(--color__tat_days_90);
+  color: #fff;
+}
+
+.ticket_id_compound__tat_days_90__troika .legend-label__title {
+  background-color: var(--color__compound__tat_days_90__troika);
+  color: #fff;
+}
+
+.ticket_id_tat_days_365 .legend-label__title {
+  background-color: var(--color__tat_days_365);
+  color: #fff;
+}
+
+.ticket_id_compound__tat_days_365__troika .legend-label__title {
+  background-color: var(--color__compound__tat_days_365__troika);
   color: #fff;
 }

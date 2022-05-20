@@ -16,17 +16,42 @@
   padding: 0 1em;
   min-width: 320px;
   box-sizing: border-box;
+
+  /* Цвета билетов */
+  --color__allInOne_trips_60: #c0504d;
+
+  --color__allInOne_days_30: #cc5652;
+  --color__allInOne_days_90: #d95b57;
+  --color__allInOne_days_365: #e5605c;
+
+  --color__troika: #10a6c8;
+
+  --color__bankcard_mir-promo: #00905e;
+
+  --color__tat_days_30: #005580;
+  --color__compound__tat_days_30__troika: #005580;
+
+  --color__tat_days_90: #006699;
+  --color__compound__tat_days_90__troika: #006699;
+
+  --color__tat_days_365: #007dbd;
+  --color__compound__tat_days_365__troika: #007dbd;
+
+
+
+  --color__;
+  --color__;
+  --color__;
 }
 
 a {
   color: inherit;
   transition: opacity .2s, text-decoration-color .5s;
   text-decoration: underline;
-  text-decoration-color: #db2426;
   text-decoration-thickness: 2px;
+  text-decoration-color: #007dbd;
 }
 
 a:hover {
-  /* opacity: .7; */
-  text-decoration-color: #007dbd;
+  text-decoration-color: #db2426;
 }
