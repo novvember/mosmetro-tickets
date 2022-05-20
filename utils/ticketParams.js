@@ -82,7 +82,7 @@ export const ticketParams = [
   {
     name: 'Единый на&nbsp;90&nbsp;дней',
     price: 5710,
-    dayLimit: 30,
+    dayLimit: 90,
     tripLimit: Infinity,
     isValidForMetro: true,
     isValidForTat: true,

@@ -1,5 +1,5 @@
 export default class Legend {
-  constructor (ticketParams, ticketGroupParams, legendLabelSelectors, legendGroupSelectors) {
+  constructor (ticketParams, ticketGroupParams, legendLabelSelectors, legendGroupSelectors, handleSubmit) {
     this._ticketParams = ticketParams;
 
     this._ticketGroupParams = ticketGroupParams;
@@ -14,6 +14,10 @@ export default class Legend {
     this._legendGroupTitleSelector = legendGroupSelectors.titleSelector;
     this._legendTicketListSelector = legendGroupSelectors.ticketListSelector;
     this._longGroupAdditionalClass = legendGroupSelectors.longGroupAdditionalClass;
+
+    this._handleSubmit = handleSubmit;
+
+    this._inputs = [];
   }
 
   _getElementFromTemplate(templateSelector, elementSelector) {
@@ -40,8 +44,15 @@ export default class Legend {
 
     element.classList.add(`ticket_id_${ticket.id}`);
     title.innerHTML = ticket.name;
+
     if (ticket.isSelectedByDefault) checkbox.checked = true;
+    checkbox.name = ticket.id;
+
     if (ticket.isIgnored) checkbox.disabled = true;
+
+    this._setEventListeners(checkbox);
+
+    this._inputs.push(element);
 
     return element;
   }
@@ -64,5 +75,26 @@ export default class Legend {
     }
 
     return element;
+  }
+
+  _getInputValues() {
+    this._inputValues = {};
+
+    this._inputs.forEach(input => {
+      const checkbox = input.querySelector(this._legendLabelCheckboxSelector);
+      this._inputValues[checkbox.name] = checkbox.checked;
+    });
+
+    return this._inputValues;
+  }
+
+  _submit() {
+    this._handleSubmit(this._getInputValues());
+  }
+
+  _setEventListeners(inputElement) {
+    inputElement.addEventListener('input', () => {
+      this._submit();
+    });
   }
 }

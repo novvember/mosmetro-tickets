@@ -26,6 +26,7 @@ export default class Cell {
 
   setMinTicket(value) {
     this._element.dataset.minTicket = value;
+    this._element.title = value;
   }
 
   setMinCost(value) {

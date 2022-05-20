@@ -14,7 +14,7 @@ export default class Field {
     return seletedTickets;
   }
 
-  _setSelectedTickets (seletedTickets) {
+  setSelectedTickets (seletedTickets) {
     this._selectedTickets = seletedTickets;
   }
 

@@ -108,9 +108,16 @@ console.log('...Готово');
 // Создание формы с выбором билетов
 console.log('Создание формы с выбором билетов...');
 
-const ticketsLegend = new Legend(ticketParams, ticketGroupParams, legendLabelSelectors, legendGroupSelectors);
+const ticketsLegend = new Legend(ticketParams, ticketGroupParams, legendLabelSelectors, legendGroupSelectors, handleSubmitLegend);
 
 const ticketsLegendSection = new Section((data) => ticketsLegend.renderGroup(data), legendSelector);
 ticketsLegendSection.renderItems(Object.keys(ticketGroupParams));
 
 console.log('...Готово');
+
+
+function handleSubmitLegend(seletedTickets) {
+  field.setSelectedTickets(seletedTickets);
+  field.calculate();
+  field.render();
+}
