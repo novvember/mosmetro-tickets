@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# Калькулятор стоимости проезда на общественном транспорте Москвы
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Находится в статусе разработки**
+**Информация ниже может быть неактуальна**
 
-## Available Scripts
+Сервис позволяет увидеть среднюю стоимость использования разных билетов на общественный транспорт Москвы на нагляном двухмерном графике (он же номограмма). По одной оси — поездки на метро, на второй — поездки на наземном транспорте (ТАТ — трамвай, автобус, троллейбус).
 
-In the project directory, you can run:
+## Ссылка на работающий сервис
+[novvember.github.io/mosmetro-tickets](https://novvember.github.io/mosmetro-tickets/)
 
-### `npm start`
+## Как пользоваться
+### Найти самый выгодный билет
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. На горизонтальной оси отметить количество **поездок на метро** (в среднем за месяц),
+2. на вертикальной — количество **поездок на наземном транспорте** (тоже среднее за месяц).
+3. На пересечении будет **точка с информацией об оптимальном билете**.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Смотреть и изучать
+* В целом видны характерные области использования тех или иных билетов
+* Видно общую картину билетов (например, некоторые билеты ни в каких ситуациях не выгодны)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Как это работает
+Сервис написан на чистых HTML/CSS/JavaScript и поэтому полностью работает в браузере на стороне пользователя.
 
-### `npm run build`
+Исходные параметры билетов — в файлах `./utils/ticketParams.js` и `./utils/ticketGroupParams.js`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Параметры расчета — в файле `./utils/...`. По умолчанию:
+* в месяце `30` дней,
+* рассчитывается график размером до `70` поездок по каждой оси.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Для каждого билета сриптом создается поле с его стоимостью использования (класс `SimpleTicket`)
+2. Такие же поля создаются для сочетаний билетов (класс `...`). Сочетания нужно дополнительно вносить в `./utils/ticketParams.js` как отдельные билеты.
+3. Создается общее поле (класс `Field`), в котором для каждой ячейки указаны значения по всем билетам, а также рассчитаны наиболее выгодный билет и другие значения.
+4. На странице генерируются график (шкалы на осях, сами ячейки), элементы управления (форма).
+5. В ячейки графика на страницу переносится информация из рассчитанного поля.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Стек технологий
+* HTML и CSS: Адаптивная верстка
+* HTML и CSS: Верстка по БЭМ
+* JS: ООП
+* JS: модульная структура проекта
 
-### `npm run eject`
+## Предыдущая версия
+[Изначальный проект](https://github.com/novvember/mosmetro-tickets/releases/tag/1.19) был сделан в 2019 году и много чего не умел.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## План развития, чеклист
+Выполненные, запланированные и далекие задачи можно увидеть на [Github Issues](https://github.com/novvember/mosmetro-tickets/issues). Отдельно отмечены те, что будут выполнены в первую очередь.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Контакты, сообщить об ошибке
+Если вы нашли ошибку в расчетах, создайте [баг на Github Issues](https://github.com/novvember/mosmetro-tickets/issues) или просто напишите на n.demitsuri@gmail.com.
