@@ -4,7 +4,9 @@
 @import url(./vendor/fonts/OpenSans/OpenSans.css);
 
 .root {
+  /* Текст */
   font-family: 'Open Sans', sans-serif;
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -51,6 +53,7 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-decoration-color: #007dbd;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
