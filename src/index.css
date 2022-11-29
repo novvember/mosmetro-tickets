@@ -1,0 +1,58 @@
+@import url(./vendor/normalize.css);
+
+@import url(./vendor/fonts/Merriweather/Merriweather.css);
+@import url(./vendor/fonts/OpenSans/OpenSans.css);
+
+.root {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+
+  /* Позиционирование секций внутри */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1em;
+  min-width: 320px;
+  box-sizing: border-box;
+
+  /* Цвета страницы */
+  background-color: #fff;
+  color: #000;
+
+  /* Цвета билетов */
+  --ticket__allInOne_trips_60: #c0504d;
+  --ticket__allInOne_days_30: #cc5652;
+  --ticket__allInOne_days_90: #d95b57;
+  --ticket__allInOne_days_365: #e5605c;
+
+  --ticket__troika: #10a6c8;
+
+  --ticket__bankcard_mir-promo: #00905e;
+
+  --ticket__tat_days_30: #005580;
+  --ticket__compound__tat_days_30__troika: #005580;
+
+  --ticket__tat_days_90: #006699;
+  --ticket__compound__tat_days_90__troika: #006699;
+
+  --ticket__tat_days_365: #007dbd;
+  --ticket__compound__tat_days_365__troika: #007dbd;
+}
+
+/* Ссылки по умолчанию */
+a {
+  color: inherit;
+  transition: opacity 0.2s, text-decoration-color 0.5s;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #007dbd;
+}
+
+a:hover {
+  text-decoration-color: #db2426;
+}
