@@ -1,0 +1,99 @@
+.diagram {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+
+  width: 100%;
+  max-width: 80vh;
+  aspect-ratio: 1 / 1;
+
+  display: grid;
+  grid-template-columns: 2em 1fr;
+  grid-template-rows: 1fr 2em;
+  grid-template-areas:
+    'axis-y field'
+    '. axis-x';
+  gap: 0.2em;
+}
+
+.diagram__axis_type_x {
+  grid-area: axis-x;
+}
+
+.diagram__axis_type_y {
+  grid-area: axis-y;
+}
+
+.diagram__field {
+  grid-area: field;
+}
+
+/* Непосредственно само поле графика */
+.diagram__cells {
+  display: grid;
+  grid-template-columns: repeat(71, 1fr);
+  grid-template-rows: repeat(71, 1fr);
+}
+
+.diagram__cell {
+  background: #ccc url(../../images/dot-white.svg) no-repeat;
+  background-position: center center;
+  /* box-shadow: none;
+  transition: background-size .3s; */
+}
+
+.diagram__cell:hover {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+  /* box-shadow: 0 0 20px #000; */
+  z-index: 1;
+  /* transition: box-shadow .3s; */
+}
+
+/* Ячейки с разными билетами */
+.diagram__cell[data-min-ticket='allInOne_trips_60'] {
+  background-color: var(--color__allInOne_trips_60);
+}
+
+.diagram__cell[data-min-ticket='allInOne_days_30'] {
+  background-color: var(--color__allInOne_days_30);
+}
+
+.diagram__cell[data-min-ticket='allInOne_days_90'] {
+  background-color: var(--color__allInOne_days_90);
+}
+
+.diagram__cell[data-min-ticket='allInOne_days_365'] {
+  background-color: var(--color__allInOne_days_365);
+}
+
+.diagram__cell[data-min-ticket='troika'] {
+  background-color: var(--color__troika);
+}
+
+.diagram__cell[data-min-ticket='bankcard_mir-promo'] {
+  background-color: var(--color__bankcard_mir-promo);
+}
+
+.diagram__cell[data-min-ticket='tat_days_30'] {
+  background-color: var(--color__tat_days_30);
+}
+
+.diagram__cell[data-min-ticket='compound__tat_days_30__troika'] {
+  background-color: var(--color__compound__tat_days_30__troika);
+}
+
+.diagram__cell[data-min-ticket='tat_days_90'] {
+  background-color: var(--color__tat_days_90);
+}
+
+.diagram__cell[data-min-ticket='compound__tat_days_90__troika'] {
+  background-color: var(--color__compound__tat_days_90__troika);
+}
+
+.diagram__cell[data-min-ticket='tat_days_365'] {
+  background-color: var(--color__tat_days_365);
+}
+
+.diagram__cell[data-min-ticket='compound__tat_days_365__troika'] {
+  background-color: var(--color__compound__tat_days_365__troika);
+}

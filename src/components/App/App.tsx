@@ -1,5 +1,5 @@
 import React from 'react';
-import Diagram from '../Diagram/Diagram';
+import Figure from '../Figure/Figure';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Text from '../Text/Text';
@@ -10,7 +10,7 @@ function App() {
     <div className="content">
       <Header />
       <main>
-        <Diagram />
+        <Figure />
         <Text />
       </main>
       <Footer />

@@ -1,0 +1,101 @@
+.axis {
+  display: grid;
+}
+
+.axis_type_x {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1em 1em;
+  grid-template-areas: 'scale' 'label';
+}
+
+.axis_type_y {
+  grid-template-columns: 1em 1em;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'label scale';
+}
+
+.axis__label {
+  grid-area: label;
+  text-align: center;
+}
+
+.axis_type_y .axis__label {
+  width: max-content;
+  height: min-content;
+  align-self: center;
+  transform-origin: 0 0;
+  transform: rotate(-90deg) translateX(-50%);
+}
+
+.axis__label::after {
+  content: '';
+  display: inline-block;
+  width: 2ex;
+  height: 1ex;
+  vertical-align: 0.1em;
+  margin-left: 0.3em;
+  background-image: url(../../images/arrow-right.svg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+/* Выделение вида траснпорта доп иконкой */
+
+.axis__label span {
+  font-weight: bold;
+}
+
+.axis__label span::before {
+  content: '';
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin-inline-end: 0.2em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: -0.2em;
+  font-size: initial;
+}
+
+.axis__label span[data-type='metro']::before {
+  background-image: url(../../images/icon_metro.svg);
+  vertical-align: -0.35em;
+}
+
+.axis__label span[data-type='bus']::before {
+  background-image: url(../../images/icon_bus.svg);
+}
+
+.axis__label span[data-type='tram']::before {
+  background-image: url(../../images/icon_tram.svg);
+}
+
+.axis__label span[data-type='trolley']::before {
+  background-image: url(../../images/icon_trolley.svg);
+}
+
+@media (max-width: 600px) {
+  .axis_type_y .axis__label span {
+    font-size: 0; /* Скрытие текста на маленьких экарнах */
+  }
+}
+
+/* Шкала с цифрами */
+.axis__scale {
+  grid-area: scale;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7em;
+}
+
+.axis_type_y .axis__scale {
+  flex-direction: column-reverse;
+}
+
+.axis__scale-number {
+  margin: 0;
+  text-align: center;
+  width: 2ch;
+  line-height: 1;
+}
