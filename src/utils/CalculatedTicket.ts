@@ -1,6 +1,5 @@
 import { CompoundTicket, SimpleTicket } from '../types/Ticket';
 import Config from '../types/Config';
-import CompoundCalculatedTicket from './CompoundCalculatedTicket';
 
 export default class CalculatedTicket {
   data: SimpleTicket | CompoundTicket;
