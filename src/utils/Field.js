@@ -1,9 +1,12 @@
+import Cell from './Cell';
+import { maxXNumber, maxYNumber } from './config';
+
 export default class Field {
-  constructor(tickets, cells) {
+  constructor(tickets, maxXNumber, maxYNumber) {
     this._tickets = tickets;
     this._selectedTickets = this._setSelectedTicketsByDefault();
     this._currentField = this._getInitialField();
-    this._cells = cells;
+    this._cells = {};
   }
 
   _setSelectedTicketsByDefault() {
@@ -80,11 +83,11 @@ export default class Field {
   _getInitialField() {
     this._setFieldSizes();
 
-    const initialField = {};
+    const initialField = [];
 
     // Записать значения всех билетов в ячейку
     for (let x = 0; x <= this._maxXNumber; x++) {
-      initialField[x] = {};
+      initialField[x] = [];
       for (let y = 0; y <= this._maxYNumber; y++) {
         initialField[x][y] = {};
         initialField[x][y].ticketValues = {};

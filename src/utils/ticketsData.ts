@@ -1,6 +1,6 @@
 import { GeneralTicket, CompoundTicket } from '../types/Ticket';
 
-export const ticketParams: Array<GeneralTicket | CompoundTicket> = [
+export const ticketsData: Array<GeneralTicket | CompoundTicket> = [
   // Единые с лимитом поездок
   {
     name: 'Единый на&nbsp;1&nbsp;поездку',
