@@ -4,12 +4,12 @@
 
 .axis_type_x {
   grid-template-columns: 1fr;
-  grid-template-rows: 1em 1em;
+  grid-template-rows: 1em 1.2em;
   grid-template-areas: 'scale' 'label';
 }
 
 .axis_type_y {
-  grid-template-columns: 1em 1em;
+  grid-template-columns: 1.2em 1em;
   grid-template-rows: 1fr;
   grid-template-areas: 'label scale';
 }
@@ -17,6 +17,7 @@
 .axis__label {
   grid-area: label;
   text-align: center;
+  line-height: 100%;
 }
 
 .axis_type_y .axis__label {
@@ -32,7 +33,6 @@
   display: inline-block;
   width: 2ex;
   height: 1ex;
-  vertical-align: 0.1em;
   margin-left: 0.3em;
   background-image: url(../../images/arrow-right.svg);
   background-size: cover;
@@ -85,12 +85,14 @@
 .axis__scale {
   grid-area: scale;
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   font-size: 0.7em;
 }
 
 .axis_type_y .axis__scale {
   flex-direction: column-reverse;
+  align-items: flex-end;
 }
 
 .axis__scale-number {

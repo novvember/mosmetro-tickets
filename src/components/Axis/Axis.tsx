@@ -1,7 +1,15 @@
 import classNames from 'classnames';
 import './Axis.css';
+import React from 'react';
 
-function Axis({ isX = false, isY = false, className }: any) {
+type AxisProps = {
+  isX?: boolean;
+  isY?: boolean;
+  className: string;
+  children: React.ReactNode;
+};
+
+function Axis({ isX = false, isY = false, className, children }: AxisProps) {
   const min = 0;
   const max = 70;
   const step = 5;
@@ -19,13 +27,7 @@ function Axis({ isX = false, isY = false, className }: any) {
         { axis_type_y: isY },
       )}
     >
-      <span className="axis__label">
-        Поездки на{' '}
-        <span data-type="metro" title="Метро">
-          метро
-        </span>{' '}
-        за месяц
-      </span>
+      <span className="axis__label">{children}</span>
 
       <div className="axis__scale">
         {numbers.map((number) => {
