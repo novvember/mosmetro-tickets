@@ -1,14 +1,14 @@
 .header {
-  padding-top: 3em;
-  padding-bottom: 3em;
+  padding-top: 1em;
+  padding-bottom: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1em;
-  font-family: 'Merriweather', serif;
 }
 
 .header__title {
+  font-family: 'Merriweather', serif;
   margin: 0;
   text-align: center;
   max-width: 900px;
