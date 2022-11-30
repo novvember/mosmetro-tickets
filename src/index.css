@@ -27,23 +27,23 @@
   color: #000;
 
   /* Цвета билетов */
-  --ticket__allInOne_trips_60: #c0504d;
-  --ticket__allInOne_days_30: #cc5652;
-  --ticket__allInOne_days_90: #d95b57;
-  --ticket__allInOne_days_365: #e5605c;
+  --ticket-allInOne_trips_60: #c0504d;
+  --ticket-allInOne_days_30: #cc5652;
+  --ticket-allInOne_days_90: #d95b57;
+  --ticket-allInOne_days_365: #e5605c;
 
-  --ticket__troika: #10a6c8;
+  --ticket-troika: #10a6c8;
 
-  --ticket__bankcard_mir-promo: #00905e;
+  --ticket-bankcard_mir-promo: #00905e;
 
-  --ticket__tat_days_30: #005580;
-  --ticket__compound__tat_days_30__troika: #005580;
+  --ticket-tat_days_30: #005580;
+  --ticket-compound__tat_days_30__troika: #005580;
 
-  --ticket__tat_days_90: #006699;
-  --ticket__compound__tat_days_90__troika: #006699;
+  --ticket-tat_days_90: #006699;
+  --ticket-compound__tat_days_90__troika: #006699;
 
-  --ticket__tat_days_365: #007dbd;
-  --ticket__compound__tat_days_365__troika: #007dbd;
+  --ticket-tat_days_365: #007dbd;
+  --ticket-compound__tat_days_365__troika: #007dbd;
 }
 
 /* Ссылки по умолчанию */

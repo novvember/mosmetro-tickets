@@ -1,0 +1,6 @@
+.field {
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(71, 1fr);
+  grid-template-rows: repeat(71, 1fr);
+}
