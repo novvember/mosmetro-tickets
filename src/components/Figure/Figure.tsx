@@ -1,10 +1,10 @@
 import Diagram from '../Diagram/Diagram';
 import './Figure.css';
 
-function Figure({ tickets }: any) {
+function Figure() {
   return (
     <section className="figure">
-      <Diagram tickets={tickets} />
+      <Diagram />
 
       <form className="legend">
         <template className="template__legend-group">

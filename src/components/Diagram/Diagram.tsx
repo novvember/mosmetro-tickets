@@ -6,20 +6,20 @@ import Cells from '../../utils/Field';
 import * as config from '../../utils/config';
 import './Diagram.css';
 
-function Diagram({ tickets }: any) {
+function Diagram() {
   const min = 0;
   const max = 70;
   const step = 5;
 
-  const [field, setField] = useState(createField());
+  // const [field, setField] = useState(createField());
 
-  console.log(field);
+  // console.log(field);
 
-  function createField() {
-    const field = new Cells(tickets, config.maxXNumber, config.maxYNumber);
-    field.calculate();
-    return field;
-  }
+  // function createField() {
+  //   const field = new Cells(tickets, config.maxXNumber, config.maxYNumber);
+  //   field.calculate();
+  //   return field;
+  // }
 
   return (
     <div className="diagram">
@@ -46,9 +46,10 @@ function Diagram({ tickets }: any) {
       </Axis>
 
       <Field className="diagram__field">
-        {field._currentField.flat().map((cell) => {
+        {/* {field._currentField.flat().map((cell) => {
           return <Cell />;
-        })}
+        })} */}
+        <Cell />
       </Field>
     </div>
   );

@@ -1,6 +1,10 @@
-const maxXNumber = 70;
-const maxYNumber = 70;
-const step = 5;
-const period = 30;
+import Config from "../types/Config";
 
-export { maxXNumber, maxYNumber, step, period };
+const config: Config = {
+  maxXNumber: 70,
+  maxYNumber: 70,
+  step: 5,
+  period: 30,
+};
+
+export default config;
