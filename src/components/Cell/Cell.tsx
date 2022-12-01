@@ -1,12 +1,12 @@
 import './Cell.css';
 
-function Cell() {
+function Cell({cell}: any) {
   return (
     <span
       className="cell"
       data-x=""
       data-y=""
-      data-ticket=""
+      data-ticket={cell.minCost.id}
     ></span>
   );
 }

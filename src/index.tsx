@@ -1,15 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux/es/exports';
 
 import './index.css';
 import App from './components/App/App';
-import buildTickets from './utils/buildTickets';
-import { ticketsData } from './utils/ticketsData';
-import Field from './utils/Field';
-import config from './utils/config';
-
-const tickets = buildTickets(ticketsData);
-const field = new Field(tickets, config);
+import store from './store/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -17,6 +12,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
 );

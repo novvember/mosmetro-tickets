@@ -1,4 +1,10 @@
-import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { calculated } from '../../store/actions';
+import buildTickets from '../../utils/buildTickets';
+import config from '../../utils/config';
+import Field from '../../utils/Field';
+import { ticketsData } from '../../utils/ticketsData';
 
 import Figure from '../Figure/Figure';
 import Footer from '../Footer/Footer';
@@ -7,7 +13,14 @@ import Text from '../Text/Text';
 
 import './App.css';
 
-function App() {
+function App({ calculated }: { calculated: any }) {
+  useEffect(() => {
+    const tickets = buildTickets(ticketsData);
+    const field = new Field(tickets, config);
+    field.calculate();
+    calculated(field.field);
+  }, [calculated]);
+
   return (
     <div className="content">
       <Header />
@@ -20,4 +33,12 @@ function App() {
   );
 }
 
-export default App;
+function mapStateToProps() {
+  return {};
+}
+
+const mapDispatchToProps = {
+  calculated,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

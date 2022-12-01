@@ -1,25 +1,14 @@
-import { useState } from 'react';
 import Axis from '../Axis/Axis';
 import Cell from '../Cell/Cell';
 import Field from '../Field/Field';
-import Cells from '../../utils/Field';
-import * as config from '../../utils/config';
+import { connect } from 'react-redux';
+
 import './Diagram.css';
 
-function Diagram() {
+function Diagram({ field }: { field: any }) {
   const min = 0;
   const max = 70;
   const step = 5;
-
-  // const [field, setField] = useState(createField());
-
-  // console.log(field);
-
-  // function createField() {
-  //   const field = new Cells(tickets, config.maxXNumber, config.maxYNumber);
-  //   field.calculate();
-  //   return field;
-  // }
 
   return (
     <div className="diagram">
@@ -46,13 +35,22 @@ function Diagram() {
       </Axis>
 
       <Field className="diagram__field">
-        {/* {field._currentField.flat().map((cell) => {
-          return <Cell />;
-        })} */}
-        <Cell />
+        {field &&
+          field
+            .reverse()
+            .flat()
+            .map((cell: any, i: number) => {
+              return <Cell cell={cell} key={i} />;
+            })}
       </Field>
     </div>
   );
 }
 
-export default Diagram;
+function mapStateToProps(state: any) {
+  return {
+    field: state.field,
+  };
+}
+
+export default connect(mapStateToProps)(Diagram);
