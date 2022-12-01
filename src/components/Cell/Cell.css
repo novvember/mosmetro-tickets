@@ -1,59 +1,75 @@
 .cell {
-  background: #eee;
-  border-radius: 40%;
+  --color: 238, 238, 238;
+  background-color: rgba(var(--color), 0.6);
+  /* border-radius: 50%; */
+  position: relative;
 }
 
-.cell:hover {
-  outline: 3px solid rgba(0, 0, 0, 0.3);
-  outline-offset: 5px;
+.cell::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(var(--color), 1);
   z-index: 1;
+}
+
+.cell:hover::after {
+  outline: 3px solid rgba(0, 0, 0, 0.5);
+  outline-offset: 0.4em;
+  z-index: 2;
 }
 
 /* Ячейки с разными билетами */
 .cell[data-ticket='allInOne_trips_60'] {
-  background-color: var(--ticket-allInOne_trips_60);
+  --color: var(--ticket-allInOne_trips_60);
 }
 
 .cell[data-ticket='allInOne_days_30'] {
-  background-color: var(--ticket-allInOne_days_30);
+  --color: var(--ticket-allInOne_days_30);
 }
 
 .cell[data-ticket='allInOne_days_90'] {
-  background-color: var(--ticket-allInOne_days_90);
+  --color: var(--ticket-allInOne_days_90);
 }
 
 .cell[data-ticket='allInOne_days_365'] {
-  background-color: var(--ticket-allInOne_days_365);
+  --color: var(--ticket-allInOne_days_365);
 }
 
 .cell[data-ticket='troika'] {
-  background-color: var(--ticket-troika);
+  --color: var(--ticket-troika);
 }
 
 .cell[data-ticket='bankcard_mir-promo'] {
-  background-color: var(--ticket-bankcard_mir-promo);
+  --color: var(--ticket-bankcard_mir-promo);
 }
 
 .cell[data-ticket='tat_days_30'] {
-  background-color: var(--ticket-tat_days_30);
+  --color: var(--ticket-tat_days_30);
 }
 
 .cell[data-ticket='compound__tat_days_30__troika'] {
-  background-color: var(--ticket-compound__tat_days_30__troika);
+  --color: var(--ticket-compound__tat_days_30__troika);
 }
 
 .cell[data-ticket='tat_days_90'] {
-  background-color: var(--ticket-tat_days_90);
+  --color: var(--ticket-tat_days_90);
 }
 
 .cell[data-ticket='compound__tat_days_90__troika'] {
-  background-color: var(--ticket-compound__tat_days_90__troika);
+  --color: var(--ticket-compound__tat_days_90__troika);
 }
 
 .cell[data-ticket='tat_days_365'] {
-  background-color: var(--ticket-tat_days_365);
+  --color: var(--ticket-tat_days_365);
 }
 
 .cell[data-ticket='compound__tat_days_365__troika'] {
-  background-color: var(--ticket-compound__tat_days_365__troika);
+  --color: var(--ticket-compound__tat_days_365__troika);
 }
