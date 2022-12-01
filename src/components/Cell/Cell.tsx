@@ -26,7 +26,7 @@ function getCellStyle(value: any, min: any, max: any) {
 
   const minS = 0.01;
   const pivotS = 3.14 / 4;
-  const maxS = 0.87;
+  const maxS = 0.88;
 
   const s = ratio * (maxS - minS) + minS;
 
