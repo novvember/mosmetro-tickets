@@ -1,10 +1,22 @@
+import Config from '../types/Config';
 import { SimpleTicket } from '../types/Ticket';
 import CalculatedTicket from './CalculatedTicket';
 
 export default class SimpleCalculatedTicket extends CalculatedTicket<
   SimpleTicket
 > {
-  getCost({ metroTrips, tatTrips }: { metroTrips: number; tatTrips: number }) {
+  constructor(ticket: SimpleTicket, config: Config) {
+    super(ticket, config);
+    super.calculate();
+  }
+
+  protected getCost({
+    metroTrips,
+    tatTrips,
+  }: {
+    metroTrips: number;
+    tatTrips: number;
+  }) {
     if (this.data.isValidForMetro === false && metroTrips > 0) return null;
     if (this.data.isValidForTat === false && tatTrips > 0) return null;
 

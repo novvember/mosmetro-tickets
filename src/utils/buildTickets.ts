@@ -27,8 +27,6 @@ export default function buildTickets(
           tickets,
         );
       }
-
-      tickets[id].calculate();
     });
 
   return tickets;

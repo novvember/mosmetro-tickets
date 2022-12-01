@@ -2,8 +2,8 @@ import { CompoundTicket, SimpleTicket } from '../types/Ticket';
 import Config from '../types/Config';
 
 export default class CalculatedTicket<T extends SimpleTicket | CompoundTicket> {
-  data: T;
-  config: Config;
+  readonly data: T;
+  readonly config: Config;
   field: Array<Array<number | null>>;
 
   constructor(ticket: T, config: Config) {
@@ -23,17 +23,17 @@ export default class CalculatedTicket<T extends SimpleTicket | CompoundTicket> {
     return field;
   }
 
-  getCost({
+  protected getCost({
     metroTrips,
     tatTrips,
   }: {
     metroTrips: number;
     tatTrips: number;
   }): number | null {
-    return 0;
+    return null;
   }
 
-  calculate() {
+  protected calculate() {
     for (let y = 0; y <= this.config.maxYNumber; y++) {
       for (let x = 0; x <= this.config.maxXNumber; x++) {
         this.field[y][x] = this.getCost({
