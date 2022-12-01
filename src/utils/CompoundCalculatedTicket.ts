@@ -28,8 +28,8 @@ export default class CompoundCalculatedTicket extends CalculatedTicket<
     metroTrips: number;
     tatTrips: number;
   }) {
-    const metroCost = this.useForMetro.field[metroTrips][0];
-    const tatCost = this.useForTat.field[0][tatTrips];
+    const metroCost = this.useForMetro.field[0][metroTrips];
+    const tatCost = this.useForTat.field[tatTrips][0];
     if (metroCost === null || tatCost === null) return null;
     return metroCost + tatCost;
   }

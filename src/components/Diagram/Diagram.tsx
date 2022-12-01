@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import './Diagram.css';
 
 function Diagram({ field }: { field: any }) {
+  console.log(field);
   return (
     <div className="diagram">
       <Axis isX className="diagram__axis_type_x">
