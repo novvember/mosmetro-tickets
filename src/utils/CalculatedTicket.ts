@@ -1,12 +1,12 @@
 import { CompoundTicket, SimpleTicket } from '../types/Ticket';
 import Config from '../types/Config';
 
-export default class CalculatedTicket {
-  data: SimpleTicket | CompoundTicket;
+export default class CalculatedTicket<T extends SimpleTicket | CompoundTicket> {
+  data: T;
   config: Config;
   field: Array<Array<number | null>>;
 
-  constructor(ticket: SimpleTicket | CompoundTicket, config: Config) {
+  constructor(ticket: T, config: Config) {
     this.data = ticket;
     this.config = config;
     this.field = this.getEmptyField();

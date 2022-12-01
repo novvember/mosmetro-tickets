@@ -1,6 +1,8 @@
 import CalculatedTicket from '../utils/CalculatedTicket';
-import { Ticket } from './Ticket';
+import CompoundCalculatedTicket from '../utils/CompoundCalculatedTicket';
+import SimpleCalculatedTicket from '../utils/SimpleCalculatedTicket';
+import { CompoundTicket, SimpleTicket, Ticket } from './Ticket';
 
 export default interface CalculatedTickets {
-  [key: Ticket['id']]: CalculatedTicket;
+  [key: Ticket['id']]: SimpleCalculatedTicket | CompoundCalculatedTicket;
 }

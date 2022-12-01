@@ -2,10 +2,13 @@ import CalculatedTickets from '../types/CalculatedTickets';
 import Config from '../types/Config';
 import { CompoundTicket } from '../types/Ticket';
 import CalculatedTicket from './CalculatedTicket';
+import SimpleCalculatedTicket from './SimpleCalculatedTicket';
 
-export default class CompoundCalculatedTicket extends CalculatedTicket {
-  useForMetro: CalculatedTicket;
-  useForTat: CalculatedTicket;
+export default class CompoundCalculatedTicket extends CalculatedTicket<
+  CompoundTicket
+> {
+  useForMetro: SimpleCalculatedTicket | CompoundCalculatedTicket;
+  useForTat: SimpleCalculatedTicket | CompoundCalculatedTicket;
 
   constructor(
     ticket: CompoundTicket,
