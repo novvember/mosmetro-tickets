@@ -1,20 +1,31 @@
 import classNames from 'classnames';
 import './Axis.css';
 import React from 'react';
+import { connect } from 'react-redux';
 
 type AxisProps = {
   isX?: boolean;
   isY?: boolean;
   className: string;
   children: React.ReactNode;
+  maxXNumber: number;
+  maxYNumber: number;
+  step: number;
 };
 
-function Axis({ isX = false, isY = false, className, children }: AxisProps) {
-  const min = 0;
-  const max = 70;
-  const step = 5;
+function Axis({
+  isX = false,
+  isY = false,
+  className,
+  children,
+  maxXNumber,
+  maxYNumber,
+  step,
+}: AxisProps) {
+  const MIN = 0;
+  const max = isX ? maxXNumber : maxYNumber;
 
-  const numbers = new Array((max - min) / step + 1)
+  const numbers = new Array((max - MIN) / step + 1)
     .fill(0)
     .map((_, i) => 0 + i * step);
 
@@ -42,4 +53,12 @@ function Axis({ isX = false, isY = false, className, children }: AxisProps) {
   );
 }
 
-export default Axis;
+function mapStateToProps(state: any) {
+  return {
+    maxXNumber: state.config.maxXNumber,
+    maxYNumber: state.config.maxYNumber,
+    step: state.config.step,
+  };
+}
+
+export default connect(mapStateToProps)(Axis);

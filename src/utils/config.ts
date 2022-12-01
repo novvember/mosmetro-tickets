@@ -1,8 +1,8 @@
 import Config from "../types/Config";
 
 const config: Config = {
-  maxXNumber: 70,
-  maxYNumber: 70,
+  maxXNumber: 50,
+  maxYNumber: 50,
   step: 5,
   period: 30,
 };
