@@ -4,9 +4,9 @@ import Field from '../Field/Field';
 import { connect } from 'react-redux';
 
 import './Diagram.css';
+import flatField from '../../utils/flatField';
 
 function Diagram({ field }: { field: any }) {
-  console.log(field);
   return (
     <div className="diagram">
       <Axis isX className="diagram__axis_type_x">
@@ -33,12 +33,9 @@ function Diagram({ field }: { field: any }) {
 
       <Field className="diagram__field">
         {field &&
-          field
-            .reverse()
-            .flat()
-            .map((cell: any, i: number) => {
-              return <Cell cell={cell} key={i} />;
-            })}
+          flatField(field).map((cell: any, i: number) => {
+            return <Cell cell={cell} key={i} />;
+          })}
       </Field>
     </div>
   );
