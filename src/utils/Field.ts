@@ -61,7 +61,7 @@ export default class Field {
         const cell: Cell = { metro: x, tat: y, variants: {} };
 
         for (let id in this.allTickets) {
-          cell.variants[id] = this.allTickets[id].field[x][y];
+          cell.variants[id] = this.allTickets[id].field[y][x];
         }
 
         initialField[y][x] = cell;

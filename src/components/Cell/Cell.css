@@ -5,8 +5,7 @@
   position: relative;
 }
 
-.cell::after {
-  content: '';
+.cell__dot {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -19,7 +18,7 @@
   z-index: 1;
 }
 
-.cell:hover::after {
+.cell:hover .cell__dot {
   outline: 3px solid rgba(0, 0, 0, 0.5);
   outline-offset: 0.4em;
   z-index: 2;
