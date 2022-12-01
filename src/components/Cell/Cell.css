@@ -1,5 +1,5 @@
 .cell {
-  --color: 238, 238, 238;
+  --color: 200, 200, 200;
   background-color: rgba(var(--color), 0.6);
   /* border-radius: 50%; */
   position: relative;
