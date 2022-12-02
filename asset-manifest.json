@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4a886aaf.css",
+    "main.js": "/static/js/main.ca110756.js",
+    "static/media/Merriweather-Regular.ttf": "/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
+    "static/media/Merriweather-Light.ttf": "/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
+    "static/media/Merriweather-BoldItalic.ttf": "/static/media/Merriweather-BoldItalic.16252c125b2ba7eaf70a.ttf",
+    "static/media/Merriweather-Italic.ttf": "/static/media/Merriweather-Italic.c011994c363b810ae1f6.ttf",
+    "static/media/Merriweather-BlackItalic.ttf": "/static/media/Merriweather-BlackItalic.120bcdce9061e8894028.ttf",
+    "static/media/Merriweather-LightItalic.ttf": "/static/media/Merriweather-LightItalic.7156ba6851d2a94064dd.ttf",
+    "static/media/Merriweather-Bold.ttf": "/static/media/Merriweather-Bold.ae39f743fdcf8f64531e.ttf",
+    "static/media/Merriweather-Black.ttf": "/static/media/Merriweather-Black.cfe2aa3843d8cb416e1a.ttf",
+    "static/media/OpenSans-ExtraBoldItalic.ttf": "/static/media/OpenSans-ExtraBoldItalic.f539b62a07758863efec.ttf",
+    "static/media/OpenSans-LightItalic.ttf": "/static/media/OpenSans-LightItalic.34eb76e1135c646df8f9.ttf",
+    "static/media/OpenSans-MediumItalic.ttf": "/static/media/OpenSans-MediumItalic.4d4312a9af9f5f85f6bf.ttf",
+    "static/media/OpenSans-SemiBoldItalic.ttf": "/static/media/OpenSans-SemiBoldItalic.5d2b4174202860d9e550.ttf",
+    "static/media/OpenSans-Italic.ttf": "/static/media/OpenSans-Italic.79c81eb67c8c53b33a29.ttf",
+    "static/media/OpenSans-BoldItalic.ttf": "/static/media/OpenSans-BoldItalic.ed58bc283d35f0fd48b3.ttf",
+    "static/media/OpenSans-ExtraBold.ttf": "/static/media/OpenSans-ExtraBold.312244ca5ea57843f749.ttf",
+    "static/media/OpenSans-Medium.ttf": "/static/media/OpenSans-Medium.f0cdede053a22b990af8.ttf",
+    "static/media/OpenSans-Regular.ttf": "/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
+    "static/media/OpenSans-Bold.ttf": "/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
+    "static/media/OpenSans-Light.ttf": "/static/media/OpenSans-Light.846a12caf01a940847a7.ttf",
+    "static/media/OpenSans-SemiBold.ttf": "/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
+    "static/media/icon_tram.svg": "/static/media/icon_tram.526f5cd3327eefa4da8f.svg",
+    "static/media/icon_trolley.svg": "/static/media/icon_trolley.26d2858dbe929905a339.svg",
+    "static/media/icon_bus.svg": "/static/media/icon_bus.f3ded663246b064c416b.svg",
+    "index.html": "/index.html",
+    "static/media/arrow-right.svg": "/static/media/arrow-right.3d630b14b8580615ffb9.svg",
+    "static/media/icon_metro.svg": "/static/media/icon_metro.c4408cdf07f88bbe46a0.svg",
+    "main.4a886aaf.css.map": "/static/css/main.4a886aaf.css.map",
+    "main.ca110756.js.map": "/static/js/main.ca110756.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a886aaf.css",
+    "static/js/main.ca110756.js"
+  ]
+}
