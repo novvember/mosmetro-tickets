@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import './Diagram.css';
 import flatField from '../../utils/flatField';
 
-function Diagram({ field, minCost, maxCost }: any) {
+function Diagram({ field, minCost, maxCost, tickets }: any) {
   return (
     <div className="diagram">
       <Axis isX className="diagram__axis_type_x">
@@ -35,7 +35,7 @@ function Diagram({ field, minCost, maxCost }: any) {
         {field &&
           flatField(field).map((cell: any, i: number) => {
             return (
-              <Cell cell={cell} key={i} minCost={minCost} maxCost={maxCost} />
+              <Cell cell={cell} key={i} minCost={minCost} maxCost={maxCost} ticket={tickets[cell.minCost.id]} />
             );
           })}
       </Field>
@@ -48,6 +48,7 @@ function mapStateToProps(state: any) {
     field: state.field,
     minCost: state.minCost,
     maxCost: state.maxCost,
+    tickets: state.tickets,
   };
 }
 

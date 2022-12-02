@@ -1,6 +1,6 @@
 import './Cell.css';
 
-function Cell({ cell, minCost, maxCost }: any) {
+function Cell({ cell, minCost, maxCost, ticket }: any) {
   return (
     <span
       className="cell"
@@ -8,10 +8,11 @@ function Cell({ cell, minCost, maxCost }: any) {
       data-y=""
       data-ticket={cell.minCost.id}
       data-cost={cell.minCost.cost}
-      title={`metro: ${cell.metro}, 
-tat: ${cell.tat},
-ticket: ${cell.minCost.id},
-cost: ${cell.minCost.cost} ₽`}
+      title={`${cell.metro} раз на метро
+${cell.tat} раз на ТАТ
+ 
+👛 ${cell.minCost.cost} ₽/месяц
+🎟 ${ticket.data.name}`}
     >
       <span
         className="cell__dot"

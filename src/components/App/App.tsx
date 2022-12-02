@@ -18,7 +18,7 @@ function App({ calculated }: { calculated: any }) {
     const tickets = buildTickets(ticketsData);
     const field = new Field(tickets, config);
     field.calculate();
-    calculated(field.field, field.minCost, field.maxCost);
+    calculated(field.field, field.minCost, field.maxCost, tickets);
   }, [calculated]);
 
   return (

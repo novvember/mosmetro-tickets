@@ -3,7 +3,7 @@ import { SimpleTicket, CompoundTicket } from '../types/Ticket';
 export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   // Единые с лимитом поездок
   {
-    name: 'Единый на&nbsp;1&nbsp;поездку',
+    name: 'Единый на 1 поездку',
     price: 61,
     dayLimit: 5,
     tripLimit: 1,
@@ -16,7 +16,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'Единый на&nbsp;2&nbsp;поездки',
+    name: 'Единый на 2 поездки',
     price: 122,
     dayLimit: 5,
     tripLimit: 2,
@@ -29,7 +29,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'Единый на&nbsp;60&nbsp;поездок',
+    name: 'Единый на 60 поездок',
     price: 2400,
     dayLimit: 45,
     tripLimit: 60,
@@ -43,7 +43,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
 
   // Единые без лимита
   {
-    name: 'Единый на&nbsp;1&nbsp;сутки',
+    name: 'Единый на 1 сутки',
     price: 265,
     dayLimit: 1,
     tripLimit: Infinity,
@@ -56,7 +56,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'Единый на&nbsp;3&nbsp;суток',
+    name: 'Единый на 3 суток',
     price: 500,
     dayLimit: 3,
     tripLimit: Infinity,
@@ -69,7 +69,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'Единый на&nbsp;30&nbsp;дней',
+    name: 'Единый на 30 дней',
     price: 2360,
     dayLimit: 30,
     tripLimit: Infinity,
@@ -82,7 +82,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'Единый на&nbsp;90&nbsp;дней',
+    name: 'Единый на 90 дней',
     price: 5710,
     dayLimit: 90,
     tripLimit: Infinity,
@@ -95,7 +95,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'Единый на&nbsp;365&nbsp;дней',
+    name: 'Единый на 365 дней',
     price: 19500,
     dayLimit: 365,
     tripLimit: Infinity,
@@ -122,7 +122,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'Пересадка (90&nbsp;минут)',
+    name: 'Пересадка (90 минут)',
     price: 69,
     dayLimit: Infinity,
     tripLimit: 1,
@@ -149,7 +149,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'Карта Мир (до&nbsp;30.06.2022)',
+    name: 'Карта Мир (до 30.06.2022)',
     price: 41,
     dayLimit: Infinity,
     tripLimit: 1,
@@ -163,7 +163,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
 
   // Билеты ТАТ
   {
-    name: 'ТАТ на&nbsp;30&nbsp;дней',
+    name: 'ТАТ на 30 дней',
     price: 1400,
     dayLimit: 30,
     tripLimit: Infinity,
@@ -176,7 +176,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'ТАТ на&nbsp;90&nbsp;дней',
+    name: 'ТАТ на 90 дней',
     price: 3720,
     dayLimit: 90,
     tripLimit: Infinity,
@@ -189,7 +189,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'ТАТ на&nbsp;365&nbsp;дней',
+    name: 'ТАТ на 365 дней',
     price: 14000,
     dayLimit: 365,
     tripLimit: Infinity,
@@ -204,7 +204,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   // Сочетания билетов
   // Нужно добавить useForMetro, useForTat
   {
-    name: 'ТАТ на&nbsp;30&nbsp;дней + Тройка',
+    name: 'ТАТ на 30 дней + Тройка',
     price: null,
     dayLimit: null,
     tripLimit: null,
@@ -219,7 +219,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'ТАТ на&nbsp;90&nbsp;дней + Тройка',
+    name: 'ТАТ на 90 дней + Тройка',
     price: null,
     dayLimit: null,
     tripLimit: null,
@@ -234,7 +234,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'ТАТ на&nbsp;365&nbsp;дней + Тройка',
+    name: 'ТАТ на 365 дней + Тройка',
     price: null,
     dayLimit: null,
     tripLimit: null,
@@ -249,7 +249,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'ТАТ на&nbsp;30&nbsp;дней + Единый на&nbsp;60&nbsp;поездок',
+    name: 'ТАТ на 30 дней + Единый на 60 поездок',
     price: null,
     dayLimit: null,
     tripLimit: null,
@@ -264,7 +264,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'ТАТ на&nbsp;90&nbsp;дней + Единый на&nbsp;60&nbsp;поездок',
+    name: 'ТАТ на 90 дней + Единый на 60 поездок',
     price: null,
     dayLimit: null,
     tripLimit: null,
@@ -279,7 +279,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'ТАТ на&nbsp;365&nbsp;дней + Единый на&nbsp;60&nbsp;поездок',
+    name: 'ТАТ на 365 дней + Единый на 60 поездок',
     price: null,
     dayLimit: null,
     tripLimit: null,
@@ -302,7 +302,7 @@ export const ticketGroupParams = {
   },
 
   allInOne_trips: {
-    title: 'Единый с&nbsp;лимитом',
+    title: 'Единый с лимитом',
   },
 
   allInOne_days: {

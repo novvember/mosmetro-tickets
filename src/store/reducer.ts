@@ -6,6 +6,7 @@ const initialState = {
   minCost: null,
   maxCost: null,
   config: config,
+  tickets: null,
 };
 
 export default function reducer(state = initialState, action: any) {
@@ -17,6 +18,7 @@ export default function reducer(state = initialState, action: any) {
         loading: false,
         minCost: action.minCost,
         maxCost: action.maxCost,
+        tickets: action.tickets,
       };
     default:
       return state;

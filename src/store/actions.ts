@@ -1,9 +1,10 @@
-function calculated(field: any, minCost: number, maxCost: number) {
+function calculated(field: any, minCost: number, maxCost: number, tickets: any) {
   return {
     type: 'CALCULATED',
     field,
     minCost,
     maxCost,
+    tickets,
   };
 }
 
