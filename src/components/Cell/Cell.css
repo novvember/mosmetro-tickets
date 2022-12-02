@@ -1,8 +1,9 @@
 .cell {
   --color: 200, 200, 200;
-  background-color: rgba(var(--color), 0.6);
+  background-color: rgba(var(--color), 0.7);
   /* border-radius: 50%; */
   position: relative;
+  cursor: pointer;
 }
 
 .cell__dot {
@@ -16,11 +17,12 @@
   border-radius: 50%;
   background-color: rgba(var(--color), 1);
   z-index: 1;
+  transition: transform 0.2s;
 }
 
 .cell:hover .cell__dot {
-  outline: 3px solid rgba(0, 0, 0, 0.5);
-  outline-offset: 0.4em;
+  transform: translate(-50%, -50%) scale(2.5);
+  outline: 2px solid rgba(255, 255, 255, 0.7);
   z-index: 2;
 }
 
