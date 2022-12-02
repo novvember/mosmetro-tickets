@@ -14,14 +14,6 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 
-  /* Позиционирование секций внутри */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 1em;
-  min-width: 320px;
-  box-sizing: border-box;
-
   /* Цвета страницы */
   background-color: #fff;
   color: #000;

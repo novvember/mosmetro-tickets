@@ -1,4 +1,20 @@
 .content {
   width: 100%;
-  max-width: 1100px; /* Ограничение для больших экранов */
+  box-sizing: border-box;
+  max-width: 1800px;
+  margin: 0 auto;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.main {
+  flex-shrink: 1;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  max-height: 100%;
 }

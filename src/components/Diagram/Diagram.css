@@ -2,13 +2,12 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 
-  width: 100%;
-  max-width: 80vh;
-  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  aspect-ratio: 1;
 
   display: grid;
   grid-template-columns: max-content 1fr;
-  grid-template-rows: 1fr max-content;
+  grid-template-rows: 1fr max-content 1fr;
   grid-template-areas:
     'axis-y field'
     '. axis-x';

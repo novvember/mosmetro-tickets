@@ -5,11 +5,11 @@ import buildTickets from '../../utils/buildTickets';
 import config from '../../utils/config';
 import Field from '../../utils/Field';
 import { ticketsData } from '../../utils/ticketsData';
+import Diagram from '../Diagram/Diagram';
 
-import Figure from '../Figure/Figure';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import Text from '../Text/Text';
+// import Text from '../Text/Text';
 
 import './App.css';
 
@@ -24,9 +24,9 @@ function App({ calculated }: { calculated: any }) {
   return (
     <div className="content">
       <Header />
-      <main>
-        <Figure />
-        <Text />
+      <main className="main">
+        <Diagram />
+        {/* <Text /> */}
       </main>
       <Footer />
     </div>
