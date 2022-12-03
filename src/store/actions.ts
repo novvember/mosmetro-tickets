@@ -1,11 +1,17 @@
-function calculated(field: any, minCost: number, maxCost: number, tickets: any) {
+import CalculatedTickets from '../types/CalculatedTickets';
+import SelectedTickets from '../types/SelectedTickets';
+
+function initialized(
+  tickets: CalculatedTickets,
+  selectedTickets: SelectedTickets,
+) {
   return {
-    type: 'CALCULATED',
-    field,
-    minCost,
-    maxCost,
-    tickets,
+    type: 'INITIALIZED',
+    payload: {
+      tickets,
+      selectedTickets,
+    },
   };
 }
 
-export { calculated };
+export { initialized };

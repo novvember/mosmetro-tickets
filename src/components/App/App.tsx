@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { calculated } from '../../store/actions';
+import { initialized } from '../../store/actions';
 import buildTickets from '../../utils/buildTickets';
-import config from '../../utils/config';
-import Field from '../../utils/Field';
+import getInitialSelectedTickets from '../../utils/getInitialSelectedTickets';
 import { ticketsData } from '../../utils/ticketsData';
 import Diagram from '../Diagram/Diagram';
 
@@ -13,13 +12,12 @@ import Header from '../Header/Header';
 
 import './App.css';
 
-function App({ calculated }: { calculated: any }) {
+function App({ initialized }: { initialized: any }) {
   useEffect(() => {
     const tickets = buildTickets(ticketsData);
-    const field = new Field(tickets, config);
-    field.calculate();
-    calculated(field.field, field.minCost, field.maxCost, tickets);
-  }, [calculated]);
+    const selectedTickets = getInitialSelectedTickets(tickets);
+    initialized(tickets, selectedTickets);
+  }, [initialized]);
 
   return (
     <div className="content">
@@ -38,7 +36,7 @@ function mapStateToProps() {
 }
 
 const mapDispatchToProps = {
-  calculated,
+  initialized,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

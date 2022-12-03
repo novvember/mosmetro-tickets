@@ -1,57 +1,33 @@
 import CalculatedTickets from '../types/CalculatedTickets';
+import Cell from '../types/Cell';
 import Config from '../types/Config';
-
-type TicketId = keyof CalculatedTickets;
-
-type SelectedTickets = {
-  [key: TicketId]: boolean;
-};
-
-type Cell = {
-  metro: number;
-  tat: number;
-  variants: {
-    [key: TicketId]: number | null;
-  };
-  minCost?: {
-    cost: number;
-    id: TicketId;
-  };
-};
-
-type FieldType = Array<Array<Cell>>;
+import SelectedTickets from '../types/SelectedTickets';
+import TicketId from '../types/TicketId';
+import FieldType from '../types/Field';
 
 export default class Field {
-  allTickets: CalculatedTickets;
-  config: Config;
-  selectedTickets: SelectedTickets;
+  protected readonly config: Config;
+  protected readonly allTickets: CalculatedTickets;
+  protected readonly selectedTickets: SelectedTickets;
   field: FieldType;
   minCost: number;
   maxCost: number;
 
-  constructor(tickets: CalculatedTickets, config: Config) {
+  constructor(
+    tickets: CalculatedTickets,
+    selectedTickets: SelectedTickets,
+    config: Config,
+  ) {
     this.allTickets = tickets;
     this.config = config;
-    this.selectedTickets = this.getInitialSelectedTickets();
+    this.selectedTickets = selectedTickets;
     this.field = this.getInitialField();
     this.minCost = Infinity;
     this.maxCost = -Infinity;
+    this.calculate();
   }
 
-  getInitialSelectedTickets() {
-    const selectedTickets: SelectedTickets = {};
-
-    for (let id in this.allTickets) {
-      selectedTickets[id] = this.allTickets[id].data.isSelectedByDefault;
-    }
-    return selectedTickets;
-  }
-
-  setSelectedTickets(seletedTickets: SelectedTickets) {
-    this.selectedTickets = seletedTickets;
-  }
-
-  getInitialField() {
+  protected getInitialField() {
     const initialField: FieldType = [];
 
     for (let y = 0; y <= this.config.maxYNumber; y++) {
@@ -70,7 +46,7 @@ export default class Field {
     return initialField;
   }
 
-  calculate() {
+  protected calculate() {
     for (let y = 0; y <= this.config.maxYNumber; y++) {
       for (let x = 0; x <= this.config.maxXNumber; x++) {
         const minCost = this.getMinCost(this.field[y][x]);
@@ -82,12 +58,11 @@ export default class Field {
     }
   }
 
-  getMinCost({ variants }: Cell) {
+  protected getMinCost({ variants }: Cell) {
     let minCost = Infinity;
     let minConstId: TicketId = '';
 
     for (let id in variants) {
-      // Проверка, выбрал ли этот билет для расчета
       if (!this.selectedTickets[id] || variants[id] === null) continue;
 
       if (variants[id]! < minCost) {
