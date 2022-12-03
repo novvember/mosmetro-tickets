@@ -2,23 +2,26 @@ import './Cell.css';
 
 function Cell({ cell, minCost, maxCost, ticket }: any) {
   return (
-    <span
+    <div
       className="cell"
       data-x=""
       data-y=""
       data-ticket={cell.minCost.id}
       data-cost={cell.minCost.cost}
-      title={`${cell.metro} раз на метро
-${cell.tat} раз на ТАТ
- 
-👛 ${cell.minCost.cost} ₽/месяц
-🎟 ${ticket.data.name}`}
     >
       <span
         className="cell__dot"
         style={getCellStyle(+cell.minCost.cost, minCost, maxCost)}
       ></span>
-    </span>
+
+      <div className="cell__tooltip">
+        <p className="cell__info">👉 {ticket.data.name}</p>
+        <p className="cell__info">🪙 {cell.minCost.cost.toFixed(0)} ₽/месяц</p>
+        <p className="cell__info">|</p>
+        <p className="cell__info">{cell.metro} раз на метро</p>
+        <p className="cell__info">{cell.tat} раз на ТАТ</p>
+      </div>
+    </div>
   );
 }
 
