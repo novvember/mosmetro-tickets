@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.35078196.css",
-    "main.js": "/static/js/main.6301e320.js",
+    "main.css": "/static/css/main.1d99b321.css",
+    "main.js": "/static/js/main.b67d80f1.js",
     "static/media/Merriweather-Regular.ttf": "/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
     "static/media/Merriweather-Light.ttf": "/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
     "static/media/Merriweather-BoldItalic.ttf": "/static/media/Merriweather-BoldItalic.16252c125b2ba7eaf70a.ttf",
@@ -25,14 +25,15 @@
     "static/media/icon_tram.svg": "/static/media/icon_tram.526f5cd3327eefa4da8f.svg",
     "static/media/icon_trolley.svg": "/static/media/icon_trolley.26d2858dbe929905a339.svg",
     "static/media/icon_bus.svg": "/static/media/icon_bus.f3ded663246b064c416b.svg",
+    "static/media/coin.svg": "/static/media/coin.693c0b9cac9a682e60d7.svg",
     "index.html": "/index.html",
     "static/media/arrow-right.svg": "/static/media/arrow-right.3d630b14b8580615ffb9.svg",
     "static/media/icon_metro.svg": "/static/media/icon_metro.c4408cdf07f88bbe46a0.svg",
-    "main.35078196.css.map": "/static/css/main.35078196.css.map",
-    "main.6301e320.js.map": "/static/js/main.6301e320.js.map"
+    "main.1d99b321.css.map": "/static/css/main.1d99b321.css.map",
+    "main.b67d80f1.js.map": "/static/js/main.b67d80f1.js.map"
   },
   "entrypoints": [
-    "static/css/main.35078196.css",
-    "static/js/main.6301e320.js"
+    "static/css/main.1d99b321.css",
+    "static/js/main.b67d80f1.js"
   ]
 }
