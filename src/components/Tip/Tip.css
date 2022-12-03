@@ -1,0 +1,62 @@
+.tip {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 0.2em;
+  padding-block: 1em;
+  padding-inline: 1.8em;
+  font-size: smaller;
+  line-height: 1.2;
+  width: max-content;
+  font-weight: normal;
+  border: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+.cell:hover .tip {
+  visibility: visible;
+  transition: visibility 0s 0.5s;
+}
+
+.tip__info {
+  margin: 0;
+}
+
+.tip__ticket {
+  margin: 0;
+  margin-bottom: 0.5em;
+  padding-block: 0.5em;
+  padding-inline: 0.7em;
+  border-radius: 0.5em;
+  background-color: #fff;
+  font-weight: 500;
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-low: 0.3px 0.4px 0.8px hsl(var(--shadow-color) / 0),
+    1.3px 1.6px 3.1px hsl(var(--shadow-color) / 0.19);
+  box-shadow: var(--shadow-elevation-low);
+}
+
+.tip__cost {
+  margin: 0;
+  margin-block: 1em;
+  position: relative;
+  font-weight: bold;
+  padding: 0;
+}
+
+.tip__cost::before {
+  content: '';
+  position: absolute;
+  left: -1.3em;
+  top: 0.15em;
+  width: 1em;
+  aspect-ratio: 1;
+  display: block;
+  background-image: url(../../images/coin.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

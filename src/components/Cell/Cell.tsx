@@ -1,3 +1,4 @@
+import Tip from '../Tip/Tip';
 import './Cell.css';
 
 function Cell({ cell, minCost, maxCost }: any) {
@@ -14,13 +15,7 @@ function Cell({ cell, minCost, maxCost }: any) {
         style={getCellStyle(+cell.minCost.cost, minCost, maxCost)}
       ></span>
 
-      <div className="cell__tooltip">
-        <p className="cell__info">👉 {cell.minCost.name}</p>
-        <p className="cell__info">🪙 {cell.minCost.cost.toFixed(0)} ₽/месяц</p>
-        <p className="cell__info">|</p>
-        <p className="cell__info">{cell.metro} раз на метро</p>
-        <p className="cell__info">{cell.tat} раз на ТАТ</p>
-      </div>
+      <Tip cell={cell} />
     </div>
   );
 }
