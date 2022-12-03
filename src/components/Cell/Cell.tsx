@@ -1,6 +1,6 @@
 import './Cell.css';
 
-function Cell({ cell, minCost, maxCost, ticket }: any) {
+function Cell({ cell, minCost, maxCost }: any) {
   return (
     <div
       className="cell"
@@ -15,7 +15,7 @@ function Cell({ cell, minCost, maxCost, ticket }: any) {
       ></span>
 
       <div className="cell__tooltip">
-        <p className="cell__info">👉 {ticket.data.name}</p>
+        <p className="cell__info">👉 {cell.minCost.name}</p>
         <p className="cell__info">🪙 {cell.minCost.cost.toFixed(0)} ₽/месяц</p>
         <p className="cell__info">|</p>
         <p className="cell__info">{cell.metro} раз на метро</p>

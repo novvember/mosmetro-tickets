@@ -9,6 +9,7 @@ type Cell = {
   minCost?: {
     cost: number;
     id: TicketId;
+    name: string;
   };
 };
 

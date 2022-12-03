@@ -59,18 +59,20 @@ export default class Field {
   }
 
   protected getMinCost({ variants }: Cell) {
-    let minCost = Infinity;
-    let minConstId: TicketId = '';
+    let cost = Infinity;
+    let minId: TicketId = '';
+    let name: string = '';
 
     for (let id in variants) {
       if (!this.selectedTickets[id] || variants[id] === null) continue;
 
-      if (variants[id]! < minCost) {
-        minCost = variants[id]!;
-        minConstId = id;
+      if (variants[id]! < cost) {
+        cost = variants[id]!;
+        minId = id;
+        name = this.allTickets[id].data.name;
       }
     }
 
-    return { cost: minCost, id: minConstId };
+    return { cost, id: minId, name };
   }
 }
