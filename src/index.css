@@ -15,8 +15,11 @@
   text-rendering: optimizeLegibility;
 
   /* Цвета страницы */
-  background-color: #fff;
-  color: #000;
+  --surface: #f5f5f5;
+  --on-surface: #000;
+
+  background-color: var(--surface);
+  color: var(--on-surface);
 
   /* Цвета билетов */
 
