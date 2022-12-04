@@ -1,7 +1,9 @@
 .menu-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2em;
+  right: 1em;
   z-index: 1;
   cursor: pointer;
+  width: 3em;
+  height: 3em;
 }

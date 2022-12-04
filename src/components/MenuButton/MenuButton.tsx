@@ -10,7 +10,7 @@ type MenuButtonProps = {
 function MenuButton({ onClick }: MenuButtonProps) {
   return ReactDOM.createPortal(
     <button className="menu-button" onClick={onClick}>
-      Menu
+      🎟️
     </button>,
     document.body,
   );
