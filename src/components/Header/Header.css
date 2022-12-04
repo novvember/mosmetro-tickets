@@ -13,6 +13,23 @@
   max-width: 1000px;
 }
 
+.header__title::after {
+  margin-left: 0.3em;
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-image: url(../../images/troika-icon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  transition: background-image 0.2s;
+}
+
+.header__title:hover::after {
+  background-image: url(../../images/ediniy-icon.svg);
+}
+
 .header__subtitle {
   margin: 0;
   max-width: 1000px;
