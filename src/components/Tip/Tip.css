@@ -21,6 +21,12 @@
   transition: visibility 0s 0.5s;
 }
 
+@media (hover: none) {
+  .cell:hover .tip {
+    transition: visibility 0s 0s;
+  }
+}
+
 .tip__info {
   margin: 0;
 }
