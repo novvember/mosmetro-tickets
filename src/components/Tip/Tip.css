@@ -8,12 +8,12 @@
   backdrop-filter: blur(4px);
   border-radius: 0.2em;
   padding-block: 1em;
-  padding-inline: 1.8em;
+  padding-inline: 1.7em;
   font-size: smaller;
   line-height: 1.2;
-  width: max-content;
   font-weight: normal;
   border: 0.5px solid rgba(0, 0, 0, 0.05);
+  width: min-content;
 }
 
 .cell:hover .tip {
@@ -29,13 +29,15 @@
 
 .tip__info {
   margin: 0;
+  width: max-content;
 }
 
 .tip__ticket {
-  margin: 0;
+  margin-inline: -0.5em;
+  margin-top: 0;
   margin-bottom: 0.5em;
   padding-block: 0.5em;
-  padding-inline: 0.7em;
+  padding-inline: 0.5em;
   border-radius: 0.5em;
   background-color: #fff;
   font-weight: 500;
@@ -46,6 +48,7 @@
 }
 
 .tip__cost {
+  width: max-content;
   margin: 0;
   margin-block: 1em;
   position: relative;
