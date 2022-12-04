@@ -149,7 +149,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
   },
 
   {
-    name: 'Карта Мир (до 30.06.2022)',
+    name: 'Карта Мир (до 31.12.2022)',
     price: 41,
     dayLimit: Infinity,
     tripLimit: 1,
