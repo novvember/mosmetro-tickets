@@ -75,7 +75,7 @@
   background-image: url(../../images/icon_trolley.svg);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .axis_type_y .axis__label span {
     font-size: 0;
   }
