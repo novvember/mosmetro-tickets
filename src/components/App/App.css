@@ -18,4 +18,5 @@
   display: flex;
   justify-content: center;
   max-height: 100%;
+  gap: 1em;
 }

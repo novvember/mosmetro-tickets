@@ -8,6 +8,7 @@ import Diagram from '../Diagram/Diagram';
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import Tickets from '../Tickets/Tickets';
 // import Text from '../Text/Text';
 
 import './App.css';
@@ -24,6 +25,7 @@ function App({ initialized }: { initialized: any }) {
       <Header />
       <main className="main">
         <Diagram />
+        <Tickets />
         {/* <Text /> */}
       </main>
       <Footer />
