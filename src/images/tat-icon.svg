@@ -2,5 +2,7 @@
 <rect width="172" height="107" rx="15" fill="#007DBD"/>
 <path d="M17 18L58 18" stroke="white" stroke-opacity="0.3" stroke-width="20" stroke-linecap="round"/>
 <path d="M17 42H36" stroke="white" stroke-opacity="0.8" stroke-width="20" stroke-linecap="round"/>
-<path d="M153 22L153 69" stroke="white" stroke-opacity="0.8" stroke-width="20" stroke-linecap="round"/>
+<circle cx="153" cy="23" r="10" fill="white" fill-opacity="0.9"/>
+<circle cx="153" cy="65" r="10" fill="white" fill-opacity="0.9"/>
+<circle cx="153" cy="44" r="10" fill="white" fill-opacity="0.9"/>
 </svg>
