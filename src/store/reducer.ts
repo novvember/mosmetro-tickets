@@ -4,6 +4,8 @@ import FieldType from '../types/Field';
 import Config from '../types/Config';
 import CalculatedTickets from '../types/CalculatedTickets';
 import SelectedTickets from '../types/SelectedTickets';
+import TicketGroup from '../types/TicketGroup';
+import { ticketGroupsData } from '../utils/ticketsData';
 
 type State = {
   field: FieldType | null;
@@ -13,6 +15,7 @@ type State = {
   config: Config;
   tickets: CalculatedTickets | null;
   selectedTickets: SelectedTickets | null;
+  ticketGroups: TicketGroup[];
 };
 
 const initialState = {
@@ -23,6 +26,7 @@ const initialState = {
   config: config,
   tickets: null,
   selectedTickets: null,
+  ticketGroups: ticketGroupsData,
 };
 
 export default function reducer(state: State = initialState, action: any) {

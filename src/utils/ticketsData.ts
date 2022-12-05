@@ -295,30 +295,29 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
 ];
 
 // Параметры групп билетов
-// isLongGroup: true, // растянуть группу в легенде на несколько строк
-export const ticketGroupParams = {
-  troika: {
+export const ticketGroupsData = [
+  {
+    id: 'troika',
     title: 'Тройка',
   },
-
-  allInOne_trips: {
-    title: 'Единый с лимитом',
+  {
+    id: 'allInOne_trips',
+    title: 'Единый на поездки',
   },
-
-  allInOne_days: {
-    title: 'Единый без лимита',
+  {
+    id: 'allInOne_days',
+    title: 'Единый на дни',
   },
-
-  tat: {
-    title: 'ТАТ',
+  {
+    id: 'tat',
+    title: 'Наземный транспорт (ТАТ)',
   },
-
-  other: {
-    title: 'Другие',
+  {
+    id: 'other',
+    title: 'Другие билеты',
   },
-
-  compound: {
-    title: 'Сочетания',
-    isLongGroup: true, // растянуть группу в легенде на несколько строк
+  {
+    id: 'compound',
+    title: 'Сочетания билетов',
   },
-};
+];
