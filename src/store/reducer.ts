@@ -3,22 +3,8 @@ import { ticketGroupsConfig } from '../utils/ticketsData';
 
 import Field from '../utils/Field';
 
-import FieldType from '../types/Field';
-import AppConfig from '../types/AppConfig';
-import Tickets from '../types/Tickets';
-import SelectedTickets from '../types/SelectedTickets';
-import TicketGroupConfig from '../types/TicketGroupConfig';
-
-type State = {
-  field: FieldType | null;
-  loading: boolean;
-  minCost: number | null;
-  maxCost: number | null;
-  appConfig: AppConfig;
-  tickets: Tickets | null;
-  selectedTickets: SelectedTickets | null;
-  ticketGroupsConfigs: TicketGroupConfig[];
-};
+import TicketId from '../types/TicketId';
+import State from '../types/State';
 
 const initialState = {
   field: null,
@@ -31,9 +17,12 @@ const initialState = {
   ticketGroupsConfigs: ticketGroupsConfig,
 };
 
-export default function reducer(state: State = initialState, action: any) {
+export default function reducer(
+  state: State = initialState,
+  action: any,
+): State {
   switch (action.type) {
-    case 'INITIALIZED':
+    case 'INITIALIZED': {
       const { tickets, selectedTickets } = action.payload;
 
       const { field, minCost, maxCost } = new Field(
@@ -51,7 +40,32 @@ export default function reducer(state: State = initialState, action: any) {
         minCost,
         maxCost,
       };
+    }
 
+    case 'SELECTED': {
+      const { id, isSelected } = action.payload;
+
+      const selectedTickets = {
+        ...state.selectedTickets,
+        [id]: isSelected,
+      };
+
+      if (!state.tickets) return state;
+
+      const { field, minCost, maxCost } = new Field(
+        state.tickets,
+        selectedTickets,
+        state.appConfig,
+      );
+
+      return {
+        ...state,
+        selectedTickets: selectedTickets,
+        field,
+        minCost,
+        maxCost,
+      };
+    }
     default:
       return state;
   }
