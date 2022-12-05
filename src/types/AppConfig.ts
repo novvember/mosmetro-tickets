@@ -1,6 +1,5 @@
 export default interface AppConfig {
-  maxXNumber: number;
-  maxYNumber: number;
-  step: number;
-  period: number;
+  fieldMax: number;
+  fieldStep: number;
+  daysInPeriod: number;
 }

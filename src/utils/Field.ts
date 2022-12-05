@@ -30,10 +30,10 @@ export default class Field {
   protected getInitialField() {
     const initialField: FieldType = [];
 
-    for (let y = 0; y <= this.appConfig.maxYNumber; y++) {
+    for (let y = 0; y <= this.appConfig.fieldMax; y++) {
       initialField[y] = [];
 
-      for (let x = 0; x <= this.appConfig.maxXNumber; x++) {
+      for (let x = 0; x <= this.appConfig.fieldMax; x++) {
         const cell: Cell = { metro: x, tat: y, variants: {} };
 
         for (let id in this.tickets) {
@@ -47,8 +47,8 @@ export default class Field {
   }
 
   protected calculate() {
-    for (let y = 0; y <= this.appConfig.maxYNumber; y++) {
-      for (let x = 0; x <= this.appConfig.maxXNumber; x++) {
+    for (let y = 0; y <= this.appConfig.fieldMax; y++) {
+      for (let x = 0; x <= this.appConfig.fieldMax; x++) {
         const minCost = this.getMinCost(this.field[y][x]);
 
         this.field[y][x].minCost = minCost;

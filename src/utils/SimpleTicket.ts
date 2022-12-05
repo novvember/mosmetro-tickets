@@ -21,7 +21,7 @@ export default class SimpleTicket extends Ticket<SimpleTicketConfig> {
     const tripsPerPeriod = metroTrips + tatTrips;
     if (tripsPerPeriod === 0) return 0;
 
-    const tripsPerDay = tripsPerPeriod / this.appConfig.period;
+    const tripsPerDay = tripsPerPeriod / this.appConfig.daysInPeriod;
     const tripPeriod = 1 / tripsPerDay;
 
     // Определение количества дней до следующего билета...
@@ -33,7 +33,7 @@ export default class SimpleTicket extends Ticket<SimpleTicketConfig> {
     const ticketPeriod = Math.min(ticketPeriodByDays, ticketPeriodByTrips);
 
     const ticketsPerDay = 1 / ticketPeriod;
-    const ticketsPerPeriod = ticketsPerDay * this.appConfig.period;
+    const ticketsPerPeriod = ticketsPerDay * this.appConfig.daysInPeriod;
     const costPerPeriod = ticketsPerPeriod * this.config.price;
     return +costPerPeriod.toFixed(2);
   }

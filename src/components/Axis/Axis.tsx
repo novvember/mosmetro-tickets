@@ -8,9 +8,8 @@ type AxisProps = {
   isY?: boolean;
   className: string;
   children: React.ReactNode;
-  maxXNumber: number;
-  maxYNumber: number;
-  step: number;
+  fieldMax: number;
+  fieldStep: number;
 };
 
 function Axis({
@@ -18,16 +17,14 @@ function Axis({
   isY = false,
   className,
   children,
-  maxXNumber,
-  maxYNumber,
-  step,
+  fieldMax,
+  fieldStep,
 }: AxisProps) {
   const MIN = 0;
-  const max = isX ? maxXNumber : maxYNumber;
 
-  const numbers = new Array((max - MIN) / step + 1)
+  const numbers = new Array((fieldMax - MIN) / fieldStep + 1)
     .fill(0)
-    .map((_, i) => 0 + i * step);
+    .map((_, i) => 0 + i * fieldStep);
 
   return (
     <div
@@ -55,9 +52,8 @@ function Axis({
 
 function mapStateToProps(state: any) {
   return {
-    maxXNumber: state.appConfig.maxXNumber,
-    maxYNumber: state.appConfig.maxYNumber,
-    step: state.appConfig.step,
+    fieldMax: state.appConfig.fieldMax,
+    fieldStep: state.appConfig.fieldStep,
   };
 }
 

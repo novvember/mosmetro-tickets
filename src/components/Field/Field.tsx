@@ -5,17 +5,16 @@ import './Field.css';
 type FieldProps = {
   className: string;
   children: React.ReactNode;
-  maxXNumber: number;
-  maxYNumber: number;
+  fieldMax: number;
 };
 
-function Field({ className, children, maxXNumber, maxYNumber }: FieldProps) {
+function Field({ className, children, fieldMax }: FieldProps) {
   return (
     <div
       className="field"
       style={{
-        gridTemplateColumns: `repeat(${maxXNumber + 1}, 1fr)`,
-        gridTemplateRows: `repeat(${maxYNumber + 1}, 1fr)`,
+        gridTemplateColumns: `repeat(${fieldMax + 1}, 1fr)`,
+        gridTemplateRows: `repeat(${fieldMax + 1}, 1fr)`,
       }}
     >
       {children}
@@ -25,8 +24,7 @@ function Field({ className, children, maxXNumber, maxYNumber }: FieldProps) {
 
 function mapStateToProps(state: any) {
   return {
-    maxXNumber: state.appConfig.maxXNumber,
-    maxYNumber: state.appConfig.maxYNumber,
+    fieldMax: state.appConfig.fieldMax,
   };
 }
 

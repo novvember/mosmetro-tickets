@@ -19,9 +19,9 @@ export default abstract class Ticket<
 
   protected getEmptyField() {
     const field: Array<Array<number | null>> = [];
-    for (let y = 0; y <= this.appConfig.maxYNumber; y++) {
+    for (let y = 0; y <= this.appConfig.fieldMax; y++) {
       field[y] = [];
-      for (let x = 0; x <= this.appConfig.maxXNumber; x++) {
+      for (let x = 0; x <= this.appConfig.fieldMax; x++) {
         field[y][x] = null;
       }
     }
@@ -37,8 +37,8 @@ export default abstract class Ticket<
   }): number | null;
 
   protected calculate() {
-    for (let y = 0; y <= this.appConfig.maxYNumber; y++) {
-      for (let x = 0; x <= this.appConfig.maxXNumber; x++) {
+    for (let y = 0; y <= this.appConfig.fieldMax; y++) {
+      for (let x = 0; x <= this.appConfig.fieldMax; x++) {
         this.field[y][x] = this.getCost({
           metroTrips: x,
           tatTrips: y,
