@@ -1,29 +1,29 @@
-import CalculatedTickets from '../types/CalculatedTickets';
-import { CompoundTicket, SimpleTicket } from '../types/Ticket';
-import CompoundCalculatedTicket from './CompoundCalculatedTicket';
-import config from './config';
-import SimpleCalculatedTicket from './SimpleCalculatedTicket';
+import Tickets from '../types/Tickets';
+import {
+  CompoundTicketConfig,
+  SimpleTicketConfig,
+} from '../types/TicketConfig';
+import CompoundTicket from './CompoundTicket';
+import appConfig from './appConfig';
+import SimpleTicket from './SimpleTicket';
 
 export default function buildTickets(
-  ticketsData: Array<SimpleTicket | CompoundTicket>,
+  ticketConfigs: Array<SimpleTicketConfig | CompoundTicketConfig>,
 ) {
-  const tickets: CalculatedTickets = {};
+  const tickets: Tickets = {};
 
-  ticketsData
+  ticketConfigs
     .filter((ticket) => ticket.isIgnored === false)
     .forEach((ticket) => {
       const id = ticket.id;
       const isCompound = ticket.groupId === 'compound';
 
       if (!isCompound) {
-        tickets[id] = new SimpleCalculatedTicket(
-          ticket as SimpleTicket,
-          config,
-        );
+        tickets[id] = new SimpleTicket(ticket as SimpleTicketConfig, appConfig);
       } else {
-        tickets[id] = new CompoundCalculatedTicket(
-          ticket as CompoundTicket,
-          config,
+        tickets[id] = new CompoundTicket(
+          ticket as CompoundTicketConfig,
+          appConfig,
           tickets,
         );
       }

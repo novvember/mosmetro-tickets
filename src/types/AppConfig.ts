@@ -1,4 +1,4 @@
-export default interface Config {
+export default interface AppConfig {
   maxXNumber: number;
   maxYNumber: number;
   step: number;

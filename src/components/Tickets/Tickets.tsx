@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useState, MouseEvent, useEffect } from 'react';
 import { connect } from 'react-redux';
-import TicketGroupType from '../../types/TicketGroup';
+import TicketGroupConfig from '../../types/TicketGroupConfig';
 
 import MenuButton from '../MenuButton/MenuButton';
 import TicketGroup from '../TicketGroup/TicketGroup';
@@ -9,10 +9,10 @@ import TicketGroup from '../TicketGroup/TicketGroup';
 import './Tickets.css';
 
 type TicketsProps = {
-  ticketGroups: TicketGroupType[];
+  ticketGroupsConfigs: TicketGroupConfig[];
 };
 
-function Tickets({ ticketGroups }: TicketsProps) {
+function Tickets({ ticketGroupsConfigs }: TicketsProps) {
   const [isOpened, setIsOpened] = useState(false);
 
   function toggleMenuState() {
@@ -47,8 +47,8 @@ function Tickets({ ticketGroups }: TicketsProps) {
       <MenuButton onClick={toggleMenuState} />
       <form className="tickets__inner">
         <h2>Выбор билетов</h2>
-        
-        {ticketGroups.map((group) => {
+
+        {ticketGroupsConfigs.map((group) => {
           return <TicketGroup key={group.id} group={group} />;
         })}
       </form>
@@ -56,9 +56,9 @@ function Tickets({ ticketGroups }: TicketsProps) {
   );
 }
 
-function mapStateToProps({ ticketGroups }: any) {
+function mapStateToProps({ ticketGroupsConfigs }: any) {
   return {
-    ticketGroups,
+    ticketGroupsConfigs,
   };
 }
 

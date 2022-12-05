@@ -1,11 +1,9 @@
-import Config from '../types/Config';
-import { SimpleTicket } from '../types/Ticket';
-import CalculatedTicket from './CalculatedTicket';
+import AppConfig from '../types/AppConfig';
+import { SimpleTicketConfig } from '../types/TicketConfig';
+import Ticket from './Ticket';
 
-export default class SimpleCalculatedTicket extends CalculatedTicket<
-  SimpleTicket
-> {
-  constructor(ticket: SimpleTicket, config: Config) {
+export default class SimpleTicket extends Ticket<SimpleTicketConfig> {
+  constructor(ticket: SimpleTicketConfig, config: AppConfig) {
     super(ticket, config);
     super.calculate();
   }
@@ -17,26 +15,26 @@ export default class SimpleCalculatedTicket extends CalculatedTicket<
     metroTrips: number;
     tatTrips: number;
   }) {
-    if (this.data.isValidForMetro === false && metroTrips > 0) return null;
-    if (this.data.isValidForTat === false && tatTrips > 0) return null;
+    if (this.config.isValidForMetro === false && metroTrips > 0) return null;
+    if (this.config.isValidForTat === false && tatTrips > 0) return null;
 
     const tripsPerPeriod = metroTrips + tatTrips;
     if (tripsPerPeriod === 0) return 0;
 
-    const tripsPerDay = tripsPerPeriod / this.config.period;
+    const tripsPerDay = tripsPerPeriod / this.appConfig.period;
     const tripPeriod = 1 / tripsPerDay;
 
     // Определение количества дней до следующего билета...
     // ... через ограничение по истекшему времени
     const ticketPeriodByDays =
-      Math.ceil(this.data.dayLimit / tripPeriod) * tripPeriod;
+      Math.ceil(this.config.dayLimit / tripPeriod) * tripPeriod;
     // ... через ограничение по кончившимся поездка
-    const ticketPeriodByTrips = tripPeriod * this.data.tripLimit;
+    const ticketPeriodByTrips = tripPeriod * this.config.tripLimit;
     const ticketPeriod = Math.min(ticketPeriodByDays, ticketPeriodByTrips);
 
     const ticketsPerDay = 1 / ticketPeriod;
-    const ticketsPerPeriod = ticketsPerDay * this.config.period;
-    const costPerPeriod = ticketsPerPeriod * this.data.price;
+    const ticketsPerPeriod = ticketsPerDay * this.appConfig.period;
+    const costPerPeriod = ticketsPerPeriod * this.config.price;
     return +costPerPeriod.toFixed(2);
   }
 }

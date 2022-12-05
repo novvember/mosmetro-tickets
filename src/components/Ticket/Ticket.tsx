@@ -1,9 +1,9 @@
-import CompoundCalculatedTicket from '../../utils/CompoundCalculatedTicket';
-import SimpleCalculatedTicket from '../../utils/SimpleCalculatedTicket';
+import CompoundTicket from '../../utils/CompoundTicket';
+import SimpleTicket from '../../utils/SimpleTicket';
 import './Ticket.css';
 
 type TicketProps = {
-  ticket: SimpleCalculatedTicket | CompoundCalculatedTicket;
+  ticket: SimpleTicket | CompoundTicket;
 };
 
 function Ticket({ ticket }: TicketProps) {
@@ -11,7 +11,7 @@ function Ticket({ ticket }: TicketProps) {
     <li className="legend-label">
       <label className="legend-label__label">
         <input className="legend-label__checkbox" type="checkbox" />
-        <span className="legend-label__title">{ticket.data.name}</span>
+        <span className="legend-label__title">{ticket.config.name}</span>
       </label>
     </li>
   );

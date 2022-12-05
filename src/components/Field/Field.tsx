@@ -25,8 +25,8 @@ function Field({ className, children, maxXNumber, maxYNumber }: FieldProps) {
 
 function mapStateToProps(state: any) {
   return {
-    maxXNumber: state.config.maxXNumber,
-    maxYNumber: state.config.maxYNumber,
+    maxXNumber: state.appConfig.maxXNumber,
+    maxYNumber: state.appConfig.maxYNumber,
   };
 }
 

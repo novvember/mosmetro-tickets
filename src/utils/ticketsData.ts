@@ -1,6 +1,11 @@
-import { SimpleTicket, CompoundTicket } from '../types/Ticket';
+import {
+  SimpleTicketConfig,
+  CompoundTicketConfig,
+} from '../types/TicketConfig';
 
-export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
+export const ticketsConfigs: Array<
+  SimpleTicketConfig | CompoundTicketConfig
+> = [
   // Единые с лимитом поездок
   {
     name: 'Единый на 1 поездку',
@@ -295,7 +300,7 @@ export const ticketsData: Array<SimpleTicket | CompoundTicket> = [
 ];
 
 // Параметры групп билетов
-export const ticketGroupsData = [
+export const ticketGroupsConfig = [
   {
     id: 'troika',
     title: 'Тройка',

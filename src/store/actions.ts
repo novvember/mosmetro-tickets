@@ -1,10 +1,7 @@
-import CalculatedTickets from '../types/CalculatedTickets';
+import Tickets from '../types/Tickets';
 import SelectedTickets from '../types/SelectedTickets';
 
-function initialized(
-  tickets: CalculatedTickets,
-  selectedTickets: SelectedTickets,
-) {
+function initialized(tickets: Tickets, selectedTickets: SelectedTickets) {
   return {
     type: 'INITIALIZED',
     payload: {

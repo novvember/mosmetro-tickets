@@ -1,0 +1,49 @@
+import {
+  CompoundTicketConfig,
+  SimpleTicketConfig,
+} from '../types/TicketConfig';
+import AppConfig from '../types/AppConfig';
+
+export default abstract class Ticket<
+  T extends SimpleTicketConfig | CompoundTicketConfig
+> {
+  readonly config: T;
+  protected readonly appConfig: AppConfig;
+  readonly field: Array<Array<number | null>>;
+
+  constructor(ticket: T, appConfig: AppConfig) {
+    this.config = ticket;
+    this.appConfig = appConfig;
+    this.field = this.getEmptyField();
+  }
+
+  protected getEmptyField() {
+    const field: Array<Array<number | null>> = [];
+    for (let y = 0; y <= this.appConfig.maxYNumber; y++) {
+      field[y] = [];
+      for (let x = 0; x <= this.appConfig.maxXNumber; x++) {
+        field[y][x] = null;
+      }
+    }
+    return field;
+  }
+
+  protected abstract getCost({
+    metroTrips,
+    tatTrips,
+  }: {
+    metroTrips: number;
+    tatTrips: number;
+  }): number | null;
+
+  protected calculate() {
+    for (let y = 0; y <= this.appConfig.maxYNumber; y++) {
+      for (let x = 0; x <= this.appConfig.maxXNumber; x++) {
+        this.field[y][x] = this.getCost({
+          metroTrips: x,
+          tatTrips: y,
+        });
+      }
+    }
+  }
+}

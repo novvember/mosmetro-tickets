@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import CalculatedTickets from '../../types/CalculatedTickets';
-import TicketGroupType from '../../types/TicketGroup';
+import Tickets from '../../types/Tickets';
+import TicketGroupConfig from '../../types/TicketGroupConfig';
 import Ticket from '../Ticket/Ticket';
 import './TicketGroup.css';
 
 type TicketGroupProps = {
-  group: TicketGroupType;
-  tickets: CalculatedTickets;
+  group: TicketGroupConfig;
+  tickets: Tickets;
 };
 
 function TicketGroup({ group, tickets }: TicketGroupProps) {
   const ticketsByGroup = tickets
     ? Object.values(tickets).filter(
-        (ticket) => ticket.data.groupId === group.id,
+        (ticket) => ticket.config.groupId === group.id,
       )
     : null;
 
@@ -22,7 +22,7 @@ function TicketGroup({ group, tickets }: TicketGroupProps) {
       <ul className="legend-group__ticket-list">
         {ticketsByGroup &&
           ticketsByGroup.map((ticket) => {
-            return <Ticket key={ticket.data.id} ticket={ticket} />;
+            return <Ticket key={ticket.config.id} ticket={ticket} />;
           })}
       </ul>
     </fieldset>

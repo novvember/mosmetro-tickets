@@ -1,5 +1,5 @@
-import CalculatedTickets from './CalculatedTickets';
+import Tickets from './Tickets';
 
-type TicketId = keyof CalculatedTickets;
+type TicketId = keyof Tickets;
 
 export default TicketId;

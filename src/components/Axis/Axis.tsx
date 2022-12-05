@@ -55,9 +55,9 @@ function Axis({
 
 function mapStateToProps(state: any) {
   return {
-    maxXNumber: state.config.maxXNumber,
-    maxYNumber: state.config.maxYNumber,
-    step: state.config.step,
+    maxXNumber: state.appConfig.maxXNumber,
+    maxYNumber: state.appConfig.maxYNumber,
+    step: state.appConfig.step,
   };
 }
 

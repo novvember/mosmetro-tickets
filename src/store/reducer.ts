@@ -1,21 +1,23 @@
-import config from '../utils/config';
+import appConfig from '../utils/appConfig';
+import { ticketGroupsConfig } from '../utils/ticketsData';
+
 import Field from '../utils/Field';
+
 import FieldType from '../types/Field';
-import Config from '../types/Config';
-import CalculatedTickets from '../types/CalculatedTickets';
+import AppConfig from '../types/AppConfig';
+import Tickets from '../types/Tickets';
 import SelectedTickets from '../types/SelectedTickets';
-import TicketGroup from '../types/TicketGroup';
-import { ticketGroupsData } from '../utils/ticketsData';
+import TicketGroupConfig from '../types/TicketGroupConfig';
 
 type State = {
   field: FieldType | null;
   loading: boolean;
   minCost: number | null;
   maxCost: number | null;
-  config: Config;
-  tickets: CalculatedTickets | null;
+  appConfig: AppConfig;
+  tickets: Tickets | null;
   selectedTickets: SelectedTickets | null;
-  ticketGroups: TicketGroup[];
+  ticketGroupsConfigs: TicketGroupConfig[];
 };
 
 const initialState = {
@@ -23,10 +25,10 @@ const initialState = {
   loading: true,
   minCost: null,
   maxCost: null,
-  config: config,
+  appConfig: appConfig,
   tickets: null,
   selectedTickets: null,
-  ticketGroups: ticketGroupsData,
+  ticketGroupsConfigs: ticketGroupsConfig,
 };
 
 export default function reducer(state: State = initialState, action: any) {
@@ -37,7 +39,7 @@ export default function reducer(state: State = initialState, action: any) {
       const { field, minCost, maxCost } = new Field(
         tickets,
         selectedTickets,
-        state.config,
+        state.appConfig,
       );
 
       return {

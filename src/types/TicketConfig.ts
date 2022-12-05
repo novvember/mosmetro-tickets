@@ -1,4 +1,4 @@
-export interface Ticket {
+export interface TicketConfig {
   name: string;
   price: number | null;
   dayLimit: number | null;
@@ -11,14 +11,14 @@ export interface Ticket {
   isIgnored: boolean;
 }
 
-export interface SimpleTicket extends Ticket {
+export interface SimpleTicketConfig extends TicketConfig {
   groupId: Exclude<string, 'compound'>;
   price: number;
   dayLimit: number;
   tripLimit: number;
 }
 
-export interface CompoundTicket extends Ticket {
+export interface CompoundTicketConfig extends TicketConfig {
   groupId: 'compound';
   price: null;
   dayLimit: null;
