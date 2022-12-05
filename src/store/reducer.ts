@@ -2,8 +2,6 @@ import appConfig from '../utils/appConfig';
 import { ticketGroupsConfig } from '../utils/ticketsData';
 
 import Field from '../utils/Field';
-
-import TicketId from '../types/TicketId';
 import State from '../types/State';
 
 const initialState = {

@@ -3,10 +3,11 @@ import Tickets from '../../types/Tickets';
 import TicketGroupConfig from '../../types/TicketGroupConfig';
 import Ticket from '../Ticket/Ticket';
 import './TicketGroup.css';
+import State from '../../types/State';
 
 type TicketGroupProps = {
   group: TicketGroupConfig;
-  tickets: Tickets;
+  tickets: Tickets | null;
 };
 
 function TicketGroup({ group, tickets }: TicketGroupProps) {
@@ -29,7 +30,7 @@ function TicketGroup({ group, tickets }: TicketGroupProps) {
   );
 }
 
-function mapStateToProps({ tickets }: any) {
+function mapStateToProps({ tickets }: State) {
   return {
     tickets,
   };

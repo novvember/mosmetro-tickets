@@ -1,5 +1,12 @@
+import CellType from '../../types/Cell';
 import Tip from '../Tip/Tip';
 import './Cell.css';
+
+type CellProps = {
+  cell: CellType;
+  minCost: number;
+  maxCost: number;
+};
 
 function Cell({ cell, minCost, maxCost }: any) {
   return (

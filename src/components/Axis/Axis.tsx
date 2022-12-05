@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import './Axis.css';
 import React from 'react';
 import { connect } from 'react-redux';
+import State from '../../types/State';
 
 type AxisProps = {
   isX?: boolean;
@@ -50,7 +51,7 @@ function Axis({
   );
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: State) {
   return {
     fieldMax: state.appConfig.fieldMax,
     fieldStep: state.appConfig.fieldStep,
