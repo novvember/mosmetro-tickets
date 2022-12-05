@@ -47,19 +47,10 @@ function Tickets({ ticketGroups }: TicketsProps) {
       <MenuButton onClick={toggleMenuState} />
       <form className="tickets__inner">
         <h2>Выбор билетов</h2>
-
+        
         {ticketGroups.map((group) => {
           return <TicketGroup key={group.id} group={group} />;
         })}
-
-        <template className="template__legend-label">
-          <li className="legend-label">
-            <label className="legend-label__label">
-              <input className="legend-label__checkbox" type="checkbox" />
-              <span className="legend-label__title">#</span>
-            </label>
-          </li>
-        </template>
       </form>
     </section>
   );
