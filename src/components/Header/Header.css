@@ -1,6 +1,8 @@
 .header {
+  padding-top: 1em;
   padding-bottom: 1em;
-  padding-inline: 5em;
+  padding-left: 1em;
+  padding-right: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,30 +10,40 @@
   line-height: 1.2;
 }
 
+@media (min-width: 768px) {
+  .header {
+    padding-top: 0;
+    padding-inline: 4em;
+  }
+}
+
 .header__title {
   font-family: 'Merriweather', serif;
+  font-size: 24px;
   margin: 0;
-  text-align: center;
 }
 
-.header__title::after {
+@media (min-width: 768px) {
+  .header__title {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+.header__version {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.6em;
+  font-weight: normal;
+  opacity: 0.5;
   margin-left: 0.3em;
-  content: '';
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-image: url(../../images/troika-icon.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  transition: background-image 0.2s;
-}
-
-.header__title:hover::after {
-  background-image: url(../../images/ediniy-icon.svg);
 }
 
 .header__subtitle {
   margin: 0;
-  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .header__subtitle {
+    text-align: center;
+  }
 }
