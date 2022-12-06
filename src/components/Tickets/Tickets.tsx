@@ -45,13 +45,15 @@ function Tickets({ ticketGroupsConfigs }: TicketsProps) {
       onClick={handleOverlayClick}
     >
       <MenuButton onClick={toggleMenuState} />
-      <form className="tickets__inner">
-        <h2>Выбор билетов</h2>
+      <div className="tickets__inner">
+        <h2 className='tickets__title'>Выбор билетов</h2>
 
-        {ticketGroupsConfigs.map((group) => {
-          return <TicketGroup key={group.id} group={group} />;
-        })}
-      </form>
+        <form className="tickets__form">
+          {ticketGroupsConfigs.map((group) => {
+            return <TicketGroup key={group.id} group={group} />;
+          })}
+        </form>
+      </div>
     </section>
   );
 }

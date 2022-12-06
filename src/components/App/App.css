@@ -13,10 +13,8 @@
 }
 
 .main {
-  flex-shrink: 1;
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  max-height: 100%;
-  gap: 1em;
+  height: 1px;
 }
