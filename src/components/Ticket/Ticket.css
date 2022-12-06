@@ -1,0 +1,49 @@
+.ticket {
+  width: 110px;
+}
+
+.ticket__input-item {
+}
+
+.ticket__input {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.ticket__label {
+  width: fit-content;
+  font-size: smaller;
+  line-height: 1.2;
+  font-weight: 500;
+  display: block;
+  margin: 0;
+  padding-block: 0.5em;
+  padding-inline: 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: opacity 0.2s, box-shadow 0.2s, color 0.2s;
+  background-color: #fff;
+
+  text-decoration-color: #ccc;
+  color: #aaa;
+}
+
+.ticket__input:checked + .ticket__label {
+  color: inherit;
+
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-low: 0.3px 0.4px 0.8px hsl(var(--shadow-color) / 0),
+    1.3px 1.6px 3.1px hsl(var(--shadow-color) / 0.19);
+  box-shadow: var(--shadow-elevation-low);
+}
+
+.ticket__label:hover {
+  opacity: 0.8;
+}
+
+.ticket__input:disabled + .ticket__label {
+  opacity: 0.3;
+}

@@ -18,9 +18,9 @@ function TicketGroup({ group, tickets }: TicketGroupProps) {
     : null;
 
   return (
-    <fieldset className="legend-group">
-      <h2 className="legend-group__title">{group.title}</h2>
-      <ul className="legend-group__ticket-list">
+    <fieldset className="ticket-group">
+      <h3 className="ticket-group__title">{group.title}</h3>
+      <ul className="ticket-group__list">
         {ticketsByGroup &&
           ticketsByGroup.map((ticket) => {
             return <Ticket key={ticket.config.id} ticket={ticket} />;

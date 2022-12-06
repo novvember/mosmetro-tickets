@@ -21,15 +21,15 @@ function Ticket({ ticket, selectedTickets, selected }: TicketProps) {
   }
 
   return (
-    <li className="legend-label">
-      <label className="legend-label__label">
+    <li className="ticket">
+      <label className="ticket__input-item">
         <input
-          className="legend-label__checkbox"
+          className="ticket__input"
           type="checkbox"
           checked={isSelected}
           onChange={handleChange}
         />
-        <span className="legend-label__title">{ticket.config.name}</span>
+        <span className="ticket__label">{ticket.config.name}</span>
       </label>
     </li>
   );

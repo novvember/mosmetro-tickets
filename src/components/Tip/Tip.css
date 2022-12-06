@@ -44,7 +44,7 @@
   --shadow-color: 0deg 0% 0%;
   --shadow-elevation-low: 0.3px 0.4px 0.8px hsl(var(--shadow-color) / 0),
     1.3px 1.6px 3.1px hsl(var(--shadow-color) / 0.19);
-  box-shadow: var(--shadow-elevation-low);
+  /* box-shadow: var(--shadow-elevation-low); */
 }
 
 .tip__cost {

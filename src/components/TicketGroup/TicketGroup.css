@@ -1,81 +1,24 @@
-.legend-group {
-  font-family: 'Open Sans', sans-serif;
+.ticket-group {
   border: none;
-  border-radius: .2em;
-  padding: .4em;
-  padding-top: 0;
   margin: 0;
+  padding: 0;
 }
 
-.legend-group__title {
+.ticket-group__title {
   margin: 0;
-  font-size: .8em;
+  margin-bottom: 0.5em;
   font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: #aaa;
-  margin-bottom: .4em;
+  font-size: 1em;
 }
 
-.legend-group__ticket-list {
+.ticket-group__list {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: .4em;
+  flex-wrap: wrap;
+  gap: 0.5em;
 }
-
-.legend-label {
-
-}
-
-.legend-label__label {
-  display: flex;
-  gap: .4em;
-  align-items: baseline;
-}
-
-.legend-label__title {
-  cursor: pointer;
-  margin: 0;
-  padding: .4em;
-  font-size: .9em;
-  color: #000;
-  text-decoration: line-through;
-  border-radius: .4em;
-  opacity: .3;
-  background-color: #eee;
-  transition: opacity .1s;
-}
-
-.legend-label__checkbox {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-}
-
-.legend-label__checkbox:checked + .legend-label__title {
-  text-decoration: none;
-  opacity: 1;
-}
-
-.legend-label__checkbox:disabled + .legend-label__title {
-  background: none;
-  outline: 1px dotted #ddd;
-  cursor: not-allowed;
-}
-
-
-.legend-label_current .legend-label__title {
-  outline: 2px solid gold;
-  outline-offset: 2px;
-  transform: rotate(-2deg) scale(1.05);
-  box-shadow: 0 0 .5em #aaa;
-}
-
 
 /* Разные билеты */
 .ticket_id_allInOne_trips_60 .legend-label__title {
