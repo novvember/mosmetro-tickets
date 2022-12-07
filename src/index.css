@@ -17,7 +17,6 @@
   /* Цвета страницы */
   --surface: #f5f5f5;
   --on-surface: #000;
-
   background-color: var(--surface);
   color: var(--on-surface);
 
@@ -72,4 +71,22 @@ a {
 
 a:hover {
   text-decoration-color: #db2426;
+}
+
+/* Кнопки с дополнительными меню */
+#menu-buttons {
+  position: absolute;
+  top: 2em;
+  right: 1em;
+  z-index: 0;
+  width: 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+@media (min-width: 768px) {
+  #menu-buttons {
+    top: 1em;
+  }
 }

@@ -1,9 +1,30 @@
 .menu-button {
-  position: absolute;
-  top: 2em;
-  right: 1em;
-  z-index: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   cursor: pointer;
-  width: 3em;
-  height: 3em;
+  transition: transform 0.2s;
+}
+
+.menu-button:hover {
+  transform: translateX(-15%);
+}
+
+.menu-button_type_tickets {
+  background-image: url(../../images/tickets-icon.svg);
+}
+
+@media (min-width: 1024px) {
+  .menu-button_type_tickets {
+    display: none;
+  }
+}
+
+.menu-button_type_info {
+  background-image: url(../../images/info-icon.svg);
 }

@@ -8,8 +8,9 @@ import { ticketsConfigs } from '../../utils/ticketsData';
 import Diagram from '../Diagram/Diagram';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import Menu from '../Menu/Menu';
 import Tickets from '../Tickets/Tickets';
-// import Text from '../Text/Text';
+import Info from '../Info/Info';
 
 import './App.css';
 
@@ -26,8 +27,10 @@ function App({ initialized }: { initialized: any }) {
       <main className="main">
         <Diagram />
         <Tickets />
-        {/* <Text /> */}
       </main>
+      <Menu type="info">
+        <Info />
+      </Menu>
       <Footer />
     </div>
   );

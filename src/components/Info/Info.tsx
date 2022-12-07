@@ -1,8 +1,8 @@
-import './Text.css';
+import './Info.css';
 
-function Text() {
+function Info() {
   return (
-    <section className="text">
+    <section className="info">
       <h2>Данные актуальны?</h2>
       <p>
         Актуальны на 2022 год: учтено последнее изменение стоимости проезда
@@ -31,4 +31,4 @@ function Text() {
   );
 }
 
-export default Text;
+export default Info;

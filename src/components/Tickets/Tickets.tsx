@@ -11,7 +11,7 @@ type TicketsProps = {
 
 function Tickets({ ticketGroupsConfigs }: TicketsProps) {
   return (
-    <Menu isStaticOnDesktops>
+    <Menu type="tickets">
       <div className="tickets">
         <h2 className="tickets__title">Выбор билетов</h2>
 

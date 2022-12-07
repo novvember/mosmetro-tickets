@@ -1,15 +1,19 @@
 import classNames from 'classnames';
 import { MouseEvent, ReactNode, useEffect, useState } from 'react';
 import MenuButton from '../MenuButton/MenuButton';
+import MenuButtonForInfo from '../MenuButtonForInfo/MenuButtonForInfo';
+import MenuButtonForTickets from '../MenuButtonForTickets/MenuButtonForTickets';
 import './Menu.css';
 
 type MenuProps = {
-  isStaticOnDesktops?: boolean;
+  type: 'tickets' | 'info';
   children: ReactNode;
 };
 
-function Menu({ isStaticOnDesktops = false, children }: MenuProps) {
+function Menu({ type, children }: MenuProps) {
   const [isOpened, setIsOpened] = useState(false);
+
+  const isStaticOnDesktops = type === 'tickets';
 
   function toggleMenuState() {
     setIsOpened((state) => !state);
@@ -44,7 +48,12 @@ function Menu({ isStaticOnDesktops = false, children }: MenuProps) {
       )}
       onClick={handleOverlayClick}
     >
-      <MenuButton onClick={toggleMenuState} />
+      {type === 'tickets' ? (
+        <MenuButtonForTickets onClick={toggleMenuState} />
+      ) : (
+        <MenuButtonForInfo onClick={toggleMenuState} />
+      )}
+
       <div className="menu__inner">{children}</div>
     </section>
   );
