@@ -1,10 +1,3 @@
-.ticket {
-  width: 110px;
-}
-
-.ticket__input-item {
-}
-
 .ticket__input {
   position: absolute;
   height: 1px;
@@ -14,7 +7,8 @@
 }
 
 .ticket__label {
-  width: fit-content;
+  width: min-content;
+  min-width: 70px;
   font-size: smaller;
   line-height: 1.2;
   font-weight: 500;
