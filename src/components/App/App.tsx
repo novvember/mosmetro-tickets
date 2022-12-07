@@ -26,7 +26,9 @@ function App({ initialized }: { initialized: any }) {
       <Header />
       <main className="main">
         <Diagram />
-        <Tickets />
+        <Menu type="tickets">
+          <Tickets />
+        </Menu>
       </main>
       <Menu type="info">
         <Info />

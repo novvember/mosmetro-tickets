@@ -19,6 +19,7 @@
 .menu-button_type_tickets {
   background-image: url(../../images/tickets-icon.svg);
   position: relative;
+  order: -1;
 }
 
 @media (min-width: 1024px) {
