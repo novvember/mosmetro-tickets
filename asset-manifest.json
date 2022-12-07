@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e011a61d.css",
-    "main.js": "/static/js/main.b68b6db4.js",
+    "main.js": "/static/js/main.d308053d.js",
     "static/media/Merriweather-Regular.ttf": "/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
     "static/media/Merriweather-Light.ttf": "/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
     "static/media/Merriweather-BoldItalic.ttf": "/static/media/Merriweather-BoldItalic.16252c125b2ba7eaf70a.ttf",
@@ -33,10 +33,10 @@
     "static/media/arrow-handwritten.svg": "/static/media/arrow-handwritten.66516bcd834629f79bf9.svg",
     "static/media/icon_metro.svg": "/static/media/icon_metro.c4408cdf07f88bbe46a0.svg",
     "main.e011a61d.css.map": "/static/css/main.e011a61d.css.map",
-    "main.b68b6db4.js.map": "/static/js/main.b68b6db4.js.map"
+    "main.d308053d.js.map": "/static/js/main.d308053d.js.map"
   },
   "entrypoints": [
     "static/css/main.e011a61d.css",
-    "static/js/main.b68b6db4.js"
+    "static/js/main.d308053d.js"
   ]
 }
