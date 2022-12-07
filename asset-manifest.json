@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.9b912616.css",
+    "main.css": "/static/css/main.13fd5d9f.css",
     "main.js": "/static/js/main.e46cd23d.js",
     "static/media/Merriweather-Regular.ttf": "/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
     "static/media/Merriweather-Light.ttf": "/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
@@ -23,19 +23,19 @@
     "static/media/OpenSans-Light.ttf": "/static/media/OpenSans-Light.846a12caf01a940847a7.ttf",
     "static/media/OpenSans-SemiBold.ttf": "/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
     "static/media/icon_tram.svg": "/static/media/icon_tram.526f5cd3327eefa4da8f.svg",
-    "static/media/tickets-icon.svg": "/static/media/tickets-icon.30f4602e57a57427fa54.svg",
     "static/media/info-icon.svg": "/static/media/info-icon.48d7ba6a1215ea738430.svg",
+    "static/media/tickets-icon.svg": "/static/media/tickets-icon.a63940256a8133f44841.svg",
     "static/media/icon_trolley.svg": "/static/media/icon_trolley.26d2858dbe929905a339.svg",
     "static/media/icon_bus.svg": "/static/media/icon_bus.f3ded663246b064c416b.svg",
     "static/media/wallet-icon.svg": "/static/media/wallet-icon.a97170a7e25a52182f3d.svg",
     "index.html": "/index.html",
     "static/media/arrow-right.svg": "/static/media/arrow-right.3d630b14b8580615ffb9.svg",
     "static/media/icon_metro.svg": "/static/media/icon_metro.c4408cdf07f88bbe46a0.svg",
-    "main.9b912616.css.map": "/static/css/main.9b912616.css.map",
+    "main.13fd5d9f.css.map": "/static/css/main.13fd5d9f.css.map",
     "main.e46cd23d.js.map": "/static/js/main.e46cd23d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b912616.css",
+    "static/css/main.13fd5d9f.css",
     "static/js/main.e46cd23d.js"
   ]
 }
