@@ -2,16 +2,16 @@
   padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 1em;
-  padding-right: 4em;
+  padding-right: 1em;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1em;
   line-height: 1.2;
 }
 
 @media (min-width: 768px) {
   .header {
+    align-items: center;
     padding-top: 0;
     padding-inline: 4em;
   }
@@ -21,12 +21,16 @@
   font-family: 'Merriweather', serif;
   font-size: 24px;
   margin: 0;
+  padding-right: 3em;
+  max-width: 900px;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
   .header__title {
     font-size: 32px;
     text-align: center;
+    padding: 0;
   }
 }
 
@@ -40,10 +44,18 @@
 
 .header__subtitle {
   margin: 0;
+  max-width: 900px;
+}
+
+@media (min-width: 425px) {
+  .header__subtitle {
+    padding-right: 4em;
+  }
 }
 
 @media (min-width: 768px) {
   .header__subtitle {
     text-align: center;
+    padding: 0;
   }
 }
