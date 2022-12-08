@@ -29,6 +29,7 @@ function App({ initialized }: { initialized: any }) {
   }
 
   useEffect(() => {
+    setDocHeight();
     window.addEventListener('resize', setDocHeight);
     return () => {
       window.removeEventListener('resize', setDocHeight);
