@@ -4,7 +4,6 @@
   max-width: 1800px;
   margin: 0 auto;
   height: 100vh;
-  height: -webkit-fill-available; /* mobile viewport bug fix */
   max-height: 100vh;
   display: flex;
   flex-direction: column;
