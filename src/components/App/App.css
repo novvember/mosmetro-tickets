@@ -5,6 +5,7 @@
   margin: 0 auto;
   height: 100vh;
   max-height: 100vh;
+  max-height: -webkit-fill-available; /* mobile viewport bug fix */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
