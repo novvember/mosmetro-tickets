@@ -21,6 +21,20 @@ function App({ initialized }: { initialized: any }) {
     initialized(tickets, selectedTickets);
   }, [initialized]);
 
+  // Fix full height on mobile
+
+  function setDocHeight() {
+    const doc = document.documentElement;
+    doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', setDocHeight);
+    return () => {
+      window.removeEventListener('resize', setDocHeight);
+    };
+  }, []);
+
   return (
     <div className="content">
       <Header />

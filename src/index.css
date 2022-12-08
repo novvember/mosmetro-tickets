@@ -3,13 +3,9 @@
 @import url(./vendor/fonts/Merriweather/Merriweather.css);
 @import url(./vendor/fonts/OpenSans/OpenSans.css);
 
-html {
-  max-height: -webkit-fill-available; /* mobile viewport bug fix */
-}
-
 .root {
-  /* min-height: 100vh;
-  min-height: -webkit-fill-available; */
+  /* Fix full height on mobile */
+  /* --doc-height: 100vh; */
 
   /* Текст */
   font-family: 'Open Sans', sans-serif;
