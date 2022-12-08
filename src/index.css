@@ -4,9 +4,6 @@
 @import url(./vendor/fonts/OpenSans/OpenSans.css);
 
 .root {
-  /* Fix full height on mobile */
-  /* --doc-height: 100vh; */
-
   /* Текст */
   font-family: 'Open Sans', sans-serif;
   line-height: 1.4;

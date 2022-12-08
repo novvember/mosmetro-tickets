@@ -5,7 +5,6 @@
   margin: 0 auto;
   height: 100vh;
   max-height: 100vh;
-  max-height: var(--doc-height); /* Fix full height on mobile */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
