@@ -1,33 +1,21 @@
 .info {
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.info__title {
-  font-family: 'Merriweather', serif;
-  margin: 0;
-  margin-bottom: 0.5em;
-}
-
-.info__content {
   padding-bottom: 16px;
+  padding-inline: 16px;
   overflow-y: auto;
   flex-shrink: 1;
 }
 
-.info__content h3 {
+.info h3 {
   font-family: 'Merriweather', serif;
   margin-top: 1.5em;
   margin-bottom: 0;
 }
 
-.info__content h3:first-of-type {
+.info h3:first-of-type {
   margin-top: 0;
 }
 
-.info__content p {
+.info p {
   margin-block: 0.75em;
 }
 

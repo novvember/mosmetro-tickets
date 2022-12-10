@@ -1,32 +1,8 @@
 .tickets {
-  padding-block: 1em;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-@media (min-width: 1024px) {
-  .tickets {
-    padding: 0;
-    height: calc(100% - 1.5em);
-  }
-}
-
-.tickets__title {
-  padding-inline: 16px;
-  margin: 0;
-  margin-bottom: 0.5em;
-  font-family: Merriweather, serif;
-}
-
-.tickets__form {
   padding-inline: 16px;
   padding-bottom: 16px;
   box-sizing: border-box;
-  overflow-y: auto;
-  flex-shrink: 1;
   display: flex;
   gap: 1.5em;
   flex-direction: column;
-  margin-bottom: 1em;
 }

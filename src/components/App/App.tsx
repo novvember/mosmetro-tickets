@@ -26,11 +26,11 @@ function App({ initialized }: { initialized: any }) {
       <Header />
       <main className="main">
         <Diagram />
-        <Menu type="tickets">
+        <Menu type="tickets" title="Выбор билетов">
           <Tickets />
         </Menu>
       </main>
-      <Menu type="info">
+      <Menu type="info" title="О Приложении">
         <Info />
       </Menu>
       <Footer />
