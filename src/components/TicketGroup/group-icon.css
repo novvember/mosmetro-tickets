@@ -1,0 +1,34 @@
+.group-icon::after {
+  content: '';
+  margin-left: 0.3em;
+  display: inline-block;
+  width: 1.2em;
+  height: 0.8em;
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.group-icon_id_troika::after {
+  background-image: url(../../images/troika-icon.svg);
+}
+
+.group-icon_id_allInOne_trips::after {
+  background-image: url(../../images/ediniy-icon.svg);
+}
+
+.group-icon_id_allInOne_days::after {
+  background-image: url(../../images/ediniy-icon.svg);
+}
+
+.group-icon_id_tat::after {
+  background-image: url(../../images/tat-icon.svg);
+}
+
+.group-icon_id_other::after {
+  background-image: url(../../images/bank-card.svg);
+}
+
+.group-icon_id_compound::after {
+  background-image: url(../../images/compound.svg);
+}

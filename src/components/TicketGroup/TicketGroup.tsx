@@ -1,9 +1,13 @@
 import { connect } from 'react-redux';
+import classNames from 'classnames';
+
 import Tickets from '../../types/Tickets';
 import TicketGroupConfig from '../../types/TicketGroupConfig';
 import Ticket from '../Ticket/Ticket';
-import './TicketGroup.css';
 import State from '../../types/State';
+
+import './TicketGroup.css';
+import './group-icon.css';
 
 type TicketGroupProps = {
   group: TicketGroupConfig;
@@ -19,7 +23,15 @@ function TicketGroup({ group, tickets }: TicketGroupProps) {
 
   return (
     <fieldset className="ticket-group">
-      <h3 className="ticket-group__title">{group.title}</h3>
+      <h3
+        className={classNames(
+          'ticket-group__title',
+          'group-icon',
+          `group-icon_id_${group.id}`,
+        )}
+      >
+        {group.title}
+      </h3>
       <ul className="ticket-group__list">
         {ticketsByGroup &&
           ticketsByGroup.map((ticket) => {
