@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e011a61d.css",
-    "main.js": "/static/js/main.d308053d.js",
+    "main.css": "/static/css/main.9575b39e.css",
+    "main.js": "/static/js/main.0b7fe748.js",
     "static/media/Merriweather-Regular.ttf": "/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
     "static/media/Merriweather-Light.ttf": "/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
     "static/media/Merriweather-BoldItalic.ttf": "/static/media/Merriweather-BoldItalic.16252c125b2ba7eaf70a.ttf",
@@ -24,6 +24,7 @@
     "static/media/OpenSans-SemiBold.ttf": "/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
     "static/media/icon_tram.svg": "/static/media/icon_tram.526f5cd3327eefa4da8f.svg",
     "static/media/tickets-icon.svg": "/static/media/tickets-icon.a63940256a8133f44841.svg",
+    "static/media/troika-icon.svg": "/static/media/troika-icon.d31943c644188121055c.svg",
     "static/media/icon_trolley.svg": "/static/media/icon_trolley.26d2858dbe929905a339.svg",
     "static/media/icon_bus.svg": "/static/media/icon_bus.f3ded663246b064c416b.svg",
     "static/media/info-icon.svg": "/static/media/info-icon.ec31910e5eff1169dd35.svg",
@@ -31,12 +32,17 @@
     "index.html": "/index.html",
     "static/media/arrow-right.svg": "/static/media/arrow-right.3d630b14b8580615ffb9.svg",
     "static/media/arrow-handwritten.svg": "/static/media/arrow-handwritten.66516bcd834629f79bf9.svg",
+    "static/media/ediniy-icon.svg": "/static/media/ediniy-icon.21dd0f75be15de7e3c0b.svg",
     "static/media/icon_metro.svg": "/static/media/icon_metro.c4408cdf07f88bbe46a0.svg",
-    "main.e011a61d.css.map": "/static/css/main.e011a61d.css.map",
-    "main.d308053d.js.map": "/static/js/main.d308053d.js.map"
+    "static/media/tat-icon.svg": "/static/media/tat-icon.27290eaf70074083c384.svg",
+    "static/media/compound.svg": "/static/media/compound.9cba056a0ac30590c069.svg",
+    "static/media/close-icon.svg": "/static/media/close-icon.4f4048c183f04c990fca.svg",
+    "static/media/bank-card.svg": "/static/media/bank-card.0c1761aeb3994769408f.svg",
+    "main.9575b39e.css.map": "/static/css/main.9575b39e.css.map",
+    "main.0b7fe748.js.map": "/static/js/main.0b7fe748.js.map"
   },
   "entrypoints": [
-    "static/css/main.e011a61d.css",
-    "static/js/main.d308053d.js"
+    "static/css/main.9575b39e.css",
+    "static/js/main.0b7fe748.js"
   ]
 }
