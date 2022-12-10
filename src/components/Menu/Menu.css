@@ -54,7 +54,7 @@
   transform: translateX(0);
 }
 
-@media (min-width: 426px) {
+@media (min-width: 476px) {
   .menu__inner {
     max-width: 400px;
   }
