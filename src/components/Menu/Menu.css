@@ -69,8 +69,35 @@
   }
 }
 
+.menu__close-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 2em;
+  aspect-ratio: 1;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url(../../images/close-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  transition: transform 0.2s;
+}
+
+.menu__close-button:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 1024px) {
+  .menu_static-on-desktops .menu__close-button {
+    display: none;
+  }
+}
+
 .menu__title {
   padding-inline: 16px;
+  padding-right: 48px;
   margin: 0;
   margin-bottom: 0.5em;
   font-family: Merriweather, serif;

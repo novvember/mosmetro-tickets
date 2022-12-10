@@ -55,6 +55,12 @@ function Menu({ type, title, children }: MenuProps) {
       )}
 
       <section className="menu__inner">
+        <button
+          className="menu__close-button"
+          type="button"
+          onClick={toggleMenuState}
+          aria-label="Закрыть меню"
+        ></button>
         <h2 className="menu__title">{title}</h2>
         <div className="menu__content">{children}</div>
       </section>
