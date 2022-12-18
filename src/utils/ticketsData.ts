@@ -9,7 +9,7 @@ export const ticketsConfigs: Array<
   // Единые с лимитом поездок
   {
     name: 'Единый на 1 поездку',
-    price: 61,
+    price: 62,
     dayLimit: 5,
     tripLimit: 1,
     isValidForMetro: true,
@@ -22,7 +22,7 @@ export const ticketsConfigs: Array<
 
   {
     name: 'Единый на 2 поездки',
-    price: 122,
+    price: 124,
     dayLimit: 5,
     tripLimit: 2,
     isValidForMetro: true,
@@ -35,7 +35,7 @@ export const ticketsConfigs: Array<
 
   {
     name: 'Единый на 60 поездок',
-    price: 2400,
+    price: 2730,
     dayLimit: 45,
     tripLimit: 60,
     isValidForMetro: true,
@@ -49,7 +49,7 @@ export const ticketsConfigs: Array<
   // Единые без лимита
   {
     name: 'Единый на 1 сутки',
-    price: 265,
+    price: 285,
     dayLimit: 1,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -62,7 +62,7 @@ export const ticketsConfigs: Array<
 
   {
     name: 'Единый на 3 суток',
-    price: 500,
+    price: 540,
     dayLimit: 3,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -75,7 +75,7 @@ export const ticketsConfigs: Array<
 
   {
     name: 'Единый на 30 дней',
-    price: 2360,
+    price: 2540,
     dayLimit: 30,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -88,7 +88,7 @@ export const ticketsConfigs: Array<
 
   {
     name: 'Единый на 90 дней',
-    price: 5710,
+    price: 6150,
     dayLimit: 90,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -115,7 +115,7 @@ export const ticketsConfigs: Array<
   // Карта Тройка
   {
     name: 'Электронный кошелек',
-    price: 46,
+    price: 50,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -128,7 +128,7 @@ export const ticketsConfigs: Array<
 
   {
     name: 'Пересадка (90 минут)',
-    price: 69,
+    price: 75,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -142,7 +142,7 @@ export const ticketsConfigs: Array<
   // Банковские карты
   {
     name: 'Банковская карта',
-    price: 51,
+    price: 56,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -152,24 +152,36 @@ export const ticketsConfigs: Array<
     isSelectedByDefault: true,
     isIgnored: false,
   },
-
   {
-    name: 'Карта Мир (до 31.12.2022)',
-    price: 41,
+    name: 'Facepay',
+    price: 46,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
-    isValidForTat: true,
-    id: 'bankcard_mir-promo',
+    isValidForTat: false,
+    id: 'facepay',
     groupId: 'other',
     isSelectedByDefault: true,
     isIgnored: false,
   },
 
+  // {
+  //   name: 'Карта Мир (до 31.12.2022)',
+  //   price: 41,
+  //   dayLimit: Infinity,
+  //   tripLimit: 1,
+  //   isValidForMetro: true,
+  //   isValidForTat: true,
+  //   id: 'bankcard_mir-promo',
+  //   groupId: 'other',
+  //   isSelectedByDefault: true,
+  //   isIgnored: false,
+  // },
+
   // Билеты ТАТ
   {
     name: 'ТАТ на 30 дней',
-    price: 1400,
+    price: 1560,
     dayLimit: 30,
     tripLimit: Infinity,
     isValidForMetro: false,
@@ -182,7 +194,7 @@ export const ticketsConfigs: Array<
 
   {
     name: 'ТАТ на 90 дней',
-    price: 3720,
+    price: 4140,
     dayLimit: 90,
     tripLimit: Infinity,
     isValidForMetro: false,
@@ -209,6 +221,21 @@ export const ticketsConfigs: Array<
   // Сочетания билетов
   // Нужно добавить useForMetro, useForTat
   {
+    name: 'Facepay + Тройка',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__troika__facepay',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'facepay',
+    useForTat: 'troika',
+  },
+
+  {
     name: 'ТАТ на 30 дней + Тройка',
     price: null,
     dayLimit: null,
@@ -220,6 +247,21 @@ export const ticketsConfigs: Array<
     isSelectedByDefault: true,
     isIgnored: false,
     useForMetro: 'troika',
+    useForTat: 'tat_days_30',
+  },
+
+  {
+    name: 'ТАТ на 30 дней + Facepay',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__tat_days_30__facepay',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'facepay',
     useForTat: 'tat_days_30',
   },
 
@@ -239,6 +281,21 @@ export const ticketsConfigs: Array<
   },
 
   {
+    name: 'ТАТ на 90 дней + Facepay',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__tat_days_90__facepay',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'facepay',
+    useForTat: 'tat_days_90',
+  },
+
+  {
     name: 'ТАТ на 365 дней + Тройка',
     price: null,
     dayLimit: null,
@@ -250,6 +307,21 @@ export const ticketsConfigs: Array<
     isSelectedByDefault: true,
     isIgnored: false,
     useForMetro: 'troika',
+    useForTat: 'tat_days_365',
+  },
+
+  {
+    name: 'ТАТ на 365 дней + Facepay',
+    price: null,
+    dayLimit: null,
+    tripLimit: null,
+    isValidForMetro: true,
+    isValidForTat: true,
+    id: 'compound__tat_days_365__facepay',
+    groupId: 'compound',
+    isSelectedByDefault: true,
+    isIgnored: false,
+    useForMetro: 'facepay',
     useForTat: 'tat_days_365',
   },
 

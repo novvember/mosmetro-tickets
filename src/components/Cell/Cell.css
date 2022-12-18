@@ -47,6 +47,14 @@
   --color: var(--ticket-troika);
 }
 
+.cell[data-ticket='compound__troika__facepay'] {
+  --color: var(--ticket-facepay);
+}
+
+.cell[data-ticket='facepay'] {
+  --color: var(--ticket-facepay);
+}
+
 .cell[data-ticket='bankcard_mir-promo'] {
   --color: var(--ticket-bankcard_mir-promo);
 }
@@ -59,6 +67,10 @@
   --color: var(--ticket-compound__tat_days_30__troika);
 }
 
+.cell[data-ticket='compound__tat_days_30__facepay'] {
+  --color: var(--ticket-compound__tat_days_30__troika);
+}
+
 .cell[data-ticket='tat_days_90'] {
   --color: var(--ticket-tat_days_90);
 }
@@ -67,10 +79,18 @@
   --color: var(--ticket-compound__tat_days_90__troika);
 }
 
+.cell[data-ticket='compound__tat_days_90__facepay'] {
+  --color: var(--ticket-compound__tat_days_90__troika);
+}
+
 .cell[data-ticket='tat_days_365'] {
   --color: var(--ticket-tat_days_365);
 }
 
 .cell[data-ticket='compound__tat_days_365__troika'] {
+  --color: var(--ticket-compound__tat_days_365__troika);
+}
+
+.cell[data-ticket='compound__tat_days_365__facepay'] {
   --color: var(--ticket-compound__tat_days_365__troika);
 }
