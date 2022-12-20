@@ -1,7 +1,7 @@
 import './MenuButton.css';
 
 import ReactDOM from 'react-dom';
-import { MouseEvent } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 type MenuButtonProps = {
@@ -11,14 +11,22 @@ type MenuButtonProps = {
 };
 
 function MenuButton({ onClick, className, title }: MenuButtonProps) {
-  return ReactDOM.createPortal(
-    <button
-      className={classNames('menu-button', className)}
-      onClick={onClick}
-      aria-label={title}
-    ></button>,
-    document.getElementById('menu-buttons')!,
-  );
+  const [isDomReady, setIsDomReady] = useState(false);
+
+  useEffect(() => {
+    setIsDomReady(true);
+  }, []);
+
+  return isDomReady
+    ? ReactDOM.createPortal(
+        <button
+          className={classNames('menu-button', className)}
+          onClick={onClick}
+          aria-label={title}
+        ></button>,
+        document.getElementById('menu-buttons')!,
+      )
+    : null;
 }
 
 export default MenuButton;

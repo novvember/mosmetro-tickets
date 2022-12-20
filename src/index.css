@@ -78,18 +78,8 @@ a:hover {
 
 /* Кнопки с дополнительными меню */
 #menu-buttons {
-  position: absolute;
-  top: 2em;
-  right: 1em;
-  z-index: 0;
-  width: 3em;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
-}
-
-@media (min-width: 768px) {
-  #menu-buttons {
-    top: 1em;
-  }
 }
