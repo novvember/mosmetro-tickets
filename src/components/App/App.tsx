@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import { initialized } from '../../store/actions';
+import { ticketsActions } from '../../store/actions';
 import buildTickets from '../../utils/buildTickets';
 import getInitialSelectedTickets from '../../utils/getInitialSelectedTickets';
 import { ticketsConfigs } from '../../utils/ticketsData';
@@ -13,13 +13,16 @@ import Tickets from '../Tickets/Tickets';
 import Info from '../Info/Info';
 
 import './App.css';
+import { useAppDispatch } from '../../store';
 
-function App({ initialized }: { initialized: any }) {
+function App() {
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
     const tickets = buildTickets(ticketsConfigs);
     const selectedTickets = getInitialSelectedTickets(tickets);
-    initialized(tickets, selectedTickets);
-  }, [initialized]);
+    dispatch(ticketsActions.initializeTickets(tickets, selectedTickets));
+  }, [dispatch]);
 
   return (
     <div className="content">
@@ -38,12 +41,4 @@ function App({ initialized }: { initialized: any }) {
   );
 }
 
-function mapStateToProps() {
-  return {};
-}
-
-const mapDispatchToProps = {
-  initialized,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

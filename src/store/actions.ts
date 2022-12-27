@@ -1,10 +1,11 @@
 import Tickets from '../types/Tickets';
 import SelectedTickets from '../types/SelectedTickets';
 import TicketId from '../types/TicketId';
+import { TICKETS_TYPES } from './action-types';
 
-function initialized(tickets: Tickets, selectedTickets: SelectedTickets) {
+function initializeTickets(tickets: Tickets, selectedTickets: SelectedTickets) {
   return {
-    type: 'INITIALIZED',
+    type: TICKETS_TYPES.INITIALIZE,
     payload: {
       tickets,
       selectedTickets,
@@ -12,9 +13,9 @@ function initialized(tickets: Tickets, selectedTickets: SelectedTickets) {
   };
 }
 
-function selected(id: TicketId, isSelected: boolean) {
+function selectTickets(id: TicketId, isSelected: boolean) {
   return {
-    type: 'SELECTED',
+    type: TICKETS_TYPES.SELECT,
     payload: {
       id,
       isSelected,
@@ -22,4 +23,4 @@ function selected(id: TicketId, isSelected: boolean) {
   };
 }
 
-export { initialized, selected };
+export const ticketsActions = { initializeTickets, selectTickets };

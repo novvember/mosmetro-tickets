@@ -1,14 +1,12 @@
-import { connect } from 'react-redux';
-import TicketGroupConfig from '../../types/TicketGroupConfig';
+import { useAppSelector } from '../../store';
+import { ticketGroupsConfigsSelector } from '../../store/selectors';
 import TicketGroup from '../TicketGroup/TicketGroup';
 
 import './Tickets.css';
 
-type TicketsProps = {
-  ticketGroupsConfigs: TicketGroupConfig[];
-};
+function Tickets() {
+  const ticketGroupsConfigs = useAppSelector(ticketGroupsConfigsSelector);
 
-function Tickets({ ticketGroupsConfigs }: TicketsProps) {
   return (
     <form className="tickets">
       {ticketGroupsConfigs.map((group) => {
@@ -18,10 +16,4 @@ function Tickets({ ticketGroupsConfigs }: TicketsProps) {
   );
 }
 
-function mapStateToProps({ ticketGroupsConfigs }: any) {
-  return {
-    ticketGroupsConfigs,
-  };
-}
-
-export default connect(mapStateToProps)(Tickets);
+export default Tickets;

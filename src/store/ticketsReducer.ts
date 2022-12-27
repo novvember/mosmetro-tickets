@@ -1,8 +1,26 @@
-import appConfig from '../utils/appConfig';
 import { ticketGroupsConfig } from '../utils/ticketsData';
 
+import appConfig from '../utils/appConfig';
 import Field from '../utils/Field';
-import State from '../types/State';
+
+import AppConfig from '../types/AppConfig';
+import FieldType from '../types/Field';
+import SelectedTickets from '../types/SelectedTickets';
+import TicketGroupConfig from '../types/TicketGroupConfig';
+import Tickets from '../types/Tickets';
+import { TICKETS_TYPES } from './action-types';
+import { AnyAction } from 'redux';
+
+export interface TicketsState {
+  field: FieldType | null;
+  loading: boolean;
+  minCost: number | null;
+  maxCost: number | null;
+  appConfig: AppConfig;
+  tickets: Tickets | null;
+  selectedTickets: SelectedTickets | null;
+  ticketGroupsConfigs: TicketGroupConfig[];
+}
 
 const initialState = {
   field: null,
@@ -15,12 +33,12 @@ const initialState = {
   ticketGroupsConfigs: ticketGroupsConfig,
 };
 
-export default function reducer(
-  state: State = initialState,
-  action: any,
-): State {
+export default function ticketsReducer(
+  state: TicketsState = initialState,
+  action: AnyAction,
+): TicketsState {
   switch (action.type) {
-    case 'INITIALIZED': {
+    case TICKETS_TYPES.INITIALIZE: {
       const { tickets, selectedTickets } = action.payload;
 
       const { field, minCost, maxCost } = new Field(
@@ -40,7 +58,7 @@ export default function reducer(
       };
     }
 
-    case 'SELECTED': {
+    case TICKETS_TYPES.SELECT: {
       const { id, isSelected } = action.payload;
 
       const selectedTickets = {

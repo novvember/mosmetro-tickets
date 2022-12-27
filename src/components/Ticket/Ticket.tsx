@@ -1,23 +1,22 @@
-import { connect } from 'react-redux';
-import SelectedTickets from '../../types/SelectedTickets';
 import CompoundTicket from '../../utils/CompoundTicket';
 import SimpleTicket from '../../utils/SimpleTicket';
 import './Ticket.css';
-import { selected } from '../../store/actions';
 import { ChangeEvent } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store';
+import { ticketsActions } from '../../store/actions';
+import { isSelectedSelector } from '../../store/selectors';
 
 type TicketProps = {
   ticket: SimpleTicket | CompoundTicket;
-  selectedTickets: SelectedTickets;
-  selected: any;
 };
 
-function Ticket({ ticket, selectedTickets, selected }: TicketProps) {
+function Ticket({ ticket }: TicketProps) {
   const id = ticket.config.id;
-  const isSelected = selectedTickets[id];
+  const isSelected = useAppSelector(isSelectedSelector(id));
+  const dispatch = useAppDispatch();
 
   function handleChange(evt: ChangeEvent<HTMLInputElement>) {
-    selected(id, !isSelected);
+    dispatch(ticketsActions.selectTickets(id, !isSelected));
   }
 
   return (
@@ -35,14 +34,4 @@ function Ticket({ ticket, selectedTickets, selected }: TicketProps) {
   );
 }
 
-function mapStateToProps({ selectedTickets }: any) {
-  return {
-    selectedTickets,
-  };
-}
-
-const mapDispatchToProps = {
-  selected,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Ticket);
+export default Ticket;

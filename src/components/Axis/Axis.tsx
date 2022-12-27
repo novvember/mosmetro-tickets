@@ -1,27 +1,21 @@
 import classNames from 'classnames';
 import './Axis.css';
 import React from 'react';
-import { connect } from 'react-redux';
-import State from '../../types/State';
+import { useAppSelector } from '../../store';
+import { fieldMaxSelector, fieldStepSelector } from '../../store/selectors';
 
 type AxisProps = {
   isX?: boolean;
   isY?: boolean;
   className: string;
   children: React.ReactNode;
-  fieldMax: number;
-  fieldStep: number;
 };
 
-function Axis({
-  isX = false,
-  isY = false,
-  className,
-  children,
-  fieldMax,
-  fieldStep,
-}: AxisProps) {
+function Axis({ isX = false, isY = false, className, children }: AxisProps) {
   const MIN = 0;
+
+  const fieldMax = useAppSelector(fieldMaxSelector);
+  const fieldStep = useAppSelector(fieldStepSelector);
 
   const numbers = new Array((fieldMax - MIN) / fieldStep + 1)
     .fill(0)
@@ -51,11 +45,4 @@ function Axis({
   );
 }
 
-function mapStateToProps(state: State) {
-  return {
-    fieldMax: state.appConfig.fieldMax,
-    fieldStep: state.appConfig.fieldStep,
-  };
-}
-
-export default connect(mapStateToProps)(Axis);
+export default Axis;

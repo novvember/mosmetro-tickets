@@ -1,20 +1,20 @@
-import { connect } from 'react-redux';
 import classNames from 'classnames';
 
-import Tickets from '../../types/Tickets';
 import TicketGroupConfig from '../../types/TicketGroupConfig';
 import Ticket from '../Ticket/Ticket';
-import State from '../../types/State';
 
 import './TicketGroup.css';
 import './group-icon.css';
+import { useAppSelector } from '../../store';
+import { ticketsSelector } from '../../store/selectors';
 
 type TicketGroupProps = {
   group: TicketGroupConfig;
-  tickets: Tickets | null;
 };
 
-function TicketGroup({ group, tickets }: TicketGroupProps) {
+function TicketGroup({ group }: TicketGroupProps) {
+  const tickets = useAppSelector(ticketsSelector);
+
   const ticketsByGroup = tickets
     ? Object.values(tickets).filter(
         (ticket) => ticket.config.groupId === group.id,
@@ -42,10 +42,4 @@ function TicketGroup({ group, tickets }: TicketGroupProps) {
   );
 }
 
-function mapStateToProps({ tickets }: State) {
-  return {
-    tickets,
-  };
-}
-
-export default connect(mapStateToProps)(TicketGroup);
+export default TicketGroup;

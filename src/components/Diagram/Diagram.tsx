@@ -1,12 +1,21 @@
 import Axis from '../Axis/Axis';
 import Cell from '../Cell/Cell';
 import Field from '../Field/Field';
-import { connect } from 'react-redux';
 
 import './Diagram.css';
 import flatField from '../../utils/flatField';
+import { useAppSelector } from '../../store';
+import {
+  fieldSelector,
+  maxCostSelector,
+  minCostSelector,
+} from '../../store/selectors';
 
-function Diagram({ field, minCost, maxCost }: any) {
+function Diagram() {
+  const field = useAppSelector(fieldSelector);
+  const minCost = useAppSelector(minCostSelector);
+  const maxCost = useAppSelector(maxCostSelector);
+
   return (
     <div className="diagram">
       <Axis isX className="diagram__axis_type_x">
@@ -43,12 +52,4 @@ function Diagram({ field, minCost, maxCost }: any) {
   );
 }
 
-function mapStateToProps(state: any) {
-  return {
-    field: state.field,
-    minCost: state.minCost,
-    maxCost: state.maxCost,
-  };
-}
-
-export default connect(mapStateToProps)(Diagram);
+export default Diagram;
