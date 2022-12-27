@@ -1,8 +1,10 @@
-import classNames from 'classnames';
-import './Axis.css';
 import React from 'react';
+import classNames from 'classnames';
+
 import { useAppSelector } from '../../store';
 import { fieldMaxSelector, fieldStepSelector } from '../../store/selectors';
+
+import './Axis.css';
 
 type AxisProps = {
   isX?: boolean;
@@ -13,7 +15,6 @@ type AxisProps = {
 
 function Axis({ isX = false, isY = false, className, children }: AxisProps) {
   const MIN = 0;
-
   const fieldMax = useAppSelector(fieldMaxSelector);
   const fieldStep = useAppSelector(fieldStepSelector);
 

@@ -12,11 +12,6 @@ type MenuProps = {
 
 function Menu({ type, title, children }: MenuProps) {
   const [isOpened, setIsOpened] = useState(false);
-  const [isDomReady, setIsDomReady] = useState(false);
-
-  useEffect(() => {
-    setIsDomReady(true);
-  }, []);
 
   const isStaticOnDesktops = type === 'tickets';
 

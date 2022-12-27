@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 
+import { useAppDispatch } from '../../store';
 import { ticketsActions } from '../../store/actions';
+
 import buildTickets from '../../utils/buildTickets';
 import getInitialSelectedTickets from '../../utils/getInitialSelectedTickets';
 import { ticketsConfigs } from '../../utils/ticketsData';
+
 import Diagram from '../Diagram/Diagram';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -13,7 +15,6 @@ import Tickets from '../Tickets/Tickets';
 import Info from '../Info/Info';
 
 import './App.css';
-import { useAppDispatch } from '../../store';
 
 function App() {
   const dispatch = useAppDispatch();

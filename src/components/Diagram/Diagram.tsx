@@ -42,9 +42,9 @@ function Diagram() {
 
       <Field className="diagram__field">
         {field &&
-          flatField(field).map((cell: any, i: number) => {
+          flatField(field).map((cell, i) => {
             return (
-              <Cell cell={cell} key={i} minCost={minCost} maxCost={maxCost} />
+              <Cell key={i} cell={cell} minCost={minCost} maxCost={maxCost} />
             );
           })}
       </Field>
