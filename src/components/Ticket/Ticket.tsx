@@ -16,6 +16,7 @@ function Ticket({ ticket }: TicketProps) {
   const dispatch = useAppDispatch();
 
   function handleChange(evt: ChangeEvent<HTMLInputElement>) {
+    dispatch(ticketsActions.startCalculation());
     dispatch(ticketsActions.selectTickets(id, !isSelected));
   }
 

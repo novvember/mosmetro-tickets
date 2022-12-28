@@ -15,7 +15,7 @@ import Ticket from '../utils/Ticket';
 export interface TicketsState {
   field: FieldType | null;
   isFieldLoading: boolean;
-  areTicketsLoading: boolean,
+  areTicketsLoading: boolean;
   minCost: number | null;
   maxCost: number | null;
   appConfig: AppConfig;
@@ -61,6 +61,13 @@ export default function ticketsReducer(
       };
     }
 
+    case TICKETS_TYPES.START_CALCULATION: {
+      return {
+        ...state,
+        isFieldLoading: true,
+      };
+    }
+
     case TICKETS_TYPES.SELECT: {
       const { tickets } = state;
       if (!tickets) return state;
@@ -101,6 +108,7 @@ export default function ticketsReducer(
 
       return {
         ...state,
+        isFieldLoading: false,
         selectedTickets: selectedTickets,
         field,
         minCost,

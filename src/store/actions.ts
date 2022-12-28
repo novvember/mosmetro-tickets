@@ -13,6 +13,12 @@ function initializeTickets(tickets: Tickets, selectedTickets: SelectedTickets) {
   };
 }
 
+function startCalculation() {
+  return {
+    type: TICKETS_TYPES.START_CALCULATION,
+  };
+}
+
 function selectTickets(id: TicketId, isSelected: boolean) {
   return {
     type: TICKETS_TYPES.SELECT,
@@ -23,4 +29,8 @@ function selectTickets(id: TicketId, isSelected: boolean) {
   };
 }
 
-export const ticketsActions = { initializeTickets, selectTickets };
+export const ticketsActions = {
+  initializeTickets,
+  startCalculation,
+  selectTickets,
+};
