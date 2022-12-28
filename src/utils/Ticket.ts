@@ -11,6 +11,12 @@ export default abstract class Ticket<
   protected readonly appConfig: AppConfig;
   readonly field: Array<Array<number | null>>;
 
+  static isCompound(
+    ticketConfig: SimpleTicketConfig | CompoundTicketConfig,
+  ): ticketConfig is CompoundTicketConfig {
+    return ticketConfig.groupId === 'compound';
+  }
+
   constructor(ticket: T, appConfig: AppConfig) {
     this.config = ticket;
     this.appConfig = appConfig;

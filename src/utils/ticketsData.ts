@@ -44,6 +44,11 @@ export const ticketsConfigs: Array<
     groupId: 'allInOne_trips',
     isSelectedByDefault: true,
     isIgnored: false,
+    dependencies: [
+      'compound__tat_days_30__allInOne_trips_60',
+      'compound__tat_days_90__allInOne_trips_60',
+      'compound__tat_days_365__allInOne_trips_60',
+    ],
   },
 
   // Единые без лимита
@@ -124,6 +129,12 @@ export const ticketsConfigs: Array<
     groupId: 'troika',
     isSelectedByDefault: true,
     isIgnored: false,
+    dependencies: [
+      'compound__troika__facepay',
+      'compound__tat_days_30__troika',
+      'compound__tat_days_90__troika',
+      'compound__tat_days_365__troika',
+    ],
   },
 
   {
@@ -163,6 +174,12 @@ export const ticketsConfigs: Array<
     groupId: 'other',
     isSelectedByDefault: true,
     isIgnored: false,
+    dependencies: [
+      'compound__troika__facepay',
+      'compound__tat_days_30__facepay',
+      'compound__tat_days_90__facepay',
+      'compound__tat_days_365__facepay',
+    ],
   },
 
   // {
@@ -190,6 +207,11 @@ export const ticketsConfigs: Array<
     groupId: 'tat',
     isSelectedByDefault: true,
     isIgnored: false,
+    dependencies: [
+      'compound__tat_days_30__troika',
+      'compound__tat_days_30__facepay',
+      'compound__tat_days_30__allInOne_trips_60',
+    ],
   },
 
   {
@@ -203,6 +225,11 @@ export const ticketsConfigs: Array<
     groupId: 'tat',
     isSelectedByDefault: true,
     isIgnored: false,
+    dependencies: [
+      'compound__tat_days_90__troika',
+      'compound__tat_days_90__facepay',
+      'compound__tat_days_90__allInOne_trips_60',
+    ],
   },
 
   {
@@ -216,6 +243,11 @@ export const ticketsConfigs: Array<
     groupId: 'tat',
     isSelectedByDefault: true,
     isIgnored: false,
+    dependencies: [
+      'compound__tat_days_365__troika',
+      'compound__tat_days_365__facepay',
+      'compound__tat_days_365__allInOne_trips_60',
+    ],
   },
 
   // Сочетания билетов

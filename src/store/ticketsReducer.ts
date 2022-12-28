@@ -10,6 +10,7 @@ import TicketGroupConfig from '../types/TicketGroupConfig';
 import Tickets from '../types/Tickets';
 import { TICKETS_TYPES } from './action-types';
 import { AnyAction } from 'redux';
+import Ticket from '../utils/Ticket';
 
 export interface TicketsState {
   field: FieldType | null;
@@ -59,17 +60,39 @@ export default function ticketsReducer(
     }
 
     case TICKETS_TYPES.SELECT: {
+      const { tickets } = state;
+      if (!tickets) return state;
+
       const { id, isSelected } = action.payload;
 
-      const selectedTickets = {
+      const selectedTickets: SelectedTickets = {
         ...state.selectedTickets,
         [id]: isSelected,
       };
 
-      if (!state.tickets) return state;
+      const dependencies = tickets[id].config.dependencies;
+
+      if (dependencies) {
+        for (let ticketId of dependencies) {
+          const ticketConfig = tickets[ticketId].config;
+
+          if (isSelected && Ticket.isCompound(ticketConfig)) {
+            const areAllTrue = [
+              ticketConfig.useForMetro,
+              ticketConfig.useForTat,
+            ]
+              .map((ticketId) => selectedTickets[ticketId])
+              .every((state) => state === true);
+
+            if (!areAllTrue) continue;
+          }
+
+          selectedTickets[ticketId] = isSelected;
+        }
+      }
 
       const { field, minCost, maxCost } = new Field(
-        state.tickets,
+        tickets,
         selectedTickets,
         state.appConfig,
       );

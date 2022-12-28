@@ -1,3 +1,5 @@
+import TicketId from './TicketId';
+
 export interface TicketConfig {
   name: string;
   price: number | null;
@@ -9,6 +11,7 @@ export interface TicketConfig {
   groupId: string;
   isSelectedByDefault: boolean;
   isIgnored: boolean;
+  dependencies?: TicketId[];
 }
 
 export interface SimpleTicketConfig extends TicketConfig {
