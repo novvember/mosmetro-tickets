@@ -7,6 +7,7 @@ import flatField from '../../utils/flatField';
 import { useAppSelector } from '../../store';
 import {
   fieldSelector,
+  isFieldLoadingSelector,
   maxCostSelector,
   minCostSelector,
 } from '../../store/selectors';
@@ -15,6 +16,7 @@ function Diagram() {
   const field = useAppSelector(fieldSelector);
   const minCost = useAppSelector(minCostSelector);
   const maxCost = useAppSelector(maxCostSelector);
+  const isLoading = useAppSelector(isFieldLoadingSelector)
 
   return (
     <div className="diagram">
@@ -41,6 +43,10 @@ function Diagram() {
       </Axis>
 
       <Field className="diagram__field">
+        {isLoading && (
+          <div className='diagram__loader' />
+        )}
+
         {field &&
           flatField(field).map((cell, i) => {
             return (

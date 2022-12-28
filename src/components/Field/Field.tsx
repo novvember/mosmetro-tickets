@@ -2,6 +2,7 @@ import React from 'react';
 import './Field.css';
 import { useAppSelector } from '../../store';
 import { fieldMaxSelector } from '../../store/selectors';
+import classNames from 'classnames';
 
 type FieldProps = {
   className: string;
@@ -13,7 +14,7 @@ function Field({ className, children }: FieldProps) {
 
   return (
     <div
-      className="field"
+      className={classNames("field", className)}
       style={{
         gridTemplateColumns: `repeat(${fieldMax + 1}, 1fr)`,
         gridTemplateRows: `repeat(${fieldMax + 1}, 1fr)`,

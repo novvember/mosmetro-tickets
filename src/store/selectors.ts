@@ -17,6 +17,9 @@ export const ticketGroupsConfigsSelector = (state: AppState) =>
 
 export const fieldSelector = (state: AppState) => state.tickets.field;
 
+export const isFieldLoadingSelector = (state: AppState) =>
+  state.tickets.isFieldLoading;
+
 export const minCostSelector = (state: AppState) => state.tickets.minCost;
 
 export const maxCostSelector = (state: AppState) => state.tickets.maxCost;
