@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d0fd1fb9.css",
-    "main.js": "/static/js/main.3a681a52.js",
+    "main.css": "/static/css/main.169f8458.css",
+    "main.js": "/static/js/main.f4c8c14a.js",
     "static/media/Merriweather-Regular.ttf": "/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
     "static/media/Merriweather-Light.ttf": "/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
     "static/media/Merriweather-BoldItalic.ttf": "/static/media/Merriweather-BoldItalic.16252c125b2ba7eaf70a.ttf",
@@ -36,13 +36,14 @@
     "static/media/icon_metro.svg": "/static/media/icon_metro.c4408cdf07f88bbe46a0.svg",
     "static/media/tat-icon.svg": "/static/media/tat-icon.27290eaf70074083c384.svg",
     "static/media/compound.svg": "/static/media/compound.9cba056a0ac30590c069.svg",
+    "static/media/loader-icon.svg": "/static/media/loader-icon.612ecc76c292e94d748b.svg",
     "static/media/close-icon.svg": "/static/media/close-icon.4f4048c183f04c990fca.svg",
     "static/media/bank-card.svg": "/static/media/bank-card.0c1761aeb3994769408f.svg",
-    "main.d0fd1fb9.css.map": "/static/css/main.d0fd1fb9.css.map",
-    "main.3a681a52.js.map": "/static/js/main.3a681a52.js.map"
+    "main.169f8458.css.map": "/static/css/main.169f8458.css.map",
+    "main.f4c8c14a.js.map": "/static/js/main.f4c8c14a.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0fd1fb9.css",
-    "static/js/main.3a681a52.js"
+    "static/css/main.169f8458.css",
+    "static/js/main.f4c8c14a.js"
   ]
 }
