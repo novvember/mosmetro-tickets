@@ -25,24 +25,19 @@
   padding-inline: 0.5em;
   border-radius: 0.5em;
   cursor: pointer;
-  transition: box-shadow 0.2s, color 0.2s, transform 0.2s;
-  background-color: #fff;
-
+  transition: opacity 0.2s;
+  outline: 1px solid #fff;
   text-decoration-color: #ccc;
   color: #aaa;
 }
 
 .ticket__input:checked + .ticket__label {
+  background-color: #fff;
   color: inherit;
-
-  --shadow-color: 0deg 0% 0%;
-  --shadow-elevation-low: 0.3px 0.4px 0.8px hsl(var(--shadow-color) / 0),
-    1.3px 1.6px 3.1px hsl(var(--shadow-color) / 0.19);
-  box-shadow: var(--shadow-elevation-low);
 }
 
 .ticket__label:hover {
-  transform: translateY(-0.15em);
+  opacity: 0.8;
 }
 
 .ticket__input:disabled + .ticket__label {

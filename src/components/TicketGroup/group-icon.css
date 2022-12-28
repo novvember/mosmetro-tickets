@@ -2,8 +2,9 @@
   content: '';
   margin-left: 0.3em;
   display: inline-block;
-  width: 1.2em;
-  height: 0.8em;
+  width: 1.8em;
+  height: 1em;
+  vertical-align: -0.15em;
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
