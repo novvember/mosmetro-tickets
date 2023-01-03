@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
 import { useAppDispatch } from '../../store';
-import { ticketsActions } from '../../store/actions';
 
 import buildTickets from '../../utils/buildTickets';
 import getInitialSelectedTickets from '../../utils/getInitialSelectedTickets';
@@ -15,6 +14,7 @@ import Tickets from '../Tickets/Tickets';
 import Info from '../Info/Info';
 
 import './App.css';
+import { initialized } from '../../store/slices/ticketsSlice';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const tickets = buildTickets(ticketsConfigs);
     const selectedTickets = getInitialSelectedTickets(tickets);
-    dispatch(ticketsActions.initializeTickets(tickets, selectedTickets));
+    dispatch(initialized({ tickets, selectedTickets }));
   }, [dispatch]);
 
   return (

@@ -1,13 +1,12 @@
-import CompoundTicket from '../../utils/CompoundTicket';
-import SimpleTicket from '../../utils/SimpleTicket';
 import './Ticket.css';
 import { ChangeEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { ticketsActions } from '../../store/actions';
 import { isSelectedSelector } from '../../store/selectors';
+import { calculationStarted, ticketsSelected } from '../../store/slices/ticketsSlice';
+import TicketData from '../../types/TicketData';
 
 type TicketProps = {
-  ticket: SimpleTicket | CompoundTicket;
+  ticket: TicketData;
 };
 
 function Ticket({ ticket }: TicketProps) {
@@ -16,8 +15,8 @@ function Ticket({ ticket }: TicketProps) {
   const dispatch = useAppDispatch();
 
   function handleChange(evt: ChangeEvent<HTMLInputElement>) {
-    dispatch(ticketsActions.startCalculation());
-    dispatch(ticketsActions.selectTickets(id, !isSelected));
+    dispatch(calculationStarted({}));
+    dispatch(ticketsSelected({ id, isSelected: !isSelected }));
   }
 
   return (

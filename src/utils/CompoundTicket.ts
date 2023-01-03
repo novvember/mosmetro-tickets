@@ -2,11 +2,11 @@ import Tickets from '../types/Tickets';
 import AppConfig from '../types/AppConfig';
 import { CompoundTicketConfig } from '../types/TicketConfig';
 import Ticket from './Ticket';
-import SimpleTicket from './SimpleTicket';
+import TicketData from '../types/TicketData';
 
 export default class CompoundTicket extends Ticket<CompoundTicketConfig> {
-  readonly useForMetro: SimpleTicket | CompoundTicket;
-  readonly useForTat: SimpleTicket | CompoundTicket;
+  readonly useForMetro: TicketData;
+  readonly useForTat: TicketData;
 
   constructor(
     ticketConfig: CompoundTicketConfig,

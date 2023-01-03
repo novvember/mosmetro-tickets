@@ -1,6 +1,5 @@
-import CompoundTicket from '../utils/CompoundTicket';
-import SimpleTicket from '../utils/SimpleTicket';
+import TicketData from './TicketData';
 
 export default interface Tickets {
-  [key: string]: SimpleTicket | CompoundTicket;
+  [key: string]: TicketData;
 }

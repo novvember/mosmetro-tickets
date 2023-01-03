@@ -1,16 +1,15 @@
+import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { combineReducers, createStore } from 'redux';
-import ticketsReducer, { TicketsState } from './ticketsReducer';
-
-const rootReducer = combineReducers({
-  tickets: ticketsReducer,
-});
-
-export const store = createStore(rootReducer);
-
+import ticketsSlice, { TicketsState } from './slices/ticketsSlice';
 export interface AppState {
   tickets: TicketsState;
 }
+
+export const store = configureStore({
+  reducer: {
+    tickets: ticketsSlice,
+  },
+});
 
 export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = () => useDispatch<AppDispatch>();

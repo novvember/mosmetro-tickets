@@ -19,13 +19,20 @@ export default function buildTickets(
       const isCompound = ticket.groupId === 'compound';
 
       if (!isCompound) {
-        tickets[id] = new SimpleTicket(ticket as SimpleTicketConfig, appConfig);
+        const { field, config } = new SimpleTicket(
+          ticket as SimpleTicketConfig,
+          appConfig,
+        );
+
+        tickets[id] = { field, config };
       } else {
-        tickets[id] = new CompoundTicket(
+        const { field, config } = new CompoundTicket(
           ticket as CompoundTicketConfig,
           appConfig,
           tickets,
         );
+
+        tickets[id] = { field, config };
       }
     });
 
