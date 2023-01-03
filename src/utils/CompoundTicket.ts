@@ -1,21 +1,21 @@
-import Tickets from '../types/Tickets';
 import AppConfig from '../types/AppConfig';
 import { CompoundTicketConfig } from '../types/TicketConfig';
 import Ticket from './Ticket';
-import TicketData from '../types/TicketData';
+import TicketsFields from '../types/TicketFields';
+import TicketField from '../types/TicketField';
 
 export default class CompoundTicket extends Ticket<CompoundTicketConfig> {
-  readonly useForMetro: TicketData;
-  readonly useForTat: TicketData;
+  readonly useForMetro: TicketField;
+  readonly useForTat: TicketField;
 
   constructor(
     ticketConfig: CompoundTicketConfig,
     appConfig: AppConfig,
-    simpleTickets: Tickets,
+    ticketsFields: TicketsFields,
   ) {
     super(ticketConfig, appConfig);
-    this.useForMetro = simpleTickets[ticketConfig.useForMetro];
-    this.useForTat = simpleTickets[ticketConfig.useForTat];
+    this.useForMetro = ticketsFields[ticketConfig.useForMetro];
+    this.useForTat = ticketsFields[ticketConfig.useForTat];
     super.calculate();
   }
 
@@ -26,8 +26,8 @@ export default class CompoundTicket extends Ticket<CompoundTicketConfig> {
     metroTrips: number;
     tatTrips: number;
   }) {
-    const metroCost = this.useForMetro.field[0][metroTrips];
-    const tatCost = this.useForTat.field[tatTrips][0];
+    const metroCost = this.useForMetro[0][metroTrips];
+    const tatCost = this.useForTat[tatTrips][0];
     if (metroCost === null || tatCost === null) return null;
     return metroCost + tatCost;
   }

@@ -1,5 +1,5 @@
-import Tickets from './Tickets';
+import { TicketConfig } from './TicketConfig';
 
-type TicketId = keyof Tickets;
+type TicketId = TicketConfig['id'];
 
 export default TicketId;

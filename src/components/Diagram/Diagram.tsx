@@ -6,17 +6,17 @@ import './Diagram.css';
 import flatField from '../../utils/flatField';
 import { useAppSelector } from '../../store';
 import {
-  fieldSelector,
-  isFieldLoadingSelector,
+  globalFieldSelector,
+  isLoadingSelector,
   maxCostSelector,
   minCostSelector,
 } from '../../store/selectors';
 
 function Diagram() {
-  const field = useAppSelector(fieldSelector);
+  const field = useAppSelector(globalFieldSelector);
   const minCost = useAppSelector(minCostSelector);
   const maxCost = useAppSelector(maxCostSelector);
-  const isLoading = useAppSelector(isFieldLoadingSelector)
+  const isLoading = useAppSelector(isLoadingSelector)
 
   return (
     <div className="diagram">

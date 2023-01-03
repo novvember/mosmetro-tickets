@@ -3,14 +3,14 @@ import { ChangeEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { isSelectedSelector } from '../../store/selectors';
 import { calculationStarted, ticketsSelected } from '../../store/slices/ticketsSlice';
-import TicketData from '../../types/TicketData';
+import { CompoundTicketConfig, SimpleTicketConfig } from '../../types/TicketConfig';
 
 type TicketProps = {
-  ticket: TicketData;
+  config: SimpleTicketConfig | CompoundTicketConfig;
 };
 
-function Ticket({ ticket }: TicketProps) {
-  const id = ticket.config.id;
+function Ticket({ config }: TicketProps) {
+  const id = config.id;
   const isSelected = useAppSelector(isSelectedSelector(id));
   const dispatch = useAppDispatch();
 
@@ -28,7 +28,7 @@ function Ticket({ ticket }: TicketProps) {
           checked={isSelected}
           onChange={handleChange}
         />
-        <span className="ticket__label">{ticket.config.name}</span>
+        <span className="ticket__label">{config.name}</span>
       </label>
     </li>
   );

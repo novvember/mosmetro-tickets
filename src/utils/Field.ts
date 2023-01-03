@@ -1,26 +1,30 @@
-import Tickets from '../types/Tickets';
 import Cell from '../types/Cell';
 import AppConfig from '../types/AppConfig';
-import SelectedTickets from '../types/SelectedTickets';
 import TicketId from '../types/TicketId';
-import FieldType from '../types/Field';
+import GlobalField from '../types/GlobalField';
+import TicketsConfigs from '../types/TicketsConfigs';
+import TicketsSelected from '../types/TicketsSelected';
+import TicketsFields from '../types/TicketFields';
 
 export default class Field {
   protected readonly appConfig: AppConfig;
-  protected readonly tickets: Tickets;
-  protected readonly selectedTickets: SelectedTickets;
-  field: FieldType;
+  protected readonly ticketsConfigs: TicketsConfigs;
+  protected readonly ticketsFields: TicketsFields;
+  protected readonly ticketsSelected: TicketsSelected;
+  field: GlobalField;
   minCost: number;
   maxCost: number;
 
   constructor(
-    tickets: Tickets,
-    selectedTickets: SelectedTickets,
+    ticketsConfigs: TicketsConfigs,
+    ticketsFields: TicketsFields,
+    ticketsSelected: TicketsSelected,
     appConfig: AppConfig,
   ) {
-    this.tickets = tickets;
+    this.ticketsConfigs = ticketsConfigs;
+    this.ticketsFields = ticketsFields;
     this.appConfig = appConfig;
-    this.selectedTickets = selectedTickets;
+    this.ticketsSelected = ticketsSelected;
     this.field = this.getInitialField();
     this.minCost = Infinity;
     this.maxCost = -Infinity;
@@ -28,7 +32,7 @@ export default class Field {
   }
 
   protected getInitialField() {
-    const initialField: FieldType = [];
+    const initialField: GlobalField = [];
 
     for (let y = 0; y <= this.appConfig.fieldMax; y++) {
       initialField[y] = [];
@@ -36,8 +40,8 @@ export default class Field {
       for (let x = 0; x <= this.appConfig.fieldMax; x++) {
         const cell: Cell = { metro: x, tat: y, variants: {} };
 
-        for (let id in this.tickets) {
-          cell.variants[id] = this.tickets[id].field[y][x];
+        for (let id in this.ticketsConfigs) {
+          cell.variants[id] = this.ticketsFields[id][y][x];
         }
 
         initialField[y][x] = cell;
@@ -64,12 +68,12 @@ export default class Field {
     let name: string = '';
 
     for (let id in variants) {
-      if (!this.selectedTickets[id] || variants[id] === null) continue;
+      if (!this.ticketsSelected[id] || variants[id] === null) continue;
 
       if (variants[id]! < cost) {
         cost = variants[id]!;
         minId = id;
-        name = this.tickets[id].config.name;
+        name = this.ticketsConfigs[id].name;
       }
     }
 

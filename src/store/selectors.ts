@@ -7,18 +7,19 @@ export const fieldMaxSelector = (state: AppState) =>
 export const fieldStepSelector = (state: AppState) =>
   state.tickets.appConfig.fieldStep;
 
-export const ticketsSelector = (state: AppState) => state.tickets.tickets;
+export const ticketsConfigsSelector = (state: AppState) =>
+  state.tickets.ticketsConfigs;
 
 export const isSelectedSelector = (id: TicketId) => (state: AppState) =>
-  state.tickets.selectedTickets?.[id];
+  state.tickets.ticketsSelected?.[id];
 
 export const ticketGroupsConfigsSelector = (state: AppState) =>
   state.tickets.ticketGroupsConfigs;
 
-export const fieldSelector = (state: AppState) => state.tickets.field;
+export const globalFieldSelector = (state: AppState) =>
+  state.tickets.globalField;
 
-export const isFieldLoadingSelector = (state: AppState) =>
-  state.tickets.isFieldLoading;
+export const isLoadingSelector = (state: AppState) => state.tickets.isLoading;
 
 export const minCostSelector = (state: AppState) => state.tickets.minCost;
 

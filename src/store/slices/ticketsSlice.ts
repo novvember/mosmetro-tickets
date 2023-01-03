@@ -1,35 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit';
 import AppConfig from '../../types/AppConfig';
-import FieldType from '../../types/Field';
-import SelectedTickets from '../../types/SelectedTickets';
+import GlobalField from '../../types/GlobalField';
+import TicketsFields from '../../types/TicketFields';
 import TicketGroupConfig from '../../types/TicketGroupConfig';
-import Tickets from '../../types/Tickets';
+import TicketsConfigs from '../../types/TicketsConfigs';
+import TicketsSelected from '../../types/TicketsSelected';
 import appConfig from '../../utils/appConfig';
 import Field from '../../utils/Field';
 import Ticket from '../../utils/Ticket';
 import { ticketGroupsConfig } from '../../utils/ticketsData';
 
 export interface TicketsState {
-  field: FieldType | null;
-  isFieldLoading: boolean;
-  areTicketsLoading: boolean;
+  globalField: GlobalField | null;
+  isLoading: boolean;
   minCost: number | null;
   maxCost: number | null;
   appConfig: AppConfig;
-  tickets: Tickets | null;
-  selectedTickets: SelectedTickets | null;
+  ticketsFields: TicketsFields | null;
+  ticketsSelected: TicketsSelected | null;
+  ticketsConfigs: TicketsConfigs | null;
   ticketGroupsConfigs: TicketGroupConfig[];
 }
 
 const initialState: TicketsState = {
-  field: null,
-  isFieldLoading: true,
-  areTicketsLoading: false,
+  globalField: null,
+  isLoading: true,
   minCost: null,
   maxCost: null,
   appConfig: appConfig,
-  tickets: null,
-  selectedTickets: null,
+  ticketsFields: null,
+  ticketsSelected: null,
+  ticketsConfigs: null,
   ticketGroupsConfigs: ticketGroupsConfig,
 };
 
@@ -38,64 +39,71 @@ const ticketsSlice = createSlice({
   initialState,
   reducers: {
     initialized(state, action) {
-      const { tickets, selectedTickets } = action.payload;
+      const { ticketsFields, ticketsConfigs, ticketsSelected } = action.payload;
 
       const { field, minCost, maxCost } = new Field(
-        tickets,
-        selectedTickets,
+        ticketsConfigs,
+        ticketsFields,
+        ticketsSelected,
         state.appConfig,
       );
 
-      state.isFieldLoading = false;
-      state.tickets = tickets;
-      state.selectedTickets = selectedTickets;
-      state.field = field;
+      state.isLoading = false;
+      state.ticketsFields = ticketsFields;
+      state.ticketsConfigs = ticketsConfigs;
+      state.ticketsSelected = ticketsSelected;
+      state.globalField = field;
       state.maxCost = maxCost;
       state.minCost = minCost;
     },
 
     calculationStarted(state, action) {
-      state.isFieldLoading = true;
+      state.isLoading = true;
     },
 
     ticketsSelected(state, action) {
-      if (!state.tickets) return;
-      if (!state.selectedTickets) return;
+      if (
+        !state.ticketsFields ||
+        !state.ticketsSelected ||
+        !state.ticketsConfigs
+      )
+        return;
 
       const { id, isSelected } = action.payload;
-      state.selectedTickets[id] = isSelected;
+      state.ticketsSelected[id] = isSelected;
 
-      const dependencies = state.tickets[id].config.dependencies;
+      const dependencies = state.ticketsConfigs[id].dependencies;
 
       if (dependencies) {
         for (let ticketId of dependencies) {
-          const ticketConfig = state.tickets[ticketId].config;
+          const ticketConfig = state.ticketsConfigs[ticketId];
 
           if (isSelected && Ticket.isCompound(ticketConfig)) {
             const areAllTrue = [
               ticketConfig.useForMetro,
               ticketConfig.useForTat,
             ]
-              .map((ticketId) => state.selectedTickets![ticketId])
+              .map((ticketId) => state.ticketsSelected![ticketId])
               .every((state) => state === true);
 
             if (!areAllTrue) continue;
           }
 
-          state.selectedTickets[ticketId] = isSelected;
+          state.ticketsSelected[ticketId] = isSelected;
         }
       }
 
       const { field, minCost, maxCost } = new Field(
-        state.tickets as Tickets,
-        state.selectedTickets,
+        state.ticketsConfigs,
+        state.ticketsFields,
+        state.ticketsSelected,
         state.appConfig,
       );
 
-      state.field = field;
+      state.globalField = field;
       state.minCost = minCost;
       state.maxCost = maxCost;
-      state.isFieldLoading = false;
+      state.isLoading = false;
     },
   },
 });

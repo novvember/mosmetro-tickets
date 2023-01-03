@@ -1,4 +1,3 @@
-import Tickets from '../types/Tickets';
 import {
   CompoundTicketConfig,
   SimpleTicketConfig,
@@ -6,35 +5,32 @@ import {
 import CompoundTicket from './CompoundTicket';
 import appConfig from './appConfig';
 import SimpleTicket from './SimpleTicket';
+import TicketsConfigs from '../types/TicketsConfigs';
+import TicketsFields from '../types/TicketFields';
+import Ticket from './Ticket';
+import TicketsSelected from '../types/TicketsSelected';
 
 export default function buildTickets(
-  ticketConfigs: Array<SimpleTicketConfig | CompoundTicketConfig>,
+  configs: Array<SimpleTicketConfig | CompoundTicketConfig>,
 ) {
-  const tickets: Tickets = {};
+  const ticketsFields: TicketsFields = {};
+  const ticketsConfigs: TicketsConfigs = {};
+  const ticketsSelected: TicketsSelected = {};
 
-  ticketConfigs
-    .filter((ticket) => ticket.isIgnored === false)
-    .forEach((ticket) => {
-      const id = ticket.id;
-      const isCompound = ticket.groupId === 'compound';
+  configs
+    .filter((config) => config.isIgnored === false)
+    .forEach((config) => {
+      const id = config.id;
+      const isCompound = Ticket.isCompound(config);
 
-      if (!isCompound) {
-        const { field, config } = new SimpleTicket(
-          ticket as SimpleTicketConfig,
-          appConfig,
-        );
+      const { field } = isCompound
+        ? new CompoundTicket(config, appConfig, ticketsFields)
+        : new SimpleTicket(config, appConfig);
 
-        tickets[id] = { field, config };
-      } else {
-        const { field, config } = new CompoundTicket(
-          ticket as CompoundTicketConfig,
-          appConfig,
-          tickets,
-        );
-
-        tickets[id] = { field, config };
-      }
+      ticketsFields[id] = field;
+      ticketsConfigs[id] = config;
+      ticketsSelected[id] = config.isSelectedByDefault;
     });
 
-  return tickets;
+  return { ticketsFields, ticketsConfigs, ticketsSelected };
 }
