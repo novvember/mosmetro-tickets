@@ -2,9 +2,6 @@ import { useEffect } from 'react';
 
 import { useAppDispatch } from '../../store';
 
-import buildTickets from '../../utils/buildTickets';
-import { ticketsConfigs } from '../../utils/ticketsData';
-
 import Diagram from '../Diagram/Diagram';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -13,13 +10,18 @@ import Tickets from '../Tickets/Tickets';
 import Info from '../Info/Info';
 
 import './App.css';
-import { initialized } from '../../store/slices/ticketsSlice';
+import { buildField, initializeTickets } from '../../store/slices/ticketsSlice';
 
 function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(initialized(buildTickets(ticketsConfigs)));
+    async function initialize() {
+      await dispatch(initializeTickets());
+      await dispatch(buildField());
+    }
+
+    initialize();
   }, [dispatch]);
 
   return (

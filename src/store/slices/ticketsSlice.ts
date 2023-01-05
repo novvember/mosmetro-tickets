@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { AppState } from '..';
 import AppConfig from '../../types/AppConfig';
 import GlobalField from '../../types/GlobalField';
 import TicketsFields from '../../types/TicketFields';
@@ -6,13 +7,15 @@ import TicketGroupConfig from '../../types/TicketGroupConfig';
 import TicketsConfigs from '../../types/TicketsConfigs';
 import TicketsSelected from '../../types/TicketsSelected';
 import appConfig from '../../utils/appConfig';
+import buildTickets from '../../utils/buildTickets';
 import Field from '../../utils/Field';
 import Ticket from '../../utils/Ticket';
 import { ticketGroupsConfig } from '../../utils/ticketsData';
+import { ticketsConfigs as configs } from '../../utils/ticketsData';
 
 export interface TicketsState {
   globalField: GlobalField | null;
-  isLoading: boolean;
+  isFieldLoading: boolean;
   minCost: number | null;
   maxCost: number | null;
   appConfig: AppConfig;
@@ -24,7 +27,7 @@ export interface TicketsState {
 
 const initialState: TicketsState = {
   globalField: null,
-  isLoading: true,
+  isFieldLoading: true,
   minCost: null,
   maxCost: null,
   appConfig: appConfig,
@@ -34,33 +37,42 @@ const initialState: TicketsState = {
   ticketGroupsConfigs: ticketGroupsConfig,
 };
 
-const ticketsSlice = createSlice({
-  name: 'tickets',
-  initialState,
-  reducers: {
-    initialized(state, action) {
-      const { ticketsFields, ticketsConfigs, ticketsSelected } = action.payload;
+export const initializeTickets = createAsyncThunk(
+  'tickets/initialize',
+  async () => {
+    return buildTickets(configs);
+  },
+);
 
+export const buildField = createAsyncThunk(
+  'tickets/buildField',
+  async (_, { getState }) => {
+    const state = getState() as AppState;
+
+    const {
+      ticketsFields,
+      ticketsConfigs,
+      ticketsSelected,
+      appConfig,
+    } = state.tickets;
+
+    if (ticketsFields && ticketsConfigs && ticketsSelected) {
       const { field, minCost, maxCost } = new Field(
         ticketsConfigs,
         ticketsFields,
         ticketsSelected,
-        state.appConfig,
+        appConfig,
       );
 
-      state.isLoading = false;
-      state.ticketsFields = ticketsFields;
-      state.ticketsConfigs = ticketsConfigs;
-      state.ticketsSelected = ticketsSelected;
-      state.globalField = field;
-      state.maxCost = maxCost;
-      state.minCost = minCost;
-    },
+      return { globalField: field, minCost, maxCost };
+    }
+  },
+);
 
-    calculationStarted(state, action) {
-      state.isLoading = true;
-    },
-
+const ticketsSlice = createSlice({
+  name: 'tickets',
+  initialState,
+  reducers: {
     ticketsSelected(state, action) {
       if (
         !state.ticketsFields ||
@@ -92,26 +104,36 @@ const ticketsSlice = createSlice({
           state.ticketsSelected[ticketId] = isSelected;
         }
       }
-
-      const { field, minCost, maxCost } = new Field(
-        state.ticketsConfigs,
-        state.ticketsFields,
-        state.ticketsSelected,
-        state.appConfig,
-      );
-
-      state.globalField = field;
-      state.minCost = minCost;
-      state.maxCost = maxCost;
-      state.isLoading = false;
     },
+  },
+
+  extraReducers(builder) {
+    builder
+      .addCase(initializeTickets.fulfilled, (state, action) => {
+        const {
+          ticketsFields,
+          ticketsConfigs,
+          ticketsSelected,
+        } = action.payload;
+        state.ticketsFields = ticketsFields;
+        state.ticketsConfigs = ticketsConfigs;
+        state.ticketsSelected = ticketsSelected;
+      })
+      .addCase(buildField.pending, (state, action) => {
+        state.isFieldLoading = true;
+      })
+      .addCase(buildField.fulfilled, (state, action) => {
+        if (action.payload) {
+          const { globalField, minCost, maxCost } = action.payload;
+          state.globalField = globalField;
+          state.minCost = minCost;
+          state.maxCost = maxCost;
+        }
+        state.isFieldLoading = false;
+      });
   },
 });
 
 export default ticketsSlice.reducer;
 
-export const {
-  initialized,
-  calculationStarted,
-  ticketsSelected,
-} = ticketsSlice.actions;
+export const { ticketsSelected } = ticketsSlice.actions;

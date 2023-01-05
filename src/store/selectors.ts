@@ -19,7 +19,7 @@ export const ticketGroupsConfigsSelector = (state: AppState) =>
 export const globalFieldSelector = (state: AppState) =>
   state.tickets.globalField;
 
-export const isLoadingSelector = (state: AppState) => state.tickets.isLoading;
+export const isLoadingSelector = (state: AppState) => state.tickets.isFieldLoading;
 
 export const minCostSelector = (state: AppState) => state.tickets.minCost;
 
