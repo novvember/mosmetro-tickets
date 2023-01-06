@@ -5,7 +5,7 @@ import Field from '../Field/Field';
 import './Diagram.css';
 import flatField from '../../utils/flatField';
 import { useAppSelector } from '../../store';
-import { selectGlobalField, selectIsFieldLoading, selectMaxCost, selectMinCost } from '../../store/slices/ticketsSlice';
+import { selectGlobalField, selectIsFieldLoading, selectMaxCost, selectMinCost } from '../../store/ticketsSlice';
 
 function Diagram() {
   const field = useAppSelector(selectGlobalField);

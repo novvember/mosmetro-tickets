@@ -6,7 +6,7 @@ import Ticket from '../Ticket/Ticket';
 import './TicketGroup.css';
 import './group-icon.css';
 import { useAppSelector } from '../../store';
-import { selectTicketsConfigs } from '../../store/slices/ticketsSlice';
+import { selectTicketsConfigs } from '../../store/ticketsSlice';
 
 type TicketGroupProps = {
   group: TicketGroupConfig;

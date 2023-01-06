@@ -1,18 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { AppState } from '..';
-import AppConfig from '../../types/AppConfig';
-import GlobalField from '../../types/GlobalField';
-import TicketsFields from '../../types/TicketFields';
-import TicketGroupConfig from '../../types/TicketGroupConfig';
-import TicketId from '../../types/TicketId';
-import TicketsConfigs from '../../types/TicketsConfigs';
-import TicketsSelected from '../../types/TicketsSelected';
-import appConfig from '../../utils/appConfig';
-import buildTickets from '../../utils/buildTickets';
-import Field from '../../utils/Field';
-import Ticket from '../../utils/Ticket';
-import { ticketGroupsConfig } from '../../utils/ticketsData';
-import { ticketsConfigs as configs } from '../../utils/ticketsData';
+import { AppState } from '.';
+import AppConfig from '../types/AppConfig';
+import GlobalField from '../types/GlobalField';
+import TicketsFields from '../types/TicketFields';
+import TicketGroupConfig from '../types/TicketGroupConfig';
+import TicketId from '../types/TicketId';
+import TicketsConfigs from '../types/TicketsConfigs';
+import TicketsSelected from '../types/TicketsSelected';
+import appConfig from '../utils/appConfig';
+import buildTickets from '../utils/buildTickets';
+import Field from '../utils/Field';
+import Ticket from '../utils/Ticket';
+import { ticketGroupsConfig } from '../utils/ticketsData';
+import { ticketsConfigs as configs } from '../utils/ticketsData';
 
 export interface TicketsState {
   globalField: GlobalField | null;

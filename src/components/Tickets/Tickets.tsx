@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../store';
-import { selectTicketGroupsConfigs } from '../../store/slices/ticketsSlice';
+import { selectTicketGroupsConfigs } from '../../store/ticketsSlice';
 import TicketGroup from '../TicketGroup/TicketGroup';
 
 import './Tickets.css';

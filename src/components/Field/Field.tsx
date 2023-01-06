@@ -2,7 +2,7 @@ import React from 'react';
 import './Field.css';
 import { useAppSelector } from '../../store';
 import classNames from 'classnames';
-import { selectFieldMax } from '../../store/slices/ticketsSlice';
+import { selectFieldMax } from '../../store/ticketsSlice';
 
 type FieldProps = {
   className: string;

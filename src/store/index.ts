@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import ticketsSlice, { TicketsState } from './slices/ticketsSlice';
+import ticketsSlice, { TicketsState } from './ticketsSlice';
 export interface AppState {
   tickets: TicketsState;
 }
