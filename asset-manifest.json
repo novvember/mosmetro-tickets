@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.490461ec.css",
-    "main.js": "/static/js/main.e15960c0.js",
+    "main.js": "/static/js/main.0a46bf8e.js",
     "static/media/Merriweather-Regular.ttf": "/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
     "static/media/Merriweather-Light.ttf": "/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
     "static/media/Merriweather-BoldItalic.ttf": "/static/media/Merriweather-BoldItalic.16252c125b2ba7eaf70a.ttf",
@@ -40,10 +40,10 @@
     "static/media/close-icon.svg": "/static/media/close-icon.4f4048c183f04c990fca.svg",
     "static/media/bank-card.svg": "/static/media/bank-card.0c1761aeb3994769408f.svg",
     "main.490461ec.css.map": "/static/css/main.490461ec.css.map",
-    "main.e15960c0.js.map": "/static/js/main.e15960c0.js.map"
+    "main.0a46bf8e.js.map": "/static/js/main.0a46bf8e.js.map"
   },
   "entrypoints": [
     "static/css/main.490461ec.css",
-    "static/js/main.e15960c0.js"
+    "static/js/main.0a46bf8e.js"
   ]
 }
