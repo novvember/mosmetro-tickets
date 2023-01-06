@@ -1,20 +1,16 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AppState } from '.';
-import AppConfig from '../types/AppConfig';
-import GlobalField from '../types/GlobalField';
 import TicketsFields from '../types/TicketFields';
 import TicketGroupConfig from '../types/TicketGroupConfig';
 import TicketId from '../types/TicketId';
 import TicketsConfigs from '../types/TicketsConfigs';
 import TicketsSelected from '../types/TicketsSelected';
-import appConfig from '../utils/appConfig';
 import buildTickets from '../utils/buildTickets';
 import Ticket from '../utils/Ticket';
 import { ticketGroupsConfig } from '../utils/ticketsData';
 import { ticketsConfigs as configs } from '../utils/ticketsData';
 
 export interface TicketsState {
-  appConfig: AppConfig;
   ticketsFields: TicketsFields | null;
   ticketsSelected: TicketsSelected | null;
   ticketsConfigs: TicketsConfigs | null;
@@ -22,7 +18,6 @@ export interface TicketsState {
 }
 
 const initialState: TicketsState = {
-  appConfig: appConfig,
   ticketsFields: null,
   ticketsSelected: null,
   ticketsConfigs: null,
@@ -35,7 +30,6 @@ export const initializeTickets = createAsyncThunk(
     return buildTickets(configs);
   },
 );
-
 
 const ticketsSlice = createSlice({
   name: 'tickets',
@@ -76,29 +70,18 @@ const ticketsSlice = createSlice({
   },
 
   extraReducers(builder) {
-    builder
-      .addCase(initializeTickets.fulfilled, (state, action) => {
-        const {
-          ticketsFields,
-          ticketsConfigs,
-          ticketsSelected,
-        } = action.payload;
-        state.ticketsFields = ticketsFields;
-        state.ticketsConfigs = ticketsConfigs;
-        state.ticketsSelected = ticketsSelected;
-      })
+    builder.addCase(initializeTickets.fulfilled, (state, action) => {
+      const { ticketsFields, ticketsConfigs, ticketsSelected } = action.payload;
+      state.ticketsFields = ticketsFields;
+      state.ticketsConfigs = ticketsConfigs;
+      state.ticketsSelected = ticketsSelected;
+    });
   },
 });
 
 export default ticketsSlice.reducer;
 
 export const { ticketsSelected } = ticketsSlice.actions;
-
-export const selectFieldMax = (state: AppState) =>
-  state.tickets.appConfig.fieldMax;
-
-export const selectFieldStep = (state: AppState) =>
-  state.tickets.appConfig.fieldStep;
 
 export const selectTicketsConfigs = (state: AppState) =>
   state.tickets.ticketsConfigs;
@@ -109,4 +92,8 @@ export const selectIsSelected = (state: AppState, ticketId: TicketId) =>
 export const selectTicketGroupsConfigs = (state: AppState) =>
   state.tickets.ticketGroupsConfigs;
 
+export const selectTicketsFields = (state: AppState) =>
+  state.tickets.ticketsFields;
 
+export const selectTicketsSelected = (state: AppState) =>
+  state.tickets.ticketsSelected;

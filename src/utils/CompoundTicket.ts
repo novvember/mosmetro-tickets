@@ -1,8 +1,8 @@
-import AppConfig from '../types/AppConfig';
 import { CompoundTicketConfig } from '../types/TicketConfig';
 import Ticket from './Ticket';
 import TicketsFields from '../types/TicketFields';
 import TicketField from '../types/TicketField';
+import { AppConfigState } from '../store/appConfigSlice';
 
 export default class CompoundTicket extends Ticket<CompoundTicketConfig> {
   readonly useForMetro: TicketField;
@@ -10,7 +10,7 @@ export default class CompoundTicket extends Ticket<CompoundTicketConfig> {
 
   constructor(
     ticketConfig: CompoundTicketConfig,
-    appConfig: AppConfig,
+    appConfig: AppConfigState,
     ticketsFields: TicketsFields,
   ) {
     super(ticketConfig, appConfig);

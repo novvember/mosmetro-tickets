@@ -2,6 +2,12 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AppState } from '.';
 import GlobalField from '../types/GlobalField';
 import Field from '../utils/Field';
+import { selectAppConfig } from './appConfigSlice';
+import {
+  selectTicketsConfigs,
+  selectTicketsFields,
+  selectTicketsSelected,
+} from './ticketsSlice';
 
 export interface GlobalFieldState {
   field: GlobalField | null;
@@ -22,12 +28,10 @@ export const buildField = createAsyncThunk(
   async (_, { getState }) => {
     const state = getState() as AppState;
 
-    const {
-      ticketsFields,
-      ticketsConfigs,
-      ticketsSelected,
-      appConfig,
-    } = state.tickets;
+    const ticketsFields = selectTicketsFields(state);
+    const ticketsConfigs = selectTicketsConfigs(state);
+    const ticketsSelected = selectTicketsSelected(state);
+    const appConfig = selectAppConfig(state);
 
     if (ticketsFields && ticketsConfigs && ticketsSelected) {
       const { field, minCost, maxCost } = new Field(

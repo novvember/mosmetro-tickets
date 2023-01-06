@@ -1,13 +1,13 @@
 import Cell from '../types/Cell';
-import AppConfig from '../types/AppConfig';
 import TicketId from '../types/TicketId';
 import GlobalField from '../types/GlobalField';
 import TicketsConfigs from '../types/TicketsConfigs';
 import TicketsSelected from '../types/TicketsSelected';
 import TicketsFields from '../types/TicketFields';
+import { AppConfigState } from '../store/appConfigSlice';
 
 export default class Field {
-  protected readonly appConfig: AppConfig;
+  protected readonly appConfig: AppConfigState;
   protected readonly ticketsConfigs: TicketsConfigs;
   protected readonly ticketsFields: TicketsFields;
   protected readonly ticketsSelected: TicketsSelected;
@@ -19,7 +19,7 @@ export default class Field {
     ticketsConfigs: TicketsConfigs,
     ticketsFields: TicketsFields,
     ticketsSelected: TicketsSelected,
-    appConfig: AppConfig,
+    appConfig: AppConfigState,
   ) {
     this.ticketsConfigs = ticketsConfigs;
     this.ticketsFields = ticketsFields;

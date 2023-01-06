@@ -1,9 +1,9 @@
-import AppConfig from '../types/AppConfig';
+import { AppConfigState } from '../store/appConfigSlice';
 import { SimpleTicketConfig } from '../types/TicketConfig';
 import Ticket from './Ticket';
 
 export default class SimpleTicket extends Ticket<SimpleTicketConfig> {
-  constructor(ticket: SimpleTicketConfig, config: AppConfig) {
+  constructor(ticket: SimpleTicketConfig, config: AppConfigState) {
     super(ticket, config);
     super.calculate();
   }

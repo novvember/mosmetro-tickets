@@ -1,6 +1,6 @@
-import AppConfig from '../types/AppConfig';
+import { AppConfigState } from '../store/appConfigSlice';
 
-const appConfig: AppConfig = {
+const appConfig: AppConfigState = {
   fieldMax: 50,
   fieldStep: 5,
   daysInPeriod: 30,

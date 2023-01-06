@@ -1,14 +1,14 @@
+import { AppConfigState } from '../store/appConfigSlice';
 import {
   CompoundTicketConfig,
   SimpleTicketConfig,
 } from '../types/TicketConfig';
-import AppConfig from '../types/AppConfig';
 
 export default abstract class Ticket<
   T extends SimpleTicketConfig | CompoundTicketConfig
 > {
   readonly config: T;
-  protected readonly appConfig: AppConfig;
+  protected readonly appConfig: AppConfigState;
   readonly field: Array<Array<number | null>>;
 
   static isCompound(
@@ -17,7 +17,7 @@ export default abstract class Ticket<
     return ticketConfig.groupId === 'compound';
   }
 
-  constructor(ticket: T, appConfig: AppConfig) {
+  constructor(ticket: T, appConfig: AppConfigState) {
     this.config = ticket;
     this.appConfig = appConfig;
     this.field = this.getEmptyField();

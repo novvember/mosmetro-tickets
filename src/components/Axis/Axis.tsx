@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useAppSelector } from '../../store';
 
 import './Axis.css';
-import { selectFieldMax, selectFieldStep } from '../../store/ticketsSlice';
+import { selectFieldMax, selectFieldStep } from '../../store/appConfigSlice';
 
 type AxisProps = {
   isX?: boolean;
