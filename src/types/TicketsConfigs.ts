@@ -1,9 +1,5 @@
 import { CompoundTicketConfig, SimpleTicketConfig } from './TicketConfig';
-import TicketId from './TicketId';
 
-type TicketsConfigs = Record<
-  TicketId,
-  SimpleTicketConfig | CompoundTicketConfig
->;
+type TicketsConfigs = Array<SimpleTicketConfig | CompoundTicketConfig>;
 
 export default TicketsConfigs;

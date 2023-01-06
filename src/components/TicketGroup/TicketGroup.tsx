@@ -16,7 +16,7 @@ function TicketGroup({ group }: TicketGroupProps) {
   const ticketsConfigs = useAppSelector(selectTicketsConfigs);
 
   const ticketsByGroup = ticketsConfigs
-    ? Object.values(ticketsConfigs).filter(
+    ? ticketsConfigs.filter(
       (config) => config.groupId === group.id,
     )
     : null;

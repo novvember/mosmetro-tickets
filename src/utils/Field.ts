@@ -1,10 +1,10 @@
 import Cell from '../types/Cell';
 import TicketId from '../types/TicketId';
 import GlobalField from '../types/GlobalField';
-import TicketsConfigs from '../types/TicketsConfigs';
 import TicketsSelected from '../types/TicketsSelected';
 import TicketsFields from '../types/TicketFields';
 import { AppConfigState } from '../store/appConfigSlice';
+import TicketsConfigs from '../types/TicketsConfigs';
 
 export default class Field {
   protected readonly appConfig: AppConfigState;
@@ -40,7 +40,7 @@ export default class Field {
       for (let x = 0; x <= this.appConfig.fieldMax; x++) {
         const cell: Cell = { metro: x, tat: y, variants: {} };
 
-        for (let id in this.ticketsConfigs) {
+        for (let { id } of this.ticketsConfigs) {
           cell.variants[id] = this.ticketsFields[id][y][x];
         }
 
@@ -73,7 +73,8 @@ export default class Field {
       if (variants[id]! < cost) {
         cost = variants[id]!;
         minId = id;
-        name = this.ticketsConfigs[id].name;
+        name =
+          this.ticketsConfigs.find((config) => config.id === id)?.name ?? '';
       }
     }
 
