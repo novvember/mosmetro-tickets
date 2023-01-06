@@ -1,11 +1,11 @@
 import { useAppSelector } from '../../store';
-import { ticketGroupsConfigsSelector } from '../../store/selectors';
+import { selectTicketGroupsConfigs } from '../../store/slices/ticketsSlice';
 import TicketGroup from '../TicketGroup/TicketGroup';
 
 import './Tickets.css';
 
 function Tickets() {
-  const ticketGroupsConfigs = useAppSelector(ticketGroupsConfigsSelector);
+  const ticketGroupsConfigs = useAppSelector(selectTicketGroupsConfigs);
 
   return (
     <form className="tickets">

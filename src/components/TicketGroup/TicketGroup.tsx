@@ -6,14 +6,14 @@ import Ticket from '../Ticket/Ticket';
 import './TicketGroup.css';
 import './group-icon.css';
 import { useAppSelector } from '../../store';
-import { ticketsConfigsSelector } from '../../store/selectors';
+import { selectTicketsConfigs } from '../../store/slices/ticketsSlice';
 
 type TicketGroupProps = {
   group: TicketGroupConfig;
 };
 
 function TicketGroup({ group }: TicketGroupProps) {
-  const ticketsConfigs = useAppSelector(ticketsConfigsSelector);
+  const ticketsConfigs = useAppSelector(selectTicketsConfigs);
 
   const ticketsByGroup = ticketsConfigs
     ? Object.values(ticketsConfigs).filter(

@@ -1,8 +1,7 @@
 import './Ticket.css';
 import { ChangeEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { isSelectedSelector } from '../../store/selectors';
-import { buildField, ticketsSelected } from '../../store/slices/ticketsSlice';
+import { buildField, selectIsSelected, ticketsSelected } from '../../store/slices/ticketsSlice';
 import { CompoundTicketConfig, SimpleTicketConfig } from '../../types/TicketConfig';
 
 type TicketProps = {
@@ -11,7 +10,7 @@ type TicketProps = {
 
 function Ticket({ config }: TicketProps) {
   const id = config.id;
-  const isSelected = useAppSelector(isSelectedSelector(id));
+  const isSelected = useAppSelector((state) => selectIsSelected(state, id));
   const dispatch = useAppDispatch();
 
   function handleChange(evt: ChangeEvent<HTMLInputElement>) {

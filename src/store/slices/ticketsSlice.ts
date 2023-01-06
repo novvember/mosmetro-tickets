@@ -4,6 +4,7 @@ import AppConfig from '../../types/AppConfig';
 import GlobalField from '../../types/GlobalField';
 import TicketsFields from '../../types/TicketFields';
 import TicketGroupConfig from '../../types/TicketGroupConfig';
+import TicketId from '../../types/TicketId';
 import TicketsConfigs from '../../types/TicketsConfigs';
 import TicketsSelected from '../../types/TicketsSelected';
 import appConfig from '../../utils/appConfig';
@@ -137,3 +138,27 @@ const ticketsSlice = createSlice({
 export default ticketsSlice.reducer;
 
 export const { ticketsSelected } = ticketsSlice.actions;
+
+export const selectFieldMax = (state: AppState) =>
+  state.tickets.appConfig.fieldMax;
+
+export const selectFieldStep = (state: AppState) =>
+  state.tickets.appConfig.fieldStep;
+
+export const selectTicketsConfigs = (state: AppState) =>
+  state.tickets.ticketsConfigs;
+
+export const selectIsSelected = (state: AppState, ticketId: TicketId) =>
+  state.tickets.ticketsSelected?.[ticketId];
+
+export const selectTicketGroupsConfigs = (state: AppState) =>
+  state.tickets.ticketGroupsConfigs;
+
+export const selectGlobalField = (state: AppState) => state.tickets.globalField;
+
+export const selectIsFieldLoading = (state: AppState) =>
+  state.tickets.isFieldLoading;
+
+export const selectMinCost = (state: AppState) => state.tickets.minCost;
+
+export const selectMaxCost = (state: AppState) => state.tickets.maxCost;

@@ -2,9 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { useAppSelector } from '../../store';
-import { fieldMaxSelector, fieldStepSelector } from '../../store/selectors';
 
 import './Axis.css';
+import { selectFieldMax, selectFieldStep } from '../../store/slices/ticketsSlice';
 
 type AxisProps = {
   isX?: boolean;
@@ -15,8 +15,8 @@ type AxisProps = {
 
 function Axis({ isX = false, isY = false, className, children }: AxisProps) {
   const MIN = 0;
-  const fieldMax = useAppSelector(fieldMaxSelector);
-  const fieldStep = useAppSelector(fieldStepSelector);
+  const fieldMax = useAppSelector(selectFieldMax);
+  const fieldStep = useAppSelector(selectFieldStep);
 
   const numbers = new Array((fieldMax - MIN) / fieldStep + 1)
     .fill(0)

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Field.css';
 import { useAppSelector } from '../../store';
-import { fieldMaxSelector } from '../../store/selectors';
 import classNames from 'classnames';
+import { selectFieldMax } from '../../store/slices/ticketsSlice';
 
 type FieldProps = {
   className: string;
@@ -10,7 +10,7 @@ type FieldProps = {
 };
 
 function Field({ className, children }: FieldProps) {
-  const fieldMax = useAppSelector(fieldMaxSelector);
+  const fieldMax = useAppSelector(selectFieldMax);
 
   return (
     <div
