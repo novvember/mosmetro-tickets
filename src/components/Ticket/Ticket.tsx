@@ -1,8 +1,9 @@
 import './Ticket.css';
 import { ChangeEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { buildField, selectIsSelected, ticketsSelected } from '../../store/ticketsSlice';
+import { selectIsSelected, ticketsSelected } from '../../store/ticketsSlice';
 import { CompoundTicketConfig, SimpleTicketConfig } from '../../types/TicketConfig';
+import { buildField } from '../../store/globalFieldSlice';
 
 type TicketProps = {
   config: SimpleTicketConfig | CompoundTicketConfig;

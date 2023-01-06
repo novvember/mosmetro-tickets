@@ -10,7 +10,8 @@ import Tickets from '../Tickets/Tickets';
 import Info from '../Info/Info';
 
 import './App.css';
-import { buildField, initializeTickets } from '../../store/ticketsSlice';
+import { initializeTickets } from '../../store/ticketsSlice';
+import { buildField } from '../../store/globalFieldSlice';
 
 function App() {
   const dispatch = useAppDispatch();
