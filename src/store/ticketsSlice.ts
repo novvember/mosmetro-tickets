@@ -1,22 +1,21 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AppState } from '.';
-import {
-  CompoundTicketConfig,
-  SimpleTicketConfig,
-} from '../types/TicketConfig';
 import TicketsFields from '../types/TicketFields';
 import TicketGroupConfig from '../types/TicketGroupConfig';
 import TicketId from '../types/TicketId';
+import TicketsConfigs from '../types/TicketsConfigs';
 import TicketsSelected from '../types/TicketsSelected';
-import buildTickets from '../utils/buildTickets';
+import CompoundTicket from '../utils/CompoundTicket';
+import SimpleTicket from '../utils/SimpleTicket';
 import Ticket from '../utils/Ticket';
 import { ticketGroupsConfig, ticketsConfigs } from '../utils/ticketsData';
 import { ticketsConfigs as configs } from '../utils/ticketsData';
+import { selectAppConfig } from './appConfigSlice';
 
 export interface TicketsState {
   fields: TicketsFields | null;
   selected: TicketsSelected | null;
-  configs: Array<SimpleTicketConfig | CompoundTicketConfig> | null;
+  configs: TicketsConfigs;
   groupsConfigs: TicketGroupConfig[];
 }
 
@@ -29,8 +28,28 @@ const initialState: TicketsState = {
 
 export const initializeTickets = createAsyncThunk(
   'tickets/initialize',
-  async () => {
-    return buildTickets(configs);
+  async (_, { getState }) => {
+    const state = getState() as AppState;
+    const appConfig = selectAppConfig(state);
+    const fields: TicketsFields = {};
+    const selected: TicketsSelected = {};
+    const filteredConfigs = configs.filter(
+      (config) => config.isIgnored === false,
+    );
+
+    filteredConfigs.forEach((config) => {
+      const id = config.id;
+      const isCompound = Ticket.isCompound(config);
+
+      const { field } = isCompound
+        ? new CompoundTicket(config, appConfig, fields)
+        : new SimpleTicket(config, appConfig);
+
+      fields[id] = field;
+      selected[id] = config.isSelectedByDefault;
+    });
+
+    return { fields, configs: filteredConfigs, selected };
   },
 );
 

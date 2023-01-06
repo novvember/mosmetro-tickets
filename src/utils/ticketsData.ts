@@ -1,11 +1,6 @@
-import {
-  SimpleTicketConfig,
-  CompoundTicketConfig,
-} from '../types/TicketConfig';
+import TicketsConfigs from '../types/TicketsConfigs';
 
-export const ticketsConfigs: Array<
-  SimpleTicketConfig | CompoundTicketConfig
-> = [
+export const ticketsConfigs: TicketsConfigs = [
   // Единые с лимитом поездок
   {
     name: 'Единый на 1 поездку',
