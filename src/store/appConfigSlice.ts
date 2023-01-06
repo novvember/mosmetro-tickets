@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AppState } from '.';
-import appConfig from '../utils/appConfig';
+import appConfig from '../data/appConfig';
 
 export interface AppConfigState {
   fieldMax: number;

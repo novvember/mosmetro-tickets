@@ -8,8 +8,8 @@ import TicketsSelected from '../types/TicketsSelected';
 import CompoundTicket from '../utils/CompoundTicket';
 import SimpleTicket from '../utils/SimpleTicket';
 import Ticket from '../utils/Ticket';
-import { ticketGroupsConfig, ticketsConfigs } from '../utils/ticketsData';
-import { ticketsConfigs as configs } from '../utils/ticketsData';
+import { ticketGroupsConfig, ticketsConfigs } from '../data/ticketsData';
+import { ticketsConfigs as configs } from '../data/ticketsData';
 import { selectAppConfig } from './appConfigSlice';
 
 export interface TicketsState {
