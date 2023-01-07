@@ -1,6 +1,7 @@
 import {
   createAsyncThunk,
   createEntityAdapter,
+  createSelector,
   createSlice,
   EntityState,
 } from '@reduxjs/toolkit';
@@ -117,8 +118,17 @@ export const {
   selectById: selectConfigByTicketId,
 } = configsAdapter.getSelectors((state: AppState) => state.tickets.configs);
 
+export const selectTicketsIdsByGroupId = createSelector(
+  [selectTicketsConfigs, (state, groupId) => groupId],
+  (ticketsConfigs, groupId) =>
+    ticketsConfigs
+      .filter((config) => config.groupId === groupId)
+      .map((config) => config.id),
+);
+
 export const {
-  selectAll: selectTicketGroupsConfigs,
+  selectIds: selectTicketGroupsIds,
+  selectById: selectTicketGroupById,
 } = groupsConfigsAdapter.getSelectors(
   (state: AppState) => state.tickets.groupsConfigs,
 );

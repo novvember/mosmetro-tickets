@@ -6,20 +6,17 @@ import Ticket from '../Ticket/Ticket';
 import './TicketGroup.css';
 import './group-icon.css';
 import { useAppSelector } from '../../store';
-import { selectTicketsConfigs } from '../../store/ticketsSlice';
+import { selectTicketGroupById, selectTicketsIdsByGroupId } from '../../store/ticketsSlice';
 
 type TicketGroupProps = {
-  group: TicketGroupConfig;
+  groupId: TicketGroupConfig['id'];
 };
 
-function TicketGroup({ group }: TicketGroupProps) {
-  const ticketsConfigs = useAppSelector(selectTicketsConfigs);
+function TicketGroup({ groupId }: TicketGroupProps) {
+  const group = useAppSelector((state) => selectTicketGroupById(state, groupId));
+  const ticketsIds = useAppSelector((state) => selectTicketsIdsByGroupId(state, groupId));
 
-  const ticketsByGroup = ticketsConfigs
-    ? ticketsConfigs.filter(
-      (config) => config.groupId === group.id,
-    )
-    : null;
+  if (!group) return null;
 
   return (
     <fieldset className="ticket-group">
@@ -33,9 +30,9 @@ function TicketGroup({ group }: TicketGroupProps) {
         {group.title}
       </h3>
       <ul className="ticket-group__list">
-        {ticketsByGroup &&
-          ticketsByGroup.map((config) => {
-            return <Ticket key={config.id} config={config} />;
+        {
+          ticketsIds.map((id) => {
+            return <Ticket key={id} id={id} />;
           })}
       </ul>
     </fieldset>

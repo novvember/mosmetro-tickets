@@ -1,16 +1,16 @@
 import { useAppSelector } from '../../store';
-import { selectTicketGroupsConfigs } from '../../store/ticketsSlice';
+import { selectTicketGroupsIds } from '../../store/ticketsSlice';
 import TicketGroup from '../TicketGroup/TicketGroup';
 
 import './Tickets.css';
 
 function Tickets() {
-  const ticketGroupsConfigs = useAppSelector(selectTicketGroupsConfigs);
+  const ticketGroupsIds = useAppSelector(selectTicketGroupsIds) as string[];
 
   return (
     <form className="tickets">
-      {ticketGroupsConfigs.map((group) => {
-        return <TicketGroup key={group.id} group={group} />;
+      {ticketGroupsIds.map((groupId) => {
+        return <TicketGroup key={groupId} groupId={groupId} />;
       })}
     </form>
   );

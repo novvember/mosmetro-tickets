@@ -1,18 +1,19 @@
 import './Ticket.css';
 import { ChangeEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { selectIsSelected, ticketsSelected } from '../../store/ticketsSlice';
-import { CompoundTicketConfig, SimpleTicketConfig } from '../../types/TicketConfig';
+import { selectConfigByTicketId, selectIsSelected, ticketsSelected } from '../../store/ticketsSlice';
 import { buildField } from '../../store/globalFieldSlice';
+import TicketId from '../../types/TicketId';
 
 type TicketProps = {
-  config: SimpleTicketConfig | CompoundTicketConfig;
+  id: TicketId;
 };
 
-function Ticket({ config }: TicketProps) {
-  const id = config.id;
+function Ticket({ id }: TicketProps) {
   const isSelected = useAppSelector((state) => selectIsSelected(state, id)) ?? false;
+  const config = useAppSelector((state) => selectConfigByTicketId(state, id));
   const dispatch = useAppDispatch();
+  const name = config?.name ?? '';
 
   function handleChange(evt: ChangeEvent<HTMLInputElement>) {
     dispatch(ticketsSelected({ id, isSelected: !isSelected }));
@@ -28,7 +29,7 @@ function Ticket({ config }: TicketProps) {
           checked={isSelected}
           onChange={handleChange}
         />
-        <span className="ticket__label">{config.name}</span>
+        <span className="ticket__label">{name}</span>
       </label>
     </li>
   );
