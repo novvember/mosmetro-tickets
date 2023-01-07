@@ -43,7 +43,7 @@ const initialState: TicketsState = {
 };
 
 export const initializeTickets = createAsyncThunk(
-  'tickets/initialize',
+  'tickets/initialized',
   async (_, { getState }) => {
     const state = getState() as AppState;
     const appConfig = selectAppConfig(state);

@@ -11,9 +11,8 @@ type TicketProps = {
 
 function Ticket({ id }: TicketProps) {
   const isSelected = useAppSelector((state) => selectIsSelected(state, id)) ?? false;
-  const config = useAppSelector((state) => selectConfigByTicketId(state, id));
+  const name = useAppSelector((state) => selectConfigByTicketId(state, id))?.name ?? '';
   const dispatch = useAppDispatch();
-  const name = config?.name ?? '';
 
   function handleChange(evt: ChangeEvent<HTMLInputElement>) {
     dispatch(ticketsSelected({ id, isSelected: !isSelected }));

@@ -1,3 +1,5 @@
+import { useAppSelector } from '../../store';
+import { selectMaxCost, selectMinCost } from '../../store/globalFieldSlice';
 import CellType from '../../types/Cell';
 import getCellStyle from '../../utils/getCellStyle';
 
@@ -7,11 +9,12 @@ import './Cell.css';
 
 type CellProps = {
   cell: CellType;
-  minCost: number | null;
-  maxCost: number | null;
 };
 
-function Cell({ cell, minCost, maxCost }: CellProps) {
+function Cell({ cell }: CellProps) {
+  const minCost = useAppSelector(selectMinCost) ?? 0;
+  const maxCost = useAppSelector(selectMaxCost) ?? 1;
+
   return (
     <div
       className="cell"
@@ -24,8 +27,8 @@ function Cell({ cell, minCost, maxCost }: CellProps) {
         className="cell__dot"
         style={getCellStyle(
           cell.minCost?.cost ?? 0,
-          minCost ?? 0,
-          maxCost ?? 1,
+          minCost,
+          maxCost,
         )}
       ></span>
 

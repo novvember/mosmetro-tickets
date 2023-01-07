@@ -5,12 +5,10 @@ import Field from '../Field/Field';
 import './Diagram.css';
 import flatField from '../../utils/flatField';
 import { useAppSelector } from '../../store';
-import { selectGlobalField, selectIsFieldLoading, selectMaxCost, selectMinCost } from '../../store/globalFieldSlice';
+import { selectGlobalField, selectIsFieldLoading} from '../../store/globalFieldSlice';
 
 function Diagram() {
   const field = useAppSelector(selectGlobalField);
-  const minCost = useAppSelector(selectMinCost);
-  const maxCost = useAppSelector(selectMaxCost);
   const isLoading = useAppSelector(selectIsFieldLoading);
 
   return (
@@ -45,7 +43,7 @@ function Diagram() {
         {field &&
           flatField(field).map((cell, i) => {
             return (
-              <Cell key={i} cell={cell} minCost={minCost} maxCost={maxCost} />
+              <Cell key={i} cell={cell} />
             );
           })}
       </Field>
