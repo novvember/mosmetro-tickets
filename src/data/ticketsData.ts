@@ -399,7 +399,7 @@ export const ticketsConfigs: TicketsConfigs = [
 ];
 
 // Параметры групп билетов
-export const ticketGroupsConfig = [
+export const ticketGroupsConfigs = [
   {
     id: 'troika',
     title: 'Тройка',

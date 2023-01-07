@@ -1,29 +1,44 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import {
+  createAsyncThunk,
+  createEntityAdapter,
+  createSlice,
+  EntityState,
+} from '@reduxjs/toolkit';
 import { AppState } from '.';
 import TicketsFields from '../types/TicketFields';
 import TicketGroupConfig from '../types/TicketGroupConfig';
 import TicketId from '../types/TicketId';
-import TicketsConfigs from '../types/TicketsConfigs';
 import TicketsSelected from '../types/TicketsSelected';
 import CompoundTicket from '../utils/CompoundTicket';
 import SimpleTicket from '../utils/SimpleTicket';
 import Ticket from '../utils/Ticket';
-import { ticketGroupsConfig, ticketsConfigs } from '../data/ticketsData';
-import { ticketsConfigs as configs } from '../data/ticketsData';
+import {
+  ticketGroupsConfigs,
+  ticketsConfigs as configs,
+} from '../data/ticketsData';
 import { selectAppConfig } from './appConfigSlice';
+import {
+  CompoundTicketConfig,
+  SimpleTicketConfig,
+} from '../types/TicketConfig';
+
+const configsAdapter = createEntityAdapter<
+  SimpleTicketConfig | CompoundTicketConfig
+>();
+const groupsConfigsAdapter = createEntityAdapter<TicketGroupConfig>();
 
 export interface TicketsState {
   fields: TicketsFields | null;
   selected: TicketsSelected | null;
-  configs: TicketsConfigs;
-  groupsConfigs: TicketGroupConfig[];
+  configs: EntityState<SimpleTicketConfig | CompoundTicketConfig>;
+  groupsConfigs: EntityState<TicketGroupConfig>;
 }
 
 const initialState: TicketsState = {
   fields: null,
   selected: null,
-  configs: ticketsConfigs,
-  groupsConfigs: ticketGroupsConfig,
+  configs: configsAdapter.getInitialState(),
+  groupsConfigs: groupsConfigsAdapter.getInitialState(),
 };
 
 export const initializeTickets = createAsyncThunk(
@@ -63,26 +78,21 @@ const ticketsSlice = createSlice({
       const { id, isSelected } = action.payload;
       state.selected[id] = isSelected;
 
-      const dependencies = selectLocalConfig(state, id)?.dependencies;
+      const dependencies = state.configs.entities[id]?.dependencies ?? [];
 
-      if (dependencies) {
-        for (let ticketId of dependencies) {
-          const ticketConfig = selectLocalConfig(state, ticketId);
-          if (!ticketConfig) continue;
+      for (let ticketId of dependencies) {
+        const ticketConfig = state.configs.entities[ticketId];
+        if (!ticketConfig) continue;
 
-          if (isSelected && Ticket.isCompound(ticketConfig)) {
-            const areAllTrue = [
-              ticketConfig.useForMetro,
-              ticketConfig.useForTat,
-            ]
-              .map((ticketId) => state.selected![ticketId])
-              .every((state) => state === true);
+        if (isSelected && Ticket.isCompound(ticketConfig)) {
+          const areAllTrue = [ticketConfig.useForMetro, ticketConfig.useForTat]
+            .map((ticketId) => state.selected![ticketId])
+            .every((state) => state === true);
 
-            if (!areAllTrue) continue;
-          }
-
-          state.selected[ticketId] = isSelected;
+          if (!areAllTrue) continue;
         }
+
+        state.selected[ticketId] = isSelected;
       }
     },
   },
@@ -92,7 +102,8 @@ const ticketsSlice = createSlice({
       const { fields, selected, configs } = action.payload;
       state.fields = fields;
       state.selected = selected;
-      state.configs = configs;
+      configsAdapter.setAll(state.configs, configs);
+      groupsConfigsAdapter.setAll(state.groupsConfigs, ticketGroupsConfigs);
     });
   },
 });
@@ -101,19 +112,19 @@ export default ticketsSlice.reducer;
 
 export const { ticketsSelected } = ticketsSlice.actions;
 
-const selectLocalConfig = (state: TicketsState, ticketId: TicketId) =>
-  state.configs?.find((config) => config.id === ticketId);
+export const {
+  selectAll: selectTicketsConfigs,
+  selectById: selectConfigByTicketId,
+} = configsAdapter.getSelectors((state: AppState) => state.tickets.configs);
 
-export const selectConfigByTicketId = (state: AppState, ticketId: TicketId) =>
-  selectLocalConfig(state.tickets, ticketId);
-
-export const selectTicketsConfigs = (state: AppState) => state.tickets.configs;
+export const {
+  selectAll: selectTicketGroupsConfigs,
+} = groupsConfigsAdapter.getSelectors(
+  (state: AppState) => state.tickets.groupsConfigs,
+);
 
 export const selectIsSelected = (state: AppState, ticketId: TicketId) =>
   state.tickets.selected?.[ticketId];
-
-export const selectTicketGroupsConfigs = (state: AppState) =>
-  state.tickets.groupsConfigs;
 
 export const selectTicketsFields = (state: AppState) => state.tickets.fields;
 
