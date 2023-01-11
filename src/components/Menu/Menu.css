@@ -106,4 +106,15 @@
 .menu__content {
   overflow-y: auto;
   flex-shrink: 1;
+  scrollbar-color: var(--scrollbar) transparent;
+  scrollbar-width: thin;
+}
+
+.menu__content::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+.menu__content::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar);
+  border-radius: 0.15em;
 }

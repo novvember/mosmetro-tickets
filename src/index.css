@@ -17,6 +17,7 @@
   /* Цвета страницы */
   --surface: #f5f5f5;
   --on-surface: #000;
+  --scrollbar: #7b7b7b;
   background-color: var(--surface);
   color: var(--on-surface);
 
