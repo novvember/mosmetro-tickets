@@ -17,50 +17,44 @@
   /* Цвета страницы */
   --surface: #f5f5f5;
   --on-surface: #000;
-  --scrollbar: #7b7b7b;
+  --scrollbar: rgb(123, 123, 123);
   background-color: var(--surface);
   color: var(--on-surface);
 
   /* Цвета билетов */
 
-  --ticket-allInOne_trips_60: #c0504d;
-  --ticket-allInOne_trips_60: 192, 80, 77;
+  --ticket-allInOne_trips_1: rgb(168, 71, 67);
+  --ticket-allInOne_trips_2: rgb(181, 76, 72);
+  --ticket-allInOne_trips_60: rgb(193, 81, 77);
 
-  --ticket-allInOne_days_30: #cc5652;
-  --ticket-allInOne_days_30: 204, 86, 82;
+  --ticket-allInOne_days_1: rgb(205, 86, 82);
+  --ticket-allInOne_days_3: rgb(217, 91, 87);
+  --ticket-allInOne_days_30: rgb(229, 96, 92);
+  --ticket-allInOne_days_90: rgb(217, 101, 97);
+  --ticket-allInOne_days_365: rgb(229, 106, 112);
 
-  --ticket-allInOne_days_90: #d95b57;
-  --ticket-allInOne_days_90: 217, 91, 87;
+  --ticket-troika: rgb(16, 166, 200);
+  --ticket-bankcard: rgb(28, 28, 28);
+  --ticket-facepay: rgb(245, 163, 0);
 
-  --ticket-allInOne_days_365: #e5605c;
-  --ticket-allInOne_days_365: 229, 96, 92;
+  --ticket-bankcard_mir-promo: rgb(0, 144, 94);
 
-  --ticket-troika: #10a6c8;
-  --ticket-troika: 16, 166, 200;
+  --ticket-tat_days_30: rgb(0, 85, 128);
+  --ticket-tat_days_90: rgb(0, 102, 153);
+  --ticket-tat_days_365: rgb(0, 125, 189);
 
-  --ticket-facepay: #3f5696;
-  --ticket-facepay: 63, 86, 150;
+  --ticket-compound__troika__facepay: rgb(245, 163, 0);
 
-  --ticket-bankcard_mir-promo: #00905e;
-  --ticket-bankcard_mir-promo: 0, 144, 94;
+  --ticket-compound__tat_days_30__troika: rgb(0, 85, 128);
+  --ticket-compound__tat_days_30__facepay: rgb(0, 85, 128);
+  --ticket-compound__tat_days_90__troika: rgb(0, 102, 153);
+  --ticket-compound__tat_days_90__facepay: rgb(0, 102, 153);
+  --ticket-compound__tat_days_365__troika: rgb(0, 125, 189);
+  --ticket-compound__tat_days_365__facepay: rgb(0, 125, 189);
 
-  --ticket-tat_days_30: #005580;
-  --ticket-tat_days_30: 0, 85, 128;
-
-  --ticket-compound__tat_days_30__troika: #005580;
-  --ticket-compound__tat_days_30__troika: 0, 85, 128;
-
-  --ticket-tat_days_90: #006699;
-  --ticket-tat_days_90: 0, 102, 153;
-
-  --ticket-compound__tat_days_90__troika: #006699;
-  --ticket-compound__tat_days_90__troika: 0, 102, 153;
-
-  --ticket-tat_days_365: #007dbd;
-  --ticket-tat_days_365: 0, 125, 189;
-
-  --ticket-compound__tat_days_365__troika: #007dbd;
-  --ticket-compound__tat_days_365__troika: 0, 125, 189;
+  --ticket-compound__tat_days_30__allInOne_trips_60: rgb(99, 78, 126);
+  --ticket-compound__tat_days_90__allInOne_trips_60: rgb(109, 85, 139);
+  --ticket-compound__tat_days_365__allInOne_trips_60: rgb(119, 93, 152);
 }
 
 /* Ссылки по умолчанию */

@@ -1,5 +1,6 @@
 import { useAppSelector } from '../../store';
 import { selectMaxCost, selectMinCost } from '../../store/globalFieldSlice';
+import { selectConfigByTicketId } from '../../store/ticketsSlice';
 import CellType from '../../types/Cell';
 import getCellStyle from '../../utils/getCellStyle';
 
@@ -14,14 +15,17 @@ type CellProps = {
 function Cell({ cell }: CellProps) {
   const minCost = useAppSelector(selectMinCost) ?? 0;
   const maxCost = useAppSelector(selectMaxCost) ?? 1;
+  const ticketId = cell.minCost?.id ?? '';
+  const color = useAppSelector((state) => selectConfigByTicketId(state, ticketId))?.color ?? '';
+
+  const style: React.CSSProperties = {
+    '--color': color,
+  } as React.CSSProperties;
 
   return (
     <div
       className="cell"
-      data-x=""
-      data-y=""
-      data-ticket={cell.minCost?.id ?? ''}
-      data-cost={cell.minCost?.cost ?? 0}
+      style={style}
     >
       <span
         className="cell__dot"

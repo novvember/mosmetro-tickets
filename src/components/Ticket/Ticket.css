@@ -1,3 +1,7 @@
+.ticket {
+  --color: 200, 200, 200;
+}
+
 .ticket__input {
   position: absolute;
   height: 1px;
@@ -26,14 +30,14 @@
   border-radius: 0.5em;
   cursor: pointer;
   transition: opacity 0.2s;
-  outline: 1px solid #fff;
+  outline: 1px solid rgb(var(--color));
   text-decoration-color: #ccc;
   color: #aaa;
 }
 
 .ticket__input:checked + .ticket__label {
-  background-color: #fff;
-  color: inherit;
+  background-color: rgb(var(--color));
+  color: #fff;
 }
 
 .ticket__label:hover {

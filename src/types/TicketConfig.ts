@@ -12,6 +12,7 @@ export interface TicketConfig {
   isSelectedByDefault: boolean;
   isIgnored: boolean;
   dependencies?: TicketId[];
+  color?: string;
 }
 
 export interface SimpleTicketConfig extends TicketConfig {

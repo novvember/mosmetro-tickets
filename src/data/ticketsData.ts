@@ -13,6 +13,7 @@ export const ticketsConfigs: TicketsConfigs = [
     groupId: 'allInOne_trips',
     isSelectedByDefault: true,
     isIgnored: false,
+    color: '168, 71, 67',
   },
 
   {
@@ -26,6 +27,7 @@ export const ticketsConfigs: TicketsConfigs = [
     groupId: 'allInOne_trips',
     isSelectedByDefault: true,
     isIgnored: false,
+    color: '181, 76, 72',
   },
 
   {
@@ -44,6 +46,7 @@ export const ticketsConfigs: TicketsConfigs = [
       'compound__tat_days_90__allInOne_trips_60',
       'compound__tat_days_365__allInOne_trips_60',
     ],
+    color: '193, 81, 77',
   },
 
   // Единые без лимита
@@ -58,6 +61,7 @@ export const ticketsConfigs: TicketsConfigs = [
     groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
+    color: '205, 86, 82',
   },
 
   {
@@ -71,6 +75,7 @@ export const ticketsConfigs: TicketsConfigs = [
     groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
+    color: '217, 91, 87',
   },
 
   {
@@ -84,6 +89,7 @@ export const ticketsConfigs: TicketsConfigs = [
     groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
+    color: '229, 96, 92',
   },
 
   {
@@ -97,6 +103,7 @@ export const ticketsConfigs: TicketsConfigs = [
     groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
+    color: '217, 101, 97',
   },
 
   {
@@ -110,6 +117,7 @@ export const ticketsConfigs: TicketsConfigs = [
     groupId: 'allInOne_days',
     isSelectedByDefault: true,
     isIgnored: false,
+    color: '229, 106, 112',
   },
 
   // Карта Тройка
@@ -130,6 +138,7 @@ export const ticketsConfigs: TicketsConfigs = [
       'compound__tat_days_90__troika',
       'compound__tat_days_365__troika',
     ],
+    color: '16, 166, 200',
   },
 
   {
@@ -157,6 +166,7 @@ export const ticketsConfigs: TicketsConfigs = [
     groupId: 'other',
     isSelectedByDefault: true,
     isIgnored: false,
+    color: '28, 28, 28',
   },
   {
     name: 'Facepay',
@@ -175,6 +185,7 @@ export const ticketsConfigs: TicketsConfigs = [
       'compound__tat_days_90__facepay',
       'compound__tat_days_365__facepay',
     ],
+    color: '245, 163, 0',
   },
 
   // {
@@ -188,6 +199,7 @@ export const ticketsConfigs: TicketsConfigs = [
   //   groupId: 'other',
   //   isSelectedByDefault: true,
   //   isIgnored: false,
+  //   color: '0, 144, 94',
   // },
 
   // Билеты ТАТ
@@ -207,6 +219,7 @@ export const ticketsConfigs: TicketsConfigs = [
       'compound__tat_days_30__facepay',
       'compound__tat_days_30__allInOne_trips_60',
     ],
+    color: '0, 85, 128',
   },
 
   {
@@ -225,6 +238,7 @@ export const ticketsConfigs: TicketsConfigs = [
       'compound__tat_days_90__facepay',
       'compound__tat_days_90__allInOne_trips_60',
     ],
+    color: '0, 102, 153',
   },
 
   {
@@ -243,10 +257,12 @@ export const ticketsConfigs: TicketsConfigs = [
       'compound__tat_days_365__facepay',
       'compound__tat_days_365__allInOne_trips_60',
     ],
+    color: '0, 125, 189',
   },
 
   // Сочетания билетов
   // Нужно добавить useForMetro, useForTat
+
   {
     name: 'Facepay + Тройка',
     price: null,
@@ -260,6 +276,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'facepay',
     useForTat: 'troika',
+    color: '245, 163, 0',
   },
 
   {
@@ -275,6 +292,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'troika',
     useForTat: 'tat_days_30',
+    color: '0, 85, 128',
   },
 
   {
@@ -290,6 +308,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'facepay',
     useForTat: 'tat_days_30',
+    color: '0, 85, 128',
   },
 
   {
@@ -305,6 +324,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'troika',
     useForTat: 'tat_days_90',
+    color: '0, 102, 153',
   },
 
   {
@@ -320,6 +340,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'facepay',
     useForTat: 'tat_days_90',
+    color: '0, 102, 153',
   },
 
   {
@@ -335,6 +356,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'troika',
     useForTat: 'tat_days_365',
+    color: '0, 125, 189',
   },
 
   {
@@ -350,6 +372,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'facepay',
     useForTat: 'tat_days_365',
+    color: '0, 125, 189',
   },
 
   {
@@ -365,6 +388,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'allInOne_trips_60',
     useForTat: 'tat_days_30',
+    color: '99, 78, 126',
   },
 
   {
@@ -380,6 +404,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'allInOne_trips_60',
     useForTat: 'tat_days_90',
+    color: '109, 85, 139',
   },
 
   {
@@ -395,6 +420,7 @@ export const ticketsConfigs: TicketsConfigs = [
     isIgnored: false,
     useForMetro: 'allInOne_trips_60',
     useForTat: 'tat_days_365',
+    color: '119, 93, 152',
   },
 ];
 
