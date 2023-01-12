@@ -15,28 +15,38 @@ type CellProps = {
 function Cell({ cell }: CellProps) {
   const minCost = useAppSelector(selectMinCost) ?? 0;
   const maxCost = useAppSelector(selectMaxCost) ?? 1;
+
   const ticketId = cell.minCost?.id ?? '';
+  const cost = cell.minCost?.cost ?? 0;
   const color = useAppSelector((state) => selectConfigByTicketId(state, ticketId))?.color ?? '';
 
-  const style: React.CSSProperties = {
+  const colorStyle: React.CSSProperties = {
     '--color': color,
   } as React.CSSProperties;
+
+  const dotStyle: React.CSSProperties = getCellStyle(
+    cost,
+    minCost,
+    maxCost);
 
   return (
     <div
       className="cell"
-      style={style}
+      style={colorStyle}
     >
-      <span
-        className="cell__dot"
-        style={getCellStyle(
-          cell.minCost?.cost ?? 0,
-          minCost,
-          maxCost,
-        )}
-      ></span>
 
-      <Tip cell={cell} />
+      {
+        ticketId.length > 0 &&
+        <>
+          <span
+            className="cell__dot"
+            style={dotStyle}
+          ></span>
+
+          <Tip cell={cell} />
+        </>
+      }
+
     </div>
   );
 }

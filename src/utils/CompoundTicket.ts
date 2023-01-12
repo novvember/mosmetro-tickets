@@ -17,6 +17,7 @@ export default class CompoundTicket extends Ticket<CompoundTicketConfig> {
     this.useForMetro = ticketsFields[ticketConfig.useForMetro];
     this.useForTat = ticketsFields[ticketConfig.useForTat];
     super.calculate();
+    this.field[0][0] = null;
   }
 
   protected getCost({

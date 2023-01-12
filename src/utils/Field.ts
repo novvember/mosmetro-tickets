@@ -56,8 +56,11 @@ export default class Field {
         const minCost = this.getMinCost(this.field[y][x]);
 
         this.field[y][x].minCost = minCost;
-        this.minCost = Math.min(minCost.cost, this.minCost);
-        this.maxCost = Math.max(minCost.cost, this.maxCost);
+
+        if (minCost.cost !== Infinity) {
+          this.minCost = Math.min(minCost.cost, this.minCost);
+          this.maxCost = Math.max(minCost.cost, this.maxCost);
+        }
       }
     }
   }

@@ -6,6 +6,7 @@ export default class SimpleTicket extends Ticket<SimpleTicketConfig> {
   constructor(ticket: SimpleTicketConfig, config: AppConfigState) {
     super(ticket, config);
     super.calculate();
+    this.field[0][0] = null;
   }
 
   protected getCost({
