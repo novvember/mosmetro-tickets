@@ -3,4 +3,6 @@
   display: grid;
   grid-template-columns: repeat(71, 1fr);
   grid-template-rows: repeat(71, 1fr);
+  border-radius: 0.3em;
+  background-color: #fff;
 }
