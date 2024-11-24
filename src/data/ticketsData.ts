@@ -1,10 +1,12 @@
 import TicketsConfigs from '../types/TicketsConfigs';
 
+export const ticketsDate = new Date('24 Nov 2024');
+
 export const ticketsConfigs: TicketsConfigs = [
   // Единые с лимитом поездок
   {
     name: 'Единый на 1 поездку',
-    price: 62,
+    price: 70,
     dayLimit: 5,
     tripLimit: 1,
     isValidForMetro: true,
@@ -18,7 +20,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 2 поездки',
-    price: 124,
+    price: 140,
     dayLimit: 5,
     tripLimit: 2,
     isValidForMetro: true,
@@ -32,7 +34,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 60 поездок',
-    price: 2730,
+    price: 3420,
     dayLimit: 45,
     tripLimit: 60,
     isValidForMetro: true,
@@ -52,7 +54,7 @@ export const ticketsConfigs: TicketsConfigs = [
   // Единые без лимита
   {
     name: 'Единый на 1 сутки',
-    price: 285,
+    price: 340,
     dayLimit: 1,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -66,7 +68,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 3 суток',
-    price: 540,
+    price: 650,
     dayLimit: 3,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -80,7 +82,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 30 дней',
-    price: 2540,
+    price: 2870,
     dayLimit: 30,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -94,7 +96,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 90 дней',
-    price: 6150,
+    price: 6950,
     dayLimit: 90,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -108,7 +110,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 365 дней',
-    price: 19500,
+    price: 20500,
     dayLimit: 365,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -123,7 +125,7 @@ export const ticketsConfigs: TicketsConfigs = [
   // Карта Тройка
   {
     name: 'Электронный кошелек',
-    price: 50,
+    price: 57,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -143,7 +145,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Пересадка (90 минут)',
-    price: 75,
+    price: 85,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -157,7 +159,7 @@ export const ticketsConfigs: TicketsConfigs = [
   // Банковские карты
   {
     name: 'Банковская карта',
-    price: 56,
+    price: 64,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -170,7 +172,7 @@ export const ticketsConfigs: TicketsConfigs = [
   },
   {
     name: 'Facepay',
-    price: 46,
+    price: 53,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -205,7 +207,7 @@ export const ticketsConfigs: TicketsConfigs = [
   // Билеты ТАТ
   {
     name: 'ТАТ на 30 дней',
-    price: 1560,
+    price: 1820,
     dayLimit: 30,
     tripLimit: Infinity,
     isValidForMetro: false,
@@ -224,7 +226,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'ТАТ на 90 дней',
-    price: 4140,
+    price: 4800,
     dayLimit: 90,
     tripLimit: Infinity,
     isValidForMetro: false,
@@ -243,7 +245,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'ТАТ на 365 дней',
-    price: 14000,
+    price: 14750,
     dayLimit: 365,
     tripLimit: Infinity,
     isValidForMetro: false,
