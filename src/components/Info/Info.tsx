@@ -1,6 +1,13 @@
+import { ticketsDate } from '../../data/ticketsData';
 import './Info.css';
 
 function Info() {
+  const date = ticketsDate.toLocaleDateString('ru', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
   return (
     <section className="info">
       <h3>Что это?</h3>
@@ -37,15 +44,10 @@ function Info() {
 
       <h3>Данные актуальны?</h3>
       <p>
-        Актуальны на 2023 год: учтено последнее изменение стоимости проезда
-        в Москве —{' '}
-        <a href="https://telegra.ph/file/b9658edd8ebfb03c89823.jpg">
-          со 2 января 2023 года
-        </a>
-        .
+        Актуальны на {date}
       </p>
       <p>
-        Актуальную информацию о видах билетов, их стоимости и условиях можно
+        Официальную информацию о видах билетов, их стоимости и условиях можно
         посмотреть{' '}
         <a href="https://transport.mos.ru/mostrans/oplata_proezda/">
           на официальном сайте.

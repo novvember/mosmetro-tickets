@@ -1,14 +1,22 @@
+import { ticketsDate } from '../../data/ticketsData';
 import './Footer.css';
 
 function Footer() {
+  const date = ticketsDate.toLocaleDateString('ru', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
   return (
     <footer className="footer">
       <p className="footer__text">
-        Не имеет отношения к «Московскому транспорту» /{' '}
+        Стоимость билетов по состоянию на {date}
+        {} / Не имеет отношения к «Московскому транспорту» /{' '}
         <a href="https://github.com/novvember/mosmetro-tickets">
           Репозиторий на Github
         </a>{' '}
-        / © 2019–2022 <a href="https://github.com/novvember">novvember</a>
+        / © 2019–2024 <a href="https://github.com/novvember">novvember</a>
       </p>
     </footer>
   );
