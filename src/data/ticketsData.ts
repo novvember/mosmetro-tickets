@@ -1,12 +1,12 @@
 import TicketsConfigs from '../types/TicketsConfigs';
 
-export const ticketsDate = new Date('24 Nov 2024');
+export const ticketsDate = new Date('02 Jan 2026');
 
 export const ticketsConfigs: TicketsConfigs = [
   // Единые с лимитом поездок
   {
     name: 'Единый на 1 поездку',
-    price: 70,
+    price: 90,
     dayLimit: 5,
     tripLimit: 1,
     isValidForMetro: true,
@@ -20,7 +20,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 2 поездки',
-    price: 140,
+    price: 180,
     dayLimit: 5,
     tripLimit: 2,
     isValidForMetro: true,
@@ -32,29 +32,10 @@ export const ticketsConfigs: TicketsConfigs = [
     color: '181, 76, 72',
   },
 
-  {
-    name: 'Единый на 60 поездок',
-    price: 3420,
-    dayLimit: 45,
-    tripLimit: 60,
-    isValidForMetro: true,
-    isValidForTat: true,
-    id: 'allInOne_trips_60',
-    groupId: 'allInOne_trips',
-    isSelectedByDefault: true,
-    isIgnored: false,
-    dependencies: [
-      'compound__tat_days_30__allInOne_trips_60',
-      'compound__tat_days_90__allInOne_trips_60',
-      'compound__tat_days_365__allInOne_trips_60',
-    ],
-    color: '193, 81, 77',
-  },
-
   // Единые без лимита
   {
     name: 'Единый на 1 сутки',
-    price: 340,
+    price: 415,
     dayLimit: 1,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -68,7 +49,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 3 суток',
-    price: 650,
+    price: 800,
     dayLimit: 3,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -82,7 +63,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 30 дней',
-    price: 2870,
+    price: 3460,
     dayLimit: 30,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -96,7 +77,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 90 дней',
-    price: 6950,
+    price: 8450,
     dayLimit: 90,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -110,7 +91,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Единый на 365 дней',
-    price: 20500,
+    price: 24900,
     dayLimit: 365,
     tripLimit: Infinity,
     isValidForMetro: true,
@@ -125,7 +106,7 @@ export const ticketsConfigs: TicketsConfigs = [
   // Карта Тройка
   {
     name: 'Электронный кошелек',
-    price: 57,
+    price: 75,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -145,7 +126,7 @@ export const ticketsConfigs: TicketsConfigs = [
 
   {
     name: 'Пересадка (90 минут)',
-    price: 85,
+    price: 112,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -159,7 +140,7 @@ export const ticketsConfigs: TicketsConfigs = [
   // Банковские карты
   {
     name: 'Банковская карта',
-    price: 64,
+    price: 83,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -172,7 +153,7 @@ export const ticketsConfigs: TicketsConfigs = [
   },
   {
     name: 'Facepay',
-    price: 53,
+    price: 71,
     dayLimit: Infinity,
     tripLimit: 1,
     isValidForMetro: true,
@@ -190,24 +171,10 @@ export const ticketsConfigs: TicketsConfigs = [
     color: '245, 163, 0',
   },
 
-  // {
-  //   name: 'Карта Мир (до 31.12.2022)',
-  //   price: 41,
-  //   dayLimit: Infinity,
-  //   tripLimit: 1,
-  //   isValidForMetro: true,
-  //   isValidForTat: true,
-  //   id: 'bankcard_mir-promo',
-  //   groupId: 'other',
-  //   isSelectedByDefault: true,
-  //   isIgnored: false,
-  //   color: '0, 144, 94',
-  // },
-
   // Билеты ТАТ
   {
     name: 'ТАТ на 30 дней',
-    price: 1820,
+    price: 2250,
     dayLimit: 30,
     tripLimit: Infinity,
     isValidForMetro: false,
@@ -219,14 +186,13 @@ export const ticketsConfigs: TicketsConfigs = [
     dependencies: [
       'compound__tat_days_30__troika',
       'compound__tat_days_30__facepay',
-      'compound__tat_days_30__allInOne_trips_60',
     ],
     color: '0, 85, 128',
   },
 
   {
     name: 'ТАТ на 90 дней',
-    price: 4800,
+    price: 5950,
     dayLimit: 90,
     tripLimit: Infinity,
     isValidForMetro: false,
@@ -238,14 +204,13 @@ export const ticketsConfigs: TicketsConfigs = [
     dependencies: [
       'compound__tat_days_90__troika',
       'compound__tat_days_90__facepay',
-      'compound__tat_days_90__allInOne_trips_60',
     ],
     color: '0, 102, 153',
   },
 
   {
     name: 'ТАТ на 365 дней',
-    price: 14750,
+    price: 18400,
     dayLimit: 365,
     tripLimit: Infinity,
     isValidForMetro: false,
@@ -257,7 +222,6 @@ export const ticketsConfigs: TicketsConfigs = [
     dependencies: [
       'compound__tat_days_365__troika',
       'compound__tat_days_365__facepay',
-      'compound__tat_days_365__allInOne_trips_60',
     ],
     color: '0, 125, 189',
   },
@@ -375,54 +339,6 @@ export const ticketsConfigs: TicketsConfigs = [
     useForMetro: 'facepay',
     useForTat: 'tat_days_365',
     color: '0, 125, 189',
-  },
-
-  {
-    name: 'ТАТ на 30 дней + Единый на 60 поездок',
-    price: null,
-    dayLimit: null,
-    tripLimit: null,
-    isValidForMetro: true,
-    isValidForTat: true,
-    id: 'compound__tat_days_30__allInOne_trips_60',
-    groupId: 'compound',
-    isSelectedByDefault: true,
-    isIgnored: false,
-    useForMetro: 'allInOne_trips_60',
-    useForTat: 'tat_days_30',
-    color: '99, 78, 126',
-  },
-
-  {
-    name: 'ТАТ на 90 дней + Единый на 60 поездок',
-    price: null,
-    dayLimit: null,
-    tripLimit: null,
-    isValidForMetro: true,
-    isValidForTat: true,
-    id: 'compound__tat_days_90__allInOne_trips_60',
-    groupId: 'compound',
-    isSelectedByDefault: true,
-    isIgnored: false,
-    useForMetro: 'allInOne_trips_60',
-    useForTat: 'tat_days_90',
-    color: '109, 85, 139',
-  },
-
-  {
-    name: 'ТАТ на 365 дней + Единый на 60 поездок',
-    price: null,
-    dayLimit: null,
-    tripLimit: null,
-    isValidForMetro: true,
-    isValidForTat: true,
-    id: 'compound__tat_days_365__allInOne_trips_60',
-    groupId: 'compound',
-    isSelectedByDefault: true,
-    isIgnored: false,
-    useForMetro: 'allInOne_trips_60',
-    useForTat: 'tat_days_365',
-    color: '119, 93, 152',
   },
 ];
 

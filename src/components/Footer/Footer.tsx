@@ -16,7 +16,7 @@ function Footer() {
         <a href="https://github.com/novvember/mosmetro-tickets">
           Репозиторий на Github
         </a>{' '}
-        / © 2019–2024 <a href="https://github.com/novvember">novvember</a>
+        / © 2019–2026 <a href="https://github.com/novvember">novvember</a>
       </p>
     </footer>
   );
